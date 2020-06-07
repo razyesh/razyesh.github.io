@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>My Portfolio</title>
+	<link rel="stylesheet" href="styles/style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<script src="js/jquery.js"></script>
+
+</head>
+<body>
+	
+	<main>
+		<div class="card" style="width:18rem;">
+
+			<img class="card-img-top" src="images/profileImg.jpg" alt="razyesh_profile_image" />
+			<div class="card-body">
+				<h5>Rajesh Pudasaini</h5>
+				<p>Computer Science Student</p>
+			</div>
+			
+		</div>
+	<div class="actionBtn">
+		<button class="btn btn-dark" id="getGithub">View Github Profile</button>
+		<button class="btn btn-primary">View Twitter Feed</button>
+		<button class="btn btn-success">View Personal Project</button>
+	</div>
+
+	<div class="card" id="githubDetail">
+		<div class="card-body">
+			<h5 id="githubUsername"></h5>
+			<h5 id="githubFullname"></h5>
+
+			<div class="grid-container">
+				<h6 id="followersCount"></h6>
+				<h6 id="followingCount"></h6>
+				<h6 id="noOfRepos"></h6>
+
+				<h6>Followers</h6>
+				<h6>Following</h6>
+				<h6>No. of Public Repos. </h6>
+
+			</div>
+
+		</div>
+		<button class="btn btn-sm btn-danger float-right" id="githubRepo">View All Repos</button>
+		<div class="card" id="reposList">
+		  <div class="card-header">
+		    Github Repos
+		  </div>
+		  <div class="card-body" id="repoContainer">
+		   
+		  </div>
+		</div>
+		
+	</div>
+	</main>
+
+	<script>
+
+		$("#getGithub").click(function(){
+			$("#githubDetail").toggle();
+
+			if (document.getElementById("githubDetail").style.display == "block"){
+
+				try {
+
+				fetch('https://api.github.com/users/razyesh')
+						.then(response => response.json())
+							.then(function(data){
+								let githubUsername = data['login'];
+								let fullName = data['name'];
+								let followersCount = data['followers'];
+								let followingCount = data['following'];
+								let reposCount = data['public_repos'];
+								reposURL = data['repos_url'];
+								document.getElementById("githubUsername").innerHTML = "Username: " + githubUsername;
+								document.getElementById("githubFullname").innerHTML = "Full Name: " + fullName;
+								document.getElementById("followersCount").innerHTML = followersCount;
+								document.getElementById("followingCount").innerHTML = followingCount;
+								document.getElementById("noOfRepos").innerHTML = reposCount;
+
+							})
+
+				} catch(e){
+					console.log(e);
+				}
+				}		
+		});
+
+		$("#githubRepo").click(function (){
+			$("#reposList").toggle();
+			$.ajax('https://api.github.com/users/razyesh/repos',{
+				dataType: 'json',
+				success : function (data, status, xhr){
+					var repoContainer = document.getElementById("repoContainer");
+					for (var i=0; i<data.length ; i++){
+						var heading = document.createElement("h5");
+						heading.innerHTML = i+1 + "." + data[i].name;
+						var language = document.createElement("p");
+						language.innerHTML = "language: " + data[i].language;
+						var gitCloneUrl = document.createElement("a");
+						gitCloneUrl.id = "gitCloneUrl";
+						gitCloneUrl.innerHTML = data[i].clone_url;
+						gitCloneUrl.href= data[i].clone_url;
+						repoContainer.appendChild(heading);
+						repoContainer.appendChild(language);
+						repoContainer.appendChild(gitCloneUrl);
+					}
+				}
+			})
+		})
+
+		
+		
+	</script>
+	
+</body>
+</html>
