@@ -11,30 +11,33 @@
 <body>
 	
 	<main>
-		<div class="card" style="width:18rem;">
+			
+		
+		<div class="card" style="width:18rem; background-color: white;">
 
-			<img class="card-img-top" src="images/profileImg.jpg" alt="razyesh_profile_image" />
+			<img class="card-img-top" src="images/profileImg.JPG" alt="razyesh_profile_image" />
 			<div class="card-body">
-				<h5>Rajesh Pudasaini</h5>
-				<p>Computer Science Student</p>
+				<h5>Hi, I am Rajesh!</h5>
+				<p>I love programming, doing research, and love to learn new tech stack.</p>
+				<p>Also, I love Trekking.</p>
 			</div>
+			<div class="actionBtn">
+		<button class="btn btn-sm btn-dark" id="getGithub">View Github Profile</button>
+		<hr />
+		
+	</div>
 			
 		</div>
-	<div class="actionBtn">
-		<button class="btn btn-dark" id="getGithub">View Github Profile</button>
-		<button class="btn btn-primary">View Twitter Feed</button>
-		<button class="btn btn-success">View Personal Project</button>
-	</div>
-
+	
 	<div class="card" id="githubDetail">
 		<div class="card-body">
 			<h5 id="githubUsername"></h5>
 			<h5 id="githubFullname"></h5>
 
 			<div class="grid-container">
-				<h6 id="followersCount"></h6>
-				<h6 id="followingCount"></h6>
-				<h6 id="noOfRepos"></h6>
+				<h6 id="followersCount"><div class="loader" id="loadingFollowersCount" hidden></div></h6>
+				<h6 id="followingCount"><div class="loader" id="loadingFollowingCount" hidden></div></h6>
+				<h6 id="noOfRepos"><div class="loader" id="loadingNoOfRepos" hidden></div></h6>
 
 				<h6>Followers</h6>
 				<h6>Following</h6>
@@ -49,25 +52,38 @@
 		    Github Repos
 		  </div>
 		  <div class="card-body" id="repoContainer">
-		   
+		   <div class="loader" id="loadingRepos" hidden></div>
 		  </div>
 		</div>
 		
 	</div>
+	
 	</main>
 
 	<script>
 
 		$("#getGithub").click(function(){
 			$("#githubDetail").toggle();
+			document.getElementById("loadingFollowersCount").hidden = false;
+			document.getElementById("loadingFollowingCount").hidden = false;
+			document.getElementById("loadingNoOfRepos").hidden = false;
+
+
 
 			if (document.getElementById("githubDetail").style.display == "block"){
+
 
 				try {
 
 				fetch('https://api.github.com/users/razyesh')
 						.then(response => response.json())
 							.then(function(data){
+
+								if (data){
+								document.getElementById("loadingFollowersCount").hidden = true;
+			document.getElementById("loadingFollowingCount").hidden = true;
+			document.getElementById("loadingNoOfRepos").hidden = true;
+
 								let githubUsername = data['login'];
 								let fullName = data['name'];
 								let followersCount = data['followers'];
@@ -80,6 +96,8 @@
 								document.getElementById("followingCount").innerHTML = followingCount;
 								document.getElementById("noOfRepos").innerHTML = reposCount;
 
+							} 
+
 							})
 
 				} catch(e){
@@ -90,16 +108,20 @@
 
 		$("#githubRepo").click(function (){
 			$("#reposList").toggle();
+			document.getElementById("loadingRepos").hidden = false;
+
 			$.ajax('https://api.github.com/users/razyesh/repos',{
 				dataType: 'json',
 				success : function (data, status, xhr){
+					document.getElementById("loadingRepos").hidden = true;
+
 					var repoContainer = document.getElementById("repoContainer");
 					for (var i=0; i<data.length ; i++){
 						var heading = document.createElement("h5");
 						heading.innerHTML = i+1 + "." + data[i].name;
 						var language = document.createElement("p");
 						language.innerHTML = "language: " + data[i].language;
-						var gitCloneUrl = document.createElement("a");
+						var gitCloneUrl = document.createElement("button");
 						gitCloneUrl.id = "gitCloneUrl";
 						gitCloneUrl.innerHTML = data[i].clone_url;
 						gitCloneUrl.href= data[i].clone_url;

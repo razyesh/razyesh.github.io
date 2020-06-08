@@ -1,8 +1,4 @@
-body {
-	background-image: url('../images/background.jpg');
-	background-repeat: no-repeat;	
-	background-size: cover;
-}
+
 
 main {
 	margin: auto;
@@ -18,9 +14,11 @@ main {
 }
 
 .card img {
-	border-radius: 75%;
-	width: 100%;
-	height: 30vh;
+	border-radius: 100%;
+	width: 75%;
+	height: 22vh;
+	margin-left: auto;
+	margin-right: auto;
 
 
 }
@@ -52,4 +50,21 @@ main {
 
 #gitCloneUrl:hover {
 	text-decoration: none;
+}
+
+
+.loader {
+  border-top: 10px solid blue;
+  border-right: 10px solid green;
+  border-bottom: 10px solid red;
+  border-left: 10px solid black;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
