@@ -1,0 +1,45 @@
+.card {
+	margin-left: 250px;
+	padding: 80px 150px 80px 150px;
+	width: 50%;
+	height: 400px;
+	background-color: rgb(52, 235, 219);
+}
+
+.sub-card {
+	background-color: #ffffff;
+	height: 400px;
+}
+
+.content-wrap {
+	padding: 80px 65px 80px 65px;
+}
+
+.personal-info {
+	float: left;
+}
+
+.personal-info h1, p {
+	margin: 0;
+
+}
+
+.address {
+	margin-top: 60px;
+}
+
+address p, a {
+	margin: 2px 0 0 0;
+}
+
+.my-icon {
+	float:right;
+	display: grid;
+	grid-template-columns: auto auto;
+}
+
+.my-icon img {
+	height: 80px;
+} 
+
+
