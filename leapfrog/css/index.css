@@ -1,0 +1,41 @@
+
+.info {
+	margin-left: 45%;
+	padding: 0px;
+}
+
+.info img {
+	width: 200px;
+	border-radius: 100%;
+	height: 150px;
+}
+
+main {
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+
+th, td {
+	padding: 15px;
+}
+
+th {
+	background-color: black;
+	color: white;
+	text-align: right;
+}
+
+table {
+	border-spacing: 5px;
+	margin-bottom: 20px;
+}
+
+caption {
+	font-size: 20px;
+}
