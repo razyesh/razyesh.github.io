@@ -1,0 +1,71 @@
+*{
+	margin-top: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Verdana', sans-serif;
+}
+
+.content-wrap {
+	width: 600px;
+}
+
+
+.card {
+	margin-left: 350px;
+	margin-top: 150px;
+	padding: 80px 150px 80px 150px;
+	width: 650px;
+	height: 400px;
+	background-color: rgb(52, 235, 219);
+}
+
+.sub-card {
+	background-color: #ffffff;
+	height: 400px;
+	width: 650px;
+}
+
+.name {
+	font-size: 36px;
+}
+
+.designation {
+	font-size: 22px;
+}
+.content-wrap {
+	padding: 80px 65px 80px 65px;
+}
+
+.personal-info {
+	float: left;
+	width: calc(100% - 250px);
+}
+
+.address {
+	margin-top: 60px;
+	
+}
+
+
+.my-icon {
+	float:right;
+	width: 250px;
+	margin-top: 10px;
+}
+
+.my-icon img {
+	height: 80px;
+} 
+
+.icon-row2 {
+	margin-left: 6px;
+}
+
+
+.address-text {
+	font-size: 18px;
+	text-decoration: none;
+	color: #000000;
+}
