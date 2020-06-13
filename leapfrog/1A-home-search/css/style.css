@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+main {
+    margin: 30px 100px 0 130px;
+}
+
+.searches-entries {
+    float:left;
+}
+
+.searches {
+    width: 300px;
+    height: 700px;
+    background-color: #f2f2f2;
+    float: left;
+}
+
+.searches ul li {
+    display: inline-block;
+    width: 200px;
+    font-size: 15px;;
+    padding: 10px;
+}
+
+.searches .recent-search1 {
+    font-size: 20px;
+    background-color:#88e2f2 ;
+    height: 30px;
+    color: #ffffff;
+    padding: 10px;
+    font-weight: bold;
+
+}
+
+
+.title-background {
+    width: 300px;
+}
+
+.searches .recent-search2 {
+    font-size: 20px;
+    background-color:#88e2f2 ;
+    height: 30px;
+    color: #ffffff;
+    padding: 10px;
+    font-weight: bold;
+
+}
+
+.entries {
+    float: right;
+    margin-left: 50px;
+    margin-bottom: 10px;
+    margin-right: 50px;
+}
+
+.all-entries {
+    width: 370px;
+    text-align: center;
+    background-color: #f2f2f2;
+}
+
+.subscribed {
+    text-align: center;
+    width: 370px;
+    background-color: #f2f2f2;
+
+}
+
+.all-members {
+    background-color: #88e2f2;
+    padding: 5px;
+}
+
+.friends {
+    background-color: #bfbfbf;
+    padding: 5px;
+
+}
+
+.new-entries {
+    background-color: #bfbfbf;
+    padding: 5px;
+
+}
+
+.new-comments {
+    background-color: #bfbfbf;
+    padding: 5px;
+
+}
+
+.timeline {
+    margin-top: 10px;
+}
+
+.entries-list {
+    margin-top: 15px;
+}
+
+.avatar {
+    width: 100px;
+}
+.avatar img {
+    height: 80px;
+    width: 80px;
+    margin-top: 10px;
+}
+
+.info {
+    margin-left: 150px;
+    margin-top: -85px;
+}
+
+.entries-break {
+    margin-top: 45px;
+}
+
+.video-tutorials {
+    float: right;
+    width: 300px;
+    height: 700px;
+    background-color: #f2f2f2;
+
+}
+
+.video-tutorials .video-tutorial-title {
+    font-size: 20px;
+    background-color:#88e2f2 ;
+    height: 30px;
+    color: #ffffff;
+    padding: 10px;
+    font-weight: bold;
+
+}
+
+
+.video-tutorials ul li {
+    width: 270px;
+    padding: 15px;
+    cursor: pointer;
+}
+
+
+.video-tutorials ul li:hover {
+    background-color: #ffffff;
+}
+
+.fa {
+    margin-left: 265px;
+}
