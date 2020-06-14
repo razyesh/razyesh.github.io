@@ -69,7 +69,13 @@ ul li {
 .right-sub-nav ul li {
     margin-top: -8px;
     padding: 15px ;
+    cursor: pointer;
 }
+
+.right-sub-nav ul li:hover {
+    font-weight: bolder;
+}
+
 
 .left-sub-nav {
     margin-right: 90px;
@@ -79,7 +85,10 @@ ul li {
 .left-sub-nav ul li {
     margin-top: -8px;
     padding: 15px ;
+    cursor: pointer;
 }
+
+
 
 
 .foo-nav {
