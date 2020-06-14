@@ -1,6 +1,8 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
 }
 
 
@@ -21,18 +23,27 @@ main {
 
 .searches ul li {
     display: inline-block;
-    width: 200px;
+    width: 300px;
     font-size: 15px;;
     padding: 10px;
+    cursor: pointer;
+}
+
+.searches ul li p {
+    width: 200px;
+}
+.searches ul li:hover {
+    background-color: white;
+
 }
 
 .searches .recent-search1 {
     font-size: 20px;
-    background-color:#88e2f2 ;
+    background-color:#34c1da ;
     height: 30px;
     color: #ffffff;
     padding: 10px;
-    font-weight: bold;
+    
 
 }
 
@@ -43,11 +54,11 @@ main {
 
 .searches .recent-search2 {
     font-size: 20px;
-    background-color:#88e2f2 ;
+    background-color:#34c1da ;
     height: 30px;
     color: #ffffff;
     padding: 10px;
-    font-weight: bold;
+    
 
 }
 
@@ -58,39 +69,48 @@ main {
     margin-right: 50px;
 }
 
-.all-entries {
-    width: 370px;
-    text-align: center;
-    background-color: #f2f2f2;
+.entries h1 {
+    font-size: x-large;
 }
 
-.subscribed {
+.all-entries {
+    background-color: #f2f2f2;
+    width: 370px;
+    text-align: center;
+    padding-top: 8px;
+}
+
+.entries-subscribed {
     text-align: center;
     width: 370px;
     background-color: #f2f2f2;
-
+    padding-top: 8px;
 }
 
 .all-members {
-    background-color: #88e2f2;
+    background-image: url('../images/tab-bg-active.png');
     padding: 5px;
+    width: 100px;
+
 }
 
 .friends {
-    background-color: #bfbfbf;
+    background-image: url('../images/tab-bg.png');
     padding: 5px;
-
+    width: 100px;
 }
 
 .new-entries {
-    background-color: #bfbfbf;
+    background-image: url('../images/tab-bg.png');
     padding: 5px;
-
+    width: 100px;
 }
 
 .new-comments {
-    background-color: #bfbfbf;
+    background-image: url('../images/tab-bg.png');
+    width: 100px;
     padding: 5px;
+    text-align: left;
 
 }
 
@@ -130,11 +150,11 @@ main {
 
 .video-tutorials .video-tutorial-title {
     font-size: 20px;
-    background-color:#88e2f2 ;
+    background-color:#34c1da ;
     height: 30px;
     color: #ffffff;
     padding: 10px;
-    font-weight: bold;
+   
 
 }
 
@@ -152,4 +172,34 @@ main {
 
 .fa {
     margin-left: 265px;
+}
+
+.title {
+    font-weight: bold;
+}
+
+.author {
+    color: #1fd3f3;
+}
+
+.topic-box {
+    color: #1fd3f3;
+}
+
+.subscribed {
+    color: green;
+}
+
+.new-action {
+    color: #1fd3f3;
+    font-weight: bold;
+}
+
+.title-danger {
+    color: red;
+    font-weight: bold;
+}
+
+i {
+    opacity: 0.5;
 }

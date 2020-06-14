@@ -21,7 +21,7 @@
                     <ul>
                         <li><img src="images/logo.png" alt="" class="logo"></li>
                         <li><img src="images/search-background.png" alt="" class="background-field"></li>
-                        <li><p class="field-text">Search by Term, Member or Entry Title <span class="search-icon">X |<i class="fa fa-search"></i></span></p> </li>
+                        <li><p class="field-text">Search by Term, Member or Entry Title</p> </li>
                         <li><img src="images/search-btn.png" alt="" class="background-btn"></li>
                         <li><span class="btn-text">SEARCH</span></li>
                     </ul>
@@ -48,8 +48,12 @@
             </div>
             <div class="left-sub-nav">
                 <ul>
-                    <li>Topic Boxes Invites -2 </li>
-                    <li>Friend Requests - 0</li>
+                    <li><i class="fa fa-archive" style="background-color: #88e2f2;"></i> Topic Boxes Invites -2 </li>
+                    <li class="friend-requests">
+                        <div class="user">
+                            <p><i class="fa fa-user"></i> Friend Requests - 0</p>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -59,14 +63,18 @@
                     <p class="recent-search1">Recent Searches</p>
                     <ul>
                         
-                        <li><span>Nick Cave and the Bad seeds</span> <i class="fa fa-download" aria-hidden="true"></i></li>
+                        <li>
+                            
+                                <span>Nick Cave and the Bad seeds<i class="fa fa-download"></i></span>
+                               
+                        </li>
                         <li><span>African Animals</span><i class="fa fa-download" aria-hidden="true"></i></li>
                     </ul>
                     <p class="recent-search2">Recent Searches</p>
                     <ul>
                         
                         <li><p>Different versions of the Tristan Und Isolde Prelude</p><i class="fa fa-bars" aria-hidden="true"></i></li>
-                        <li><p>Music</p><i class="fa fa-bars" aria-hidden="true"></i></li>
+                        <li><p>Music</p><i class="fa fa-bars" aria-hidden="true" aria-disabled="true"></i></li>
                         <li><p>Guitar</p><i class="fa fa-bars" aria-hidden="true"></i></li>
                         <li><p>Bob cohen</p><i class="fa fa-bars" aria-hidden="true"></i></li>
                         <li><p>Mark Schnack</p><i class="fa fa-bars" aria-hidden="true"></i></li>
@@ -78,22 +86,22 @@
                     <h1>Entries</h1>
                     <ul class="timeline">
                         <li class="all-entries">
-                            <p>All Entries</p>
+                            <p style="padding-bottom:8px;">All Entries</p>
                             <ul>
                                 <li class="all-members">All Members</li>
                                 <li class="friends">Friends</li>
                             </ul>
 
                         </li>
-                        <li class="subscribed">
-                            <p>Subscribed</p>
+                        <li class="entries-subscribed">
+                            <p style="padding-bottom:8px;">Subscribed</p>
                             <ul>
                                 <li class="new-entries">New Entries</li>
                                 <li class="new-comments">New Comments</li>
                             </ul>
                         </li>
                     </ul>
-                    <hr color="#88e2f2"/>
+                    <hr style="border: 1px solid #2fc1da"/>
                     <div class="entries-lists">
                         <div class="entries-list">
                             <div class="avatar">
@@ -101,9 +109,9 @@
                                 
                             </div>
                             <div class="info">
-                                <p>Day for Night by Francois Truffaut, a ground breaking film</p>
-                                <p>by <span class="author">Alan Coe</span>|February 10, 2012 | <span class="subscribed">Subscribed</span></p>
-                                <p>From Topic Box: <span>My Favourite Movies</span></p>
+                                <p class="title">Day for Night by Francois Truffaut, a ground breaking film</p>
+                                <p>by <span class="author">Alan Coe </span>| February 10, 2012 | <span class="subscribed">Subscribed</span></p>
+                                <p>From Topic Box: <span class="topic-box">My Favourite Movies</span></p>
                             </div>
                         </div>
                         <hr class="entries-break"/>
@@ -112,9 +120,10 @@
                                 <img src="images/p2.png" alt="Person1">
                             </div>
                             <div class="info">
-                                <p>Day for Night by Francois Truffaut, a ground breaking film</p>
-                                <p>by <span class="author">Alan Coe</span>|February 10, 2012 | <span class="subscribed">Subscribed</span></p>
-                                <p>From Topic Box: <span>My Favourite Movies</span></p>
+                                <p class="new-action">NEW ENTRY!</p>
+                                <p class="title">Day for Night by Francois Truffaut, a ground breaking film</p>
+                                <p>by <span class="author">Alan Coe </span>| February 10, 2012 | <span class="subscribed">Subscribed</span></p>
+                                <p>From Topic Box: <span class="topic-box">My Favourite Movies</span></p>
                             </div>
                         </div>
                         <hr class="entries-break"/>
@@ -123,9 +132,10 @@
                                 <img src="images/p3.png" alt="Person1">
                             </div>
                             <div class="info">
-                                <p>Day for Night by Francois Truffaut, a ground breaking film</p>
-                                <p>by <span class="author">Alan Coe</span>|February 10, 2012 | <span class="subscribed">Subscribed</span></p>
-                                <p>From Topic Box: <span>My Favourite Movies</span></p>
+                                <p class="new-action">NEW COMMENT!</p>
+                                <p class="title">Day for Night by Francois Truffaut, a ground breaking film</p>
+                                <p>by <span class="author">Alan Coe </span>| February 10, 2012 | <span class="subscribed">Subscribed</span></p>
+                                <p>From Topic Box: <span class="topic-box">My Favourite Movies</span></p>
                             </div>
                         </div>
                         <hr class="entries-break"/>
@@ -134,9 +144,9 @@
                                 <img src="images/p4.png" alt="Person1">
                             </div>
                             <div class="info">
-                                <p>Day for Night by Francois Truffaut, a ground breaking film</p>
-                                <p>by <span class="author">Alan Coe</span>|February 10, 2012 | <span class="subscribed">Subscribed</span></p>
-                                <p>From Topic Box: <span>My Favourite Movies</span></p>
+                                <p class="title">Day for Night by Francois Truffaut, a ground breaking film</p>
+                                <p>by <span class="author">Alan Coe </span>| February 10, 2012 | <span class="subscribed">Subscribed</span></p>
+                                <p>From Topic Box: <span class="topic-box" >My Favourite Movies</span></p>
                             </div>
                         </div>
                         <hr class="entries-break"/>
@@ -145,9 +155,10 @@
                                 <img src="images/p5.png" alt="Person1">
                             </div>
                             <div class="info">
-                                <p>Day for Night by Francois Truffaut, a ground breaking film</p>
-                                <p>by <span class="author">Alan Coe</span>|February 10, 2012 | <span class="subscribed">Subscribed</span></p>
-                                <p>From Topic Box: <span>My Favourite Movies</span></p>
+                                <p class="title-danger">Topic Box Invite!</p>
+                                <p class="title">Pia Pesto</p>
+                                <p>by <span class="author">Alan Coe </span>| February 10, 2012</p>
+                                <p>From Topic Box: <span class="topic-box">Favourite Recipe</span></p>
                             </div>
                         </div>
                         
@@ -175,7 +186,7 @@
                 
             </div>
         </main>
-        <footer>
+        <footer class="clearfix">
             <div class="foo-nav">
                 <div class="foo-left">
 

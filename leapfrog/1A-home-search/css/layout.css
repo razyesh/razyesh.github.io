@@ -25,26 +25,27 @@ ul li {
 }
 
 .background-field {
-    height: 30px;
+    height: 25px;
     margin-bottom: 25px;
-    width: 360px;
+    width: 400px;
 }
 .background-btn {
-    height: 30px;
+    height: 25px;
     margin-bottom: 25px;
     width: 96px;
 }
 .field-text {
     position: absolute;
-    top: 30px;
+    top: 34px;
     left: 422px;
-    width: 300px;
+    width: 320px;
+    opacity: 0.5;
 }
 
 .btn-text {
     position: absolute;
-    top: 30px;
-    left: 792px;
+    top: 34px;
+    left: 830px;
     color: white;
 }
 
@@ -85,13 +86,13 @@ ul li {
 
 
 .foo-nav {
-    margin-top: 750px;
+    margin-top: 780px;
     height: 40px;
     background-color: grey;
 }
 
 .foo-left {
-    margin-left: 115px;
+    margin-left: 125px;
     margin-top: 10px;
     float: left;
 }
@@ -104,4 +105,14 @@ ul li {
 
 .search-icon {
     margin-left: 10px;
+}
+
+.friend-requests {
+    margin-left: -270px;
+}
+
+.friend-requests i {
+
+    opacity: 0.5;
+
 }
