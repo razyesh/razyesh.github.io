@@ -103,10 +103,15 @@ ul li {
     float: left;
 }
 
+.foo-left ul li {
+    padding: 0 10px;
+}
+
 .foo-right {
     float: right;
     margin-right: 105px;
     margin-top: 10px;
+    padding: 0 10px;
 }
 
 .search-icon {
@@ -128,4 +133,8 @@ ul li {
     width: 338px;
     border: none;
     background-color: #cddaeb;
+}
+
+.user-name {
+    font-size: 22px;
 }
