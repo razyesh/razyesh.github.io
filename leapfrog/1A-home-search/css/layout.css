@@ -1,6 +1,3 @@
-.main-content-wrapper {
-    width: 1680px;
-}
 
 header {
     background-color: #88e2f2;
@@ -25,18 +22,18 @@ ul li {
 }
 
 .background-field {
-    height: 25px;
+    height: 20px;
     margin-bottom: 25px;
     width: 400px;
 }
 .background-btn {
-    height: 25px;
+    height: 20px;
     margin-bottom: 25px;
-    width: 96px;
+    width: 82px;
 }
 .field-text {
     position: absolute;
-    top: 34px;
+    top: 38px;
     left: 422px;
     width: 320px;
     opacity: 0.5;
@@ -44,7 +41,7 @@ ul li {
 
 .btn-text {
     position: absolute;
-    top: 34px;
+    top: 38px;
     left: 830px;
     color: white;
 }
@@ -86,7 +83,7 @@ ul li {
 
 
 .foo-nav {
-    margin-top: 780px;
+    margin-top: 760px;
     height: 40px;
     background-color: grey;
 }
@@ -108,11 +105,9 @@ ul li {
 }
 
 .friend-requests {
-    margin-left: -270px;
+    margin-left: -190px;
 }
 
 .friend-requests i {
-
     opacity: 0.5;
-
 }
