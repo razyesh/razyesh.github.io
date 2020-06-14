@@ -111,3 +111,12 @@ ul li {
 .friend-requests i {
     opacity: 0.5;
 }
+
+.search-box {
+    position: absolute;
+    top: 38px;
+    left: 411px;
+    width: 338px;
+    border: none;
+    background-color: #cddaeb;
+}
