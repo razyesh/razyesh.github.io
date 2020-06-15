@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
+
+.m-f {
+    font-family: 'Aclonica', sans-serif;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url('../images/back-img.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+

@@ -20,8 +20,8 @@ main {
     cursor: pointer;
 }
 
-.searches ul li p {
-    width: 150px;
+.searches ul li a {
+    width: 250px;
 }
 .searches ul li:hover {
     background-color: white;
@@ -35,8 +35,8 @@ main {
     color: #ffffff;
     padding: 10px;
     
-
 }
+
 
 
 .title-background {
@@ -49,8 +49,6 @@ main {
     height: 30px;
     color: #ffffff;
     padding: 10px;
-    
-
 }
 
 .entries {
@@ -85,6 +83,12 @@ main {
 
 }
 
+.friends, .new-entries, .new-comments, .all-members {
+    cursor: pointer;
+}
+
+
+
 .friends {
     background-image: url('../images/tab-bg.png');
     padding: 5px;
@@ -102,6 +106,11 @@ main {
     width: 100px;
     padding: 5px;
     text-align: left;
+
+}
+
+.new-entries:hover, .new-comments:hover, .friends:hover, .all-members:hover {
+    background-image: url('../images/tab-bg-active.png');
 
 }
 
@@ -169,12 +178,9 @@ main {
     font-weight: bold;
 }
 
-.author {
+.author, .topic-box {
     color: #1fd3f3;
-}
-
-.topic-box {
-    color: #1fd3f3;
+    text-decoration: none;
 }
 
 .subscribed {

@@ -1,0 +1,109 @@
+main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.container {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.header-content h1, .intro-text h1 {
+    font-size: 42px;
+}
+
+.header {
+    height: 100vh;
+    color: #ffffff;
+}
+
+.header-content {
+    padding-top: 40vh;
+    text-align: center;
+    height: 60vh;
+
+}
+
+.header-content p span {
+    color: yellow;
+    line-height: 50px;
+}
+
+.btn {
+    background-color: transparent;
+    border: 3px solid #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bolder;
+    color: #ffffff;
+    margin-right: 15px;
+    transition: all 400ms ease-in;
+}
+
+.btn-trans:hover {
+    background-color: #f1c11a ;
+    color: #000000;
+    border-color: transparent;
+}
+
+.btn-fill {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.btn-fill:hover {
+    background-color: #f1c11a;
+    border-color: transparent;
+}
+
+.intro {
+    background-color: #ffffff;
+    padding: 15vh 0;
+}
+
+.intro-content {
+    display: flex;
+    flex-wrap: wrap;
+    height: 50vh;
+}
+
+.intro-content div {
+    width: 50%;
+}
+
+.intro-text {
+    color: #000000;
+}
+
+.intro-text p {
+    text-align: justify;
+    color: #828282;
+    line-height: 40px;
+}
+
+.services {
+    background-color: #f1c11a;
+    height: 50vh;
+    clip-path: polygon(0 0, 15% 0, 50% 20%, 85% 0, 100% 0, 100% 100%, 0 100%);
+    margin-top: -15vh;
+}
+
+.service-content {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 50px;
+}
+
+
+.bucket {
+    width: 25%;
+    margin: 120px 3%;
+}
+
+.bucket p {
+    color: #000000;
+    text-align: justify;
+    padding-top: 10px;
+}

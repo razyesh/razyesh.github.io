@@ -35,14 +35,14 @@ ul li {
     position: absolute;
     top: 38px;
     left: 422px;
-    width: 320px;
+    width: 315px;
     opacity: 0.5;
 }
 
 .btn-text {
     position: absolute;
     top: 38px;
-    left: 830px;
+    left: 825px;
     color: white;
 }
 
@@ -70,10 +70,6 @@ ul li {
     margin-top: -8px;
     padding: 15px ;
     cursor: pointer;
-}
-
-.right-sub-nav ul li:hover {
-    font-weight: bolder;
 }
 
 
@@ -129,8 +125,8 @@ ul li {
 .search-box {
     position: absolute;
     top: 38px;
-    left: 411px;
-    width: 338px;
+    left: 420px;
+    width: 332px;
     border: none;
     background-color: #cddaeb;
 }

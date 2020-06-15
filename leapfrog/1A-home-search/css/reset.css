@@ -9,3 +9,8 @@
 .main-content-wrapper {
     width: 1420px;
 }
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
