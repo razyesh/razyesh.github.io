@@ -8,86 +8,83 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/reset.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
 </head>
 
 <body>
     <div class="main-content-wrapper">
-        <header>
+        <!--Header starts here-->
+        <div class="header-content">
             <nav>
                 <div class="left-nav">
+                    <form action="#">
                     <ul>
-                        <form action="">
+                        
                         <li><img src="images/logo.png" alt="" class="logo"></li>
                         <li><img src="images/search-background.png" alt="" class="background-field"></li>
                         
-                            <input type="text" class="search-box" placeholder="Search by Term, Member or Entry Title">
+                            <li><input type="text" class="search-box" placeholder="Search by Term, Member or Entry Title"></li>
                         <li><img src="images/search-btn.png" alt="" class="background-btn"></li>
-                        <li><span class="btn-text">SEARCH</span></li>
-                    </form>
-
+                        <li><span class="btn-text"></span></li>
+                    
                     </ul>
+                </form>
                 </div>
                 <div class="right-nav">
                     <h4 class="user-name">Joe Burros</h4>
                     <ul>
-                        <a href="#"><li>Home |</li></a>
-                        <a href="#"><li>settings |</li></a>
-                        <a href="#"><li>Logout </li></a>
+                        <li><a href="#"  title="Home">Home |</a></li>
+                        <li><a href="#"  title="Settings">settings |</a></li>
+                        <li><a href="#"  title="Logout">Logout </a></li>
                     </ul>
                 </div>
             </nav>
 
-        </header>
+        </div>
         <div class="sub-nav clearfix">
             <div class="right-sub-nav">
                 <ul>
-                    <a href="#"><li>Create New Entry</li></a>
-                    <a href="#"><li>My Topic Boxes</li></a>
-                    <a href="#"><li>Friends</li></a>
-                    <a href="#"><li>Invite New Member</li></a>
+                    <li><a href="#" title="Create New Entry">Create New Entry</a></li>
+                    <li><a href="#" title="My Topic Boxes">My Topic Boxes</a></li>
+                    <li><a href="#" title="Friends">Friends</a></li>
+                    <li><a href="#" title="Invite new member">Invite New Member</a></li>
                 </ul>
             </div>
             <div class="left-sub-nav">
                 <ul>
                     <li>
-                        <div class="invite">
-
-                        <a href="#"><img src="images/invite-icon.jpg" alt="Invite icon" height="12px"> Topic Boxes Invites - 2 </a>
-                    </div>
+                        <a href="#"  title="topic boxes invites"><img src="images/invite-icon.jpg" alt="Invite icon" class="invite-icon"> Topic Boxes Invites - 2 </a>
 
                     </li>
-                    <li class="friend-requests">
-                        <div class="user">
-                            <a href="#" class="friend-request"><i class="fa fa-user"></i> Friend Requests - 0</a>
-                        </div>
+                     <li >
+                        <a href="#"  class="friend-requests" title="Friend Requests"> <img src="images/user.jpg" alt="user-logo" class="user-logo"> Friend Requests - 0</a>
                     </li>
                 </ul>
             </div>
         </div>
-        <main>
+        <!--Header ends here-->
+
+        <!-- Main section start here-->
+        <div class="main-section ">
             <div class="searches-entries">
                 <div class="searches">
                     <p class="recent-search1">Recent Searches</p>
                     <ul>
                         
-                        <a href="#"><li>
-                            Nick Cave and the Bad seeds <img class="side-icon" src="images/download.jpg" alt="Download">
+                        <li>
+                            <a href="#"  title="Heading">Nick Cave and the Bad seeds <img class="side-icon" src="images/download.jpg" alt="Download"></a>
                                
-                        </li></a>
-                        <a href="#"><li>African Animals <img class="side-icon" src="images/download.jpg" alt="Download"></li></a>
+                        </li>
+                        <li><a href="#" title="Heading">African Animals <img class="side-icon" src="images/download.jpg" alt="Download"></a></li>
                     </ul>
                     <p class="recent-search2">Recent Searches</p>
                     <ul>
                         
-                        <a href="#"><li>Different versions of the Tristan Und Isolde Prelude <img class="side-icon" src="images/list.jpg" alt="List Icon"></li></a>
-                        <a href="#"><li>Music<img class="side-icon" src="images/list.jpg" alt="List Icon"></li></a>
-                        <a href="#"><li>Guitar<img class="side-icon" src="images/list.jpg" alt="List Icon"></li></a>
-                        <a href="#"><li>Bob cohen<img class="side-icon" src="images/list.jpg" alt="List Icon"></li></a>
-                        <a href="#"><li>Mark Schnack<img class="side-icon" src="images/list.jpg" alt="List Icon"></li></a>
-                        <a href="#"><li>Jefferson Dickey<img class="side-icon" src="images/list.jpg" alt="List Icon"></li></a>
+                        <li><a href="#" title="Heading">Different versions of the Tristan Und Isolde Prelude <img class="side-icon" src="images/list.jpg" alt="List Icon"></a></li>
+                        <li><a href="#" title="Heading">Music<img class="side-icon" src="images/list.jpg" alt="List Icon"></a></li>
+                        <li><a href="#" title="Heading">Guitar<img class="side-icon" src="images/list.jpg" alt="List Icon"></a></li>
+                        <li><a href="#" title="Heading">Bob cohen<img class="side-icon" src="images/list.jpg" alt="List Icon"></a></li>
+                        <li><a href="#" title="Heading">Mark Schnack<img class="side-icon" src="images/list.jpg" alt="List Icon"></a></li>
+                        <li><a href="#" title="Heading">Jefferson Dickey<img class="side-icon" src="images/list.jpg" alt="List Icon"></a></li>
 
                     </ul>
                 </div>
@@ -95,10 +92,10 @@
                     <h1>Entries</h1>
                     <ul class="timeline">
                         <li class="all-entries">
-                            <a href="#"><p style="padding-bottom:8px;">All Entries</p></a>
+                            <a href="#" title="Heading"><p style="padding-bottom:8px;">All Entries</p></a>
                             <ul>
-                                <a href="#"><li class="all-members">All Members</li></a>
-                                <a href=""><li class="friends">Friends</li></a>
+                                <li class="all-members"><a href="#" title="Heading">All Members</a></li>
+                                <li class="friends"><a href="#">Friends</a></li>
                             </ul>
 
                         </li>
@@ -119,8 +116,8 @@
                             </div>
                             <div class="info">
                                 <p class="title">Day for Night by Francois Truffaut, a ground breaking film</p>
-                                <p>by <a href="#" class="author">Alan Coe </a>| February 10, 2012 | <span class="subscribed">Subscribed</span></p>
-                                <p>From Topic Box: <a href="#" class="topic-box">Favourite Recipe</a></p>
+                                <p>by <a href="#" title="Heading" class="author">Alan Coe </a>| February 10, 2012 | <span class="subscribed">Subscribed</span></p>
+                                <p>From Topic Box: <a href="#" title="Heading" class="topic-box">Favourite Recipe</a></p>
                             </div>
                         </div>
                         <hr class="entries-break"/>
@@ -131,8 +128,8 @@
                             <div class="info">
                                 <p class="new-action">NEW ENTRY!</p>
                                 <p class="title">Blade Runner, The Director's Cut.</p>
-                                <p>by <a href="#" class="author">Alan Coe </a>| February 10, 2012 | <span class="subscribed">Subscribed</span></p>
-                                <p>From Topic Box: <a href="#" class="topic-box">Favourite Recipe</a></p>
+                                <p>by <a href="#" title="Heading" class="author">Alan Coe </a>| February 10, 2012 | <span class="subscribed">Subscribed</span></p>
+                                <p>From Topic Box: <a href="#" title="Heading" class="topic-box">Favourite Recipe</a></p>
                             </div>
                         </div>
                         <hr class="entries-break"/>
@@ -143,8 +140,8 @@
                             <div class="info">
                                 <p class="new-action">NEW COMMENT!</p>
                                 <p class="title">The Best French Restaurant In Chicago.</p>
-                                <p>by <a href="#" class="author">Alan Coe </a>| February 10, 2012 | <span class="subscribed">Subscribed</span></p>
-                                <p>From Topic Box: <a href="#" class="topic-box">Favourite Recipe</a></p>
+                                <p>by <a href="#" title="Heading" class="author">Alan Coe </a>| February 10, 2012 | <span class="subscribed">Subscribed</span></p>
+                                <p>From Topic Box: <a href="#" title="Heading" class="topic-box">Favourite Recipe</a></p>
                             </div>
                         </div>
                         <hr class="entries-break"/>
@@ -154,8 +151,8 @@
                             </div>
                             <div class="info">
                                 <p class="title">The Meaning Of Night, Dark Book but very well written.</p>
-                                <p>by <a href="#" class="author">Alan Coe </a>| February 10, 2012 | <span class="subscribed">Subscribed</span></p>
-                                <p>From Topic Box: <a href="#" class="topic-box">Favourite Recipe</a></p>
+                                <p>by <a href="#" title="Heading" class="author">Alan Coe </a>| February 10, 2012 | <span class="subscribed">Subscribed</span></p>
+                                <p>From Topic Box: <a href="#" title="Heading" class="topic-box">Favourite Recipe</a></p>
                             </div>
                         </div>
                         <hr class="entries-break"/>
@@ -166,8 +163,8 @@
                             <div class="info">
                                 <p class="title-danger">Topic Box Invite!</p>
                                 <p class="title">Pia Pesto</p>
-                                <p>by <a href="#" class="author">Alan Coe </a>| February 10, 2012</p>
-                                <p>From Topic Box: <a href="#" class="topic-box">Favourite Recipe</a></p>
+                                <p>by <a href="#" title="Author" class="author">Alan Coe </a>| February 10, 2012</p>
+                                <p>From Topic Box: <a href="#" title="Heading" class="topic-box">Favourite Recipe</a></p>
                             </div>
                         </div>
                         <hr class="entries-break"/>
@@ -180,29 +177,31 @@
                 <p class="video-tutorial-title">Video Tutorials</p>
 
                     <ul>
-                        <a href="#"><li>Overview of TuTangle</li></a>
-                        <a href="#"><li>Searching the Site</li></a>
-                        <a href="#"><li>Previous and Saved Searches</li></a>
-                        <a href="#"><li>The Topic Box Page</li></a>
-                        <a href="#"><li>Creating a Topic Box</li></a>
-                        <a href="#"><li>View Topic Box Entries</li></a>
-                        <a href="#"><li>Creating an Entry</li></a>
-                        <a href="#"><li>Privacy Settings</li></a>
-                        <a href="#"><li>Co-Authoring</li></a>
+                        <li><a href="#" title="Overview of TuTangle">Overview of TuTangle</a></li>
+                        <li><a href="#" title="Searching the Site">Searching the Site</a></li>
+                        <li><a href="#" title="Previous and Saved Searches">Previous and Saved Searches</a></li>
+                       <li> <a href="#" title="The Topic Box Page">The Topic Box Page</a></li>
+                        <li><a href="#" title="Creating a Topic Box">Creating a Topic Box</a></li>
+                        <li><a href="#" title="View Topic Box Entries">View Topic Box Entries</a></li>
+                        <li><a href="#" title="Creating an Entry">Creating an Entry</a></li>
+                        <li><a href="#" title="Privacy Settings">Privacy Settings</a></li>
+                        <li><a href="#" title="Co-Authoring">Co-Authoring</a></li>
                     </ul>
                 
             </div>
-        </main>
-        <footer class="clearfix">
+        </div>
+        <!--Main ends here-->
+        <!--Footer starts here-->
+        <div class="footer clearfix">
             <div class="foo-nav">
                 <div class="foo-left">
 
                     <ul>
-                        <a href="#"><li>About Us</li></a>
-                        <a href="#"><li>Contact Us</li></a>
-                        <a href="#"><li>Terms of Use</li></a>
-                        <a href="#"><li>Privacy Policy</li></a>
-                        <a href="#"><li>Feedback</li></a>
+                        <li><a href="#" title="About Us">About Us</a></li>
+                        <li><a href="#" title="Contact Us">Contact Us</a></li>
+                        <li><a href="#" title="Terms of Use">Terms of Use</a></li>
+                        <li><a href="#" title="Privacy Policy">Privacy Policy</a></li>
+                       <li> <a href="#" title="Feedback">Feedback</a></li>
                     </ul>
                 </div>
                 <div class="foo-right">
@@ -210,7 +209,8 @@
                 </div>
             </div>
 
-        </footer>
+        </div>
+        <!--Footer ends here -->
     </div>
 </body>
 

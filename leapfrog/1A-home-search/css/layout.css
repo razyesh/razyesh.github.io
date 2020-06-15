@@ -1,5 +1,5 @@
 
-header {
+.header-content {
     background-color: #88e2f2;
     overflow:hidden;
 }
@@ -26,7 +26,7 @@ ul li {
 .background-btn {
     height: 20px;
     margin-bottom: 25px;
-    width: 82px;
+    width: 60px;
 }
 .field-text {
     position: absolute;
@@ -46,7 +46,7 @@ ul li {
 .right-nav {
     float: right;
     margin-top: 22px;
-    margin-right: 105px;
+    margin-right: 130px;
 }
 
 .right-nav h4 {
@@ -71,7 +71,7 @@ ul li {
 
 
 .left-sub-nav {
-    margin-right: 90px;
+    margin-right: 115px;
     float: right;
 }
 
@@ -100,7 +100,7 @@ ul li {
     padding: 0 10px;
 }
 
-.foo-left ul a li, .foo-right {
+.foo-left ul li a, .foo-right {
     color: #ffffff;
 }
 
@@ -116,7 +116,7 @@ ul li {
 }
 
 .friend-requests {
-    margin-left: -190px;
+    margin-left: 10px;
 }
 
 .friend-requests i {
@@ -129,7 +129,7 @@ ul li {
     left: 420px;
     width: 332px;
     border: none;
-    background-color: #cddaeb;
+    background-color: rgb(202, 239, 247);
 }
 
 .user-name {
@@ -138,4 +138,8 @@ ul li {
 
 .friend-request {
     opacity: 0.5;
+}
+
+.user-logo, .invite-icon {
+    height: 12px;
 }
