@@ -15,14 +15,12 @@
 
 .searches ul li {
     display: inline-block;
-    width: 230px;
+    width: 240px;
     padding: 10px;
     cursor: pointer;
 }
 
-.searches ul li a {
-    width: 250px;
-}
+
 .searches ul li:hover {
     background-color: white;
 
@@ -56,6 +54,7 @@
     margin-left: 50px;
     margin-bottom: 30px;
     margin-right: 50px;
+    width: 560px;
 }
 
 .entries h1 {
@@ -64,7 +63,7 @@
 
 .all-entries {
     background-color: #f2f2f2;
-    width: 280px;
+    width: 250px;
     text-align: center;
     padding-top: 8px;
 }
@@ -169,6 +168,10 @@
     width: 250px;
     padding: 15px;
     cursor: pointer;
+}
+
+.video-tutorials ul li a {
+    width: 250px;
 }
 
 

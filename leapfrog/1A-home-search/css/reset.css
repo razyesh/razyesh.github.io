@@ -5,10 +5,13 @@
     font-size: small;
 }
 
+
+
 .main-content-wrapper {
     min-width: 1420px;
     max-width: 1420px;
     background: inherit;
+    align-content: center;
 }
 
 a {

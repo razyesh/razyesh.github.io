@@ -2,6 +2,7 @@
 .header-content {
     background-color: #88e2f2;
     overflow:hidden;
+    min-width: 1420px;
 }
 
 
@@ -60,6 +61,7 @@ ul li {
 .sub-nav {
     background-color: #f2f2f2;
     height: 40px;
+    width: 1420px;
 }
 
 .right-sub-nav {
