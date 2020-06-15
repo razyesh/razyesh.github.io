@@ -5,9 +5,10 @@
     font-size: small;
 }
 
-
 .main-content-wrapper {
-    width: 1420px;
+    min-width: 1420px;
+    max-width: 1420px;
+    background: inherit;
 }
 
 a {

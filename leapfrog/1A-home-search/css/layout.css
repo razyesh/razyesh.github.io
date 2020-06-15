@@ -4,9 +4,6 @@ header {
     overflow:hidden;
 }
 
-.clearfix{
-    clear: both;
-}
 
 ul li {
     display: inline-block;
@@ -103,6 +100,10 @@ ul li {
     padding: 0 10px;
 }
 
+.foo-left ul a li, .foo-right {
+    color: #ffffff;
+}
+
 .foo-right {
     float: right;
     margin-right: 105px;
@@ -133,4 +134,8 @@ ul li {
 
 .user-name {
     font-size: 22px;
+}
+
+.friend-request {
+    opacity: 0.5;
 }

@@ -15,8 +15,8 @@ main {
 
 .searches ul li {
     display: inline-block;
-    width: 250px;
-    padding: 5px;
+    width: 230px;
+    padding: 10px;
     cursor: pointer;
 }
 
@@ -53,7 +53,7 @@ main {
 
 .entries {
     float: right;
-    margin-left: 70px;
+    margin-left: 60px;
     margin-bottom: 30px;
     margin-right: 50px;
 }
@@ -199,4 +199,8 @@ main {
 
 i {
     opacity: 0.5;
+}
+
+.side-icon {
+    float: right;
 }
