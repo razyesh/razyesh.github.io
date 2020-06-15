@@ -2,6 +2,7 @@
 
 .m-f {
     font-family: 'Aclonica', sans-serif;
+    text-transform: uppercase;
 }
 * {
     margin: 0;

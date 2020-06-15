@@ -10,7 +10,7 @@ main {
     margin: 0 auto;
 }
 
-.header-content h1, .intro-text h1 {
+.header-content h1, .intro-text h1, .contact-section h1 {
     font-size: 42px;
 }
 
@@ -99,11 +99,167 @@ main {
 
 .bucket {
     width: 25%;
-    margin: 120px 3%;
+    margin: 80px 3%;
 }
 
 .bucket p {
     color: #000000;
     text-align: justify;
     padding-top: 10px;
+    line-height: 25px;
+}
+
+.contact {
+    background-color: #ffffff;
+    padding: 10vh 0;
+    text-align: center;
+}
+
+.contact h1 {
+    color: #000000;
+}
+
+input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    margin: 10px;
+}
+
+input[type="submit"] {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.btn-submit:hover {
+    background-color: #f1c11a;
+    border-color: transparent;
+    color: #000000;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #f1c11a;
+    height: 5vh;
+    clip-path: polygon(0 0, 15% 0, 50% 20%, 85% 0, 100% 0, 100% 100%, 0 100%);
+    margin-top: -10vh;
+    text-align: center;
+    padding-top: 5vh;
+    color: #000000;
+}
+
+@media screen and (max-width: 768px){
+    .intro-content{
+        display: block;
+        height: 90vh;
+    }
+
+    .intro-content div {
+        width: 100%;
+    }
+
+    .services {
+        height: 90vh;
+        clip-path: polygon(0 0, 15% 0, 50% 10%, 85% 0, 100% 0, 100% 100%, 0 100%);
+        margin-top: -15vh;
+    }
+
+    .service-content {
+        display: block;
+    }
+
+    .service-content div {
+        width: 100%;
+    }
+
+    .bucket {
+        margin-top: 5vh;
+    }
+}
+
+@media screen and (max-width: 425px){
+    .header-content h1 {
+        font-size: 20px;
+    }
+    .header-content p {
+        font-size: 15px;
+    }
+
+    .btn {
+        padding: 5px 10px;
+    }
+
+    .intro-content {
+        margin-top: -10vh;
+        padding-bottom: 60px;
+    }
+
+    .services {
+        height: 110vh;
+    }
+
+    .service-content div {
+        height: 20vh;
+    }
+
+}
+
+@media screen and (min-width: 320px){
+    .header-content p {
+        font-size: 12px;
+    }
+
+    .btn {
+        padding: 3px 5px;
+    }
+
+    .intro-content h1 {
+        padding-top: 10px;
+        font-size: 25px;
+    }
+   
+
+    .services {
+        clip-path: polygon(0 0, 15% 0, 50% 6%, 85% 0, 100% 0, 100% 100%, 0 100%);
+        height: 120vh;
+    }
+    .intro-content p {
+        line-height: 30px;
+    }
+
+    .service-content {
+        margin-top: 44px;
+    }
+
+    .service-content div {
+        width: 100%;
+        padding-top: -5vh;
+
+    }
+
+    .service-content div p {
+        line-height: 18px;
+        padding-bottom: 10px;
+    }
+
+    .service-content div h1 {
+        padding-top: 10px;
+    }
+
+    .bucket {
+
+        margin-top: 10px;
+    }
+
+    .contact h1 {
+        font-size: 25px;
+    }
+    .contact {
+        padding: 10px 0;
+        padding-right: 34px;
+    }
+
+    .contact-section{
+        padding-bottom: 10px;
+    }
 }
