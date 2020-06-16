@@ -5,13 +5,13 @@
     font-size: small;
 }
 
-
+.container {
+    min-width: 100%;
+}
 
 .main-content-wrapper {
-    min-width: 1420px;
     max-width: 1420px;
     background: inherit;
-    align-content: center;
     margin: 0 auto;
 }
 
