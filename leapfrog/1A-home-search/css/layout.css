@@ -2,7 +2,7 @@
 .header-content {
     background-color: #88e2f2;
     overflow:hidden;
-    min-width: 1420px;
+    width: 1420px;
 }
 
 
@@ -29,12 +29,15 @@ ul li {
     margin-bottom: 25px;
     width: 60px;
 }
+
+
 .field-text {
+    margin-left: -396px;
     position: absolute;
     top: 38px;
-    left: 422px;
     width: 315px;
-    opacity: 0.5;
+    background-color: rgba(204, 238, 247, 255);
+    border: none;
 }
 
 .btn-text {
@@ -51,7 +54,7 @@ ul li {
 }
 
 .right-nav ul li a:hover {
-    color: red;
+    background-color: #f2f2f2;
 }
 
 .right-nav h4 {
@@ -76,8 +79,8 @@ ul li {
 }
 
 .right-sub-nav ul li a:hover {
-    color: red;
-
+    padding: 10px;
+    background-color: #ffffff;
 }
 
 
@@ -93,7 +96,8 @@ ul li {
 }
 
 .left-sub-nav ul li a:hover {
-    color: red;
+    padding: 10px;
+    background-color: #ffffff;
 }
 
 
@@ -163,3 +167,4 @@ ul li {
     height: 6px;
     margin-bottom: 2px;
 }
+
