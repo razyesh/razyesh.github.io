@@ -55,6 +55,7 @@
     margin-bottom: 30px;
     margin-right: 50px;
     width: 560px;
+    height: 670px;
 }
 
 .entries h1 {
@@ -63,14 +64,14 @@
 
 .all-entries {
     background-color: #f2f2f2;
-    width: 250px;
+    width: 278px;
     text-align: center;
     padding-top: 8px;
 }
 
 .entries-subscribed {
     text-align: center;
-    width: 280px;
+    width: 278px;
     background-color: #f2f2f2;
     padding-top: 8px;
 }
@@ -79,7 +80,6 @@
     background-image: url('../images/tab-bg-active.png');
     padding: 5px;
     width: 100px;
-
 
 }
 
@@ -213,6 +213,7 @@ i {
 
 .side-icon {
     float: right;
+    margin-right: 16px;
 }
 
 .invite {

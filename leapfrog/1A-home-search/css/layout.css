@@ -141,8 +141,8 @@ ul li {
 .search-box {
     position: absolute;
     top: 38px;
-    left: 420px;
-    width: 332px;
+    left: 542px;
+    width: 400px;
     border: none;
     background-color: rgb(202, 239, 247);
 }
@@ -157,4 +157,9 @@ ul li {
 
 .user-logo, .invite-icon {
     height: 12px;
+}
+
+.circle-icon {
+    height: 6px;
+    margin-bottom: 2px;
 }
