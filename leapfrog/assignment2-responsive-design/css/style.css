@@ -1,0 +1,501 @@
+.main-section {
+    margin: 30px 100px 0 130px;
+}
+
+.searches-entries {
+    float:left;
+}
+
+.hamburger-icon {
+    display: none;
+}
+
+.searches {
+    width: 250px;
+    height: 670px;
+    background-color: #f2f2f2;
+    float: left;
+}
+
+.searches ul li {
+    display: inline-block;
+    width: 240px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+
+.searches ul li:hover {
+    background-color: white;
+
+}
+
+.searches .recent-search1 {
+    font-size: 20px;
+    background-color:#34c1da ;
+    height: 30px;
+    color: #ffffff;
+    padding: 10px;
+    
+}
+
+
+
+.title-background {
+    width: 200px;
+}
+
+.searches .recent-search2 {
+    font-size: 20px;
+    background-color:#34c1da ;
+    height: 30px;
+    color: #ffffff;
+    padding: 10px;
+}
+
+.entries {
+    float: right;
+    margin-left: 72px;
+    margin-bottom: 30px;
+    margin-right: 72px;
+    width: 520px;
+    height: 670px;
+    position: relative;
+}
+
+.entries h1 {
+    font-size: x-large;
+}
+
+.all-entries {
+    width: 278px;
+    text-align: center;
+    padding-top: 8px;
+    /* position: absolute;
+    top: 10px; */
+    margin-top: -10px;
+}
+
+.entries-part img {
+    position: absolute;
+    top: 29px;
+    left: 0px;
+}
+
+.entries-part a {
+    position: absolute;
+    top: 56px;
+    left: 95px;
+}
+.all-entries ul {
+    position: absolute;
+    top: 69px;
+    left: 25px;
+}
+
+.entries-subscribed {
+    text-align: center;
+    width: 278px;
+    padding-top: 8px;
+}
+
+.all-members {
+    background-image: url('../images/tab-bg-active.png');
+    padding: 5px;
+    width: 100px;
+
+}
+
+.all-members a {
+    color: #ffffff;
+}
+
+.friends, .new-entries, .new-comments, .all-members {
+    cursor: pointer;
+}
+
+
+
+.friends {
+    background-image: url('../images/tab-bg.png');
+    padding: 5px;
+    width: 100px;
+}
+
+.new-entries {
+    background-image: url('../images/tab-bg.png');
+    padding: 5px;
+    width: 100px;
+}
+
+.new-comments {
+    background-image: url('../images/tab-bg.png');
+    width: 100px;
+    padding: 5px;
+    text-align: left;
+
+}
+
+.new-entries:hover, .new-comments:hover, .friends:hover, .all-members:hover {
+    background-image: url('../images/tab-bg-active.png');
+
+}
+
+.subscribed-part {
+    position: absolute;
+    top: 29px;
+    left: 260px;
+}
+
+.subscribed-part a {
+    position: absolute;
+    top: 12px;
+    left: 95px; 
+}
+
+.entries-subscribed ul {
+    position: absolute;
+    top: 69px;
+    left: 278px
+
+}
+
+.entries-heading {
+    height: 16px;
+    
+}
+
+.entries-content {
+    margin-top: 60px;
+}
+.timeline {
+    margin-top: 68px;
+}
+
+
+.entries-list {
+    margin-top: 5px;
+}
+
+.avatar {
+    width: 100px;
+}
+.avatar img {
+    height: 80px;
+    width: 80px;
+    margin-top: 10px;
+}
+
+.info {
+    margin-left: 100px;
+    margin-top: -85px;
+}
+
+.entries-break {
+    margin-top: 40px;
+}
+
+.video-tutorials {
+    float: right;
+    width: 250px;
+    height: 670px;
+    background-color: #f2f2f2;
+    margin-right: 26px;
+
+}
+
+.video-tutorials .video-tutorial-title {
+    font-size: 20px;
+    background-color:#34c1da ;
+    height: 30px;
+    color: #ffffff;
+    padding: 10px;
+   
+
+}
+
+
+.video-tutorials ul li {
+    width: 250px;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.video-tutorials ul li a {
+    width: 250px;
+}
+
+
+.video-tutorials ul li:hover {
+    background-color: #ffffff;
+}
+
+
+.title {
+    font-weight: bold;
+    padding-bottom: 5px;;
+}
+
+.author, .topic-box {
+    color: #1fd3f3;
+    text-decoration: none;
+}
+
+.subscribed {
+    color: green;
+}
+
+.new-action {
+    color: #1fd3f3;
+    font-weight: bold;
+}
+
+.title-danger {
+    color: red;
+    font-weight: bold;
+}
+
+i {
+    opacity: 0.5;
+}
+
+.side-icon {
+    float: right;
+    margin-right: 16px;
+}
+
+.invite {
+    margin-left: -20px;
+}
+
+@media only screen and (max-width:868px){
+
+    * {
+        margin: 0;
+        padding: 0;
+        font-size: small;
+    }
+
+    .main-content-wrapper {
+        min-width: 100%;
+        margin: 0 auto;
+    }
+
+    .header-content {
+        width: 100%;
+    }
+
+    .logo {
+        margin-left: -115px;
+        float: left;
+    }
+
+    .hamburger-icon {
+        display: table;
+        margin-top: 20px;
+        height: 30px;
+        float: right;
+    }
+
+    .background-field {
+        width: 162%;
+        margin-left: -110px
+    }
+
+    .field-text {
+        position: absolute;
+        top: 85px;
+        margin-left: -277px;
+        width: 60%;
+    }
+
+    
+    .entries {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 30%;
+        height: 200px;
+        position: relative;
+    }
+
+    .entries-part img {
+        position: absolute;
+        top: 32px;
+        left: 0px;
+        width: 100%;
+    }
+
+    .subscribed-part img {
+        position: absolute;
+        top: 85px;
+        width: 281px;
+        left: -260px;
+    }
+
+    .subscribed-part a {
+        position: absolute;
+        top: 100px;
+        left: -165px;
+    }
+
+    .entries-part a {
+        position: absolute;
+        top: 40px;
+        left: 95px;
+    }
+
+    .entries-subscribed ul {
+        position: absolute;
+        top: 160px;
+        left: 25px;
+    }
+
+    .entries-heading {
+        width: 100%;
+    }
+
+    .entries-lists {
+        margin-top: 100px;
+    }
+
+    .right-nav, .video-tutorials, .searches, .sub-nav, .sub-nav, .background-field, .background-btn, .field-text {
+        display: none;
+    }
+
+    .foo-nav {
+        width: 100%;
+        margin-top: 980px;
+    }
+
+    .foo-nav .foo-left {
+        display: none;
+    }
+
+}
+
+
+@media only screen and (max-width:1200px){
+
+    * {
+        margin: 0;
+        padding: 0;
+        font-size: small;
+    }
+
+    ul li {
+        display: inline-block;
+    }
+
+    .main-content-wrapper {
+        min-width: 100%;
+        margin: 0 auto;
+    }
+
+    .header-content {
+        width: 100%;
+    }
+
+    .logo {
+        margin-left: -115px;
+        float: left;
+    }
+
+    .hamburger-icon {
+        margin-top: 20px;
+        height: 30px;
+        float: right;
+    }
+
+    .background-field {
+        width: 162%;
+        margin-left: -110px
+    }
+
+    .field-text {
+        position: absolute;
+        top: 85px;
+        margin-left: -277px;
+        width: 60%;
+    }
+
+    
+    .entries {
+        float: right;
+        margin-left: -113px;
+        margin-bottom: 30px;
+        margin-right: 72px;
+        width: 361px;
+        height: 670px;
+        position: relative;
+    }
+
+    .entries-part img {
+        position: absolute;
+        top: 25px;
+        left: 0px;
+        width: 64%;
+    }
+
+    .subscribed-part img {
+        position: absolute;
+        top: -21px;
+        width: 228px;
+        left: -28px;
+    }
+    .entries-part a {
+        position: absolute;
+        top: 34px;
+        left: 87px;
+    }
+
+    .subscribed-part {
+        position: absolute;
+        top: 46px;
+        left: 260px;
+    }
+
+    .subscribed-part a {
+        position: absolute;
+        top: -10px;
+        left: 50px;
+    }
+
+    .entries-subscribed ul {
+        position: absolute;
+        top: 58px;
+        left: 235px;
+        width: 62%;
+    }
+
+    .all-entries ul {
+        position: absolute;
+        top: 59px;
+        left: 5px;
+    }
+
+    .entries-heading {
+        width: 100%;
+    }
+
+    .entries-lists {
+        margin-top: 0px;
+        width: 127%;
+    }
+
+    .right-nav, .searches, .sub-nav, .background-field, .background-btn, .field-text {
+        display: none;
+    }
+
+    .foo-nav {
+        width: 100%;
+        margin-top: 980px;
+    }
+
+    .foo-nav .foo-left {
+        display: none;
+    }
+
+}
+
+
+

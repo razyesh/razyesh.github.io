@@ -1,0 +1,170 @@
+
+.header-content {
+    background-color: #88e2f2;
+    overflow:hidden;
+    width: 1420px;
+}
+
+
+ul li {
+    display: inline-block;
+}
+
+.logo {
+    height: 80px;
+}
+
+.left-nav {
+    float: left;
+    margin-left:115px;
+}
+
+.background-field {
+    height: 20px;
+    margin-bottom: 25px;
+    width: 400px;
+}
+.background-btn {
+    height: 20px;
+    margin-bottom: 25px;
+    width: 60px;
+}
+
+
+.field-text {
+    margin-left: -396px;
+    position: absolute;
+    top: 38px;
+    width: 315px;
+    background-color: rgba(204, 238, 247, 255);
+    border: none;
+}
+
+.btn-text {
+    position: absolute;
+    top: 38px;
+    left: 825px;
+    color: white;
+}
+
+.right-nav {
+    float: right;
+    margin-top: 22px;
+    margin-right: 130px;
+}
+
+.right-nav ul li a:hover {
+    background-color: #f2f2f2;
+}
+
+.right-nav h4 {
+    text-align: right;
+}
+
+.sub-nav {
+    background-color: #f2f2f2;
+    height: 40px;
+    width: 1420px;
+}
+
+.right-sub-nav {
+    margin-left: 115px;
+    float: left;
+}
+
+.right-sub-nav ul li {
+    margin-top: -8px;
+    padding: 20px ;
+    cursor: pointer;
+}
+
+.right-sub-nav ul li a:hover {
+    padding: 10px;
+    background-color: #ffffff;
+}
+
+
+.left-sub-nav {
+    margin-right: 115px;
+    float: right;
+}
+
+.left-sub-nav ul li {
+    margin-top: -8px;
+    padding: 20px ;
+    cursor: pointer;
+}
+
+.left-sub-nav ul li a:hover {
+    padding: 10px;
+    background-color: #ffffff;
+}
+
+
+
+
+.foo-nav {
+    margin-top: 760px;
+    height: 40px;
+    background-color: grey;
+}
+
+.foo-left {
+    margin-left: 125px;
+    margin-top: 10px;
+    float: left;
+}
+
+.foo-left ul li {
+    padding: 0 10px;
+}
+
+.foo-left ul li a, .foo-right {
+    color: #ffffff;
+}
+
+.foo-right {
+    float: right;
+    margin-right: 115px;
+    margin-top: 10px;
+    padding: 0 10px;
+}
+
+.search-icon {
+    margin-left: 10px;
+}
+
+.friend-requests {
+    margin-left: 10px;
+}
+
+.friend-requests i {
+    opacity: 0.5;
+}
+
+.search-box {
+    position: absolute;
+    top: 38px;
+    left: 542px;
+    width: 400px;
+    border: none;
+    background-color: rgb(202, 239, 247);
+}
+
+.user-name {
+    font-size: 22px;
+}
+
+.friend-request {
+    opacity: 0.5;
+}
+
+.user-logo, .invite-icon {
+    height: 12px;
+}
+
+.circle-icon {
+    height: 6px;
+    margin-bottom: 2px;
+}
+
