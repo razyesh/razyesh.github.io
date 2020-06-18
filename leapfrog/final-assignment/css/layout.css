@@ -15,7 +15,7 @@ header {
 
 .left-nav-header a {
     display: inline-block;
-    padding-top: 50px;
+    margin-top: 50px;
     padding-left: 10px;
 }
 
@@ -89,10 +89,96 @@ header {
     border: none;
 }
 
+/* Main Section CSS */
+
+.img-content {
+    height: 365px;
+    background-color: #333333;
+}
+
+.contact-info {
+    height: 160px;
+    background-color: #e7e7e7;
+}
+
+.contact-text {
+    padding-top: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+}
+
+.contact-btn {
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+.contact-btn .btn {
+    background-color: #1f232c;
+    border-radius: 15px;
+    border: transparent;
+    width: 280px;
+    color: #fff;
+    height: 36px;
+    font-size: 16px;
+}
+
+.contact-text p {
+    text-align: justify;
+}
+
+.contact-separator {
+    height: 5px;
+    background-color: #dadada;
+}
+
+/* End of Main CSS */
+
+/* Start of Service CSS */
+
+.service-section {
+    padding: 20px 0;
+}
+
+.service-content {
+    display: inline-block;
+}
+
+.service1, .service2, .service3 {
+    width: 100%;
+    margin: 10px 0px;
+}
+
+.service-image {
+    width: 25%;
+    float: left;
+    padding-left: 15px
+}
+
+.service-info {
+    width: 55%;
+    float: right;
+    padding: 0 10px;
+}
+
+.service-info p {
+    text-align: justify;
+}
+
+.service-underline {
+    margin: 5px 0;
+    width: 70px;
+    height: 2px;
+    background-color: #000;
+}
+
+/* END of Service CSS*/
+
 
 
 @media only screen and (min-width: 768px){
 
+    /* Header CSS for Tablet devices */
     .container {
         width: 100%;
     }
@@ -110,6 +196,10 @@ header {
     .left-nav-header {
         float: left;
         padding-left: 10px;
+    }
+
+    .left-nav-header a {
+        margin-bottom: 15px;
     }
 
     .fa-search {
@@ -156,10 +246,45 @@ header {
         display: none;
     }
 
+    /* End of Header CSS for Tablet */
+
+    /* Start of Main CSS for Tablet */
+
+    .contact-info {
+        height: 120px;
+        padding-top: 40px;
+    }
+
+    .contact-text {
+        float: left;
+        width: 65%;
+        font-size: 25px;
+        padding-top: 10px;
+    }
+
+    .contact-btn {
+        padding-right: 10px;
+        padding-left: 15px;
+        float: right;
+    }
+
+    .contact-btn .btn {
+        width: 200px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+
+
+
+    /* End of Main CSS for Tablet*/
+
     
 }
 
 @media only screen and (min-width:938px){
+
+    /* Start of Header Section for Desktop */
 
     .container {
         max-width: 980px;
@@ -188,6 +313,7 @@ header {
 
     .search-box {
         text-align: right;
+        margin-right: 10px;
     }
 
     #tab-lap-nav-list ul li {
@@ -203,11 +329,10 @@ header {
         color: #ffffff;
         padding: 10px 10px;
         font-size: 13px;
+        
     }
 
     .search-field {
-        margin-top: 30px;
-        margin-right: 10px;
         height: 25px;
         color: #cccccc;
         background-color: #1f232c;
@@ -233,6 +358,27 @@ header {
     .logo {
         width: 100%;
     }
+
+    .left-nav-header a {
+        padding-left: 0px;
+    }
+
+    /* End of Header Section for Desktop */
+
+    /* Start of Main Section for Desktop*/
+
+    .contact-text {
+        width: 65%;
+        font-size: 31px;
+    }
+
+    .contact-btn .btn {
+        width: 280px;
+        height: 57px;
+    }
+
+
+    /* End of Main Section for Desktop*/
     
 }
 
