@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Assignment</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <div class="container-wrapper">
+        <!--Header Starts Here-->
+        <header>
+            <div class="container">
+                <div class="header-content">
+                    <div class="left-nav-header clearfix">
+                        <img src="images/logo.png" alt="Organization Logo" class="logo">
+                        <button onclick="mobileIcon()" class="menu-icon"><i class="fa fa-bars fa-2x"></i></button>
+                    </div>
+                    <div class="right-nav-header clearfix">
+                        <div class="search-box">
+                            <input type="text" placeholder="Search Term Here" class="search-field">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <div class="nav-list">
+
+                            <div id="mobile-nav-list">
+
+                                <ul>
+                                    <li><a href="#">HOME</a></li>
+                                    <li><a href="#">STYLE DEMO</a></li>
+                                    <li><a href="#">FULL WIDTH</a></li>
+                                    <li><a href="#">DROPDOWN</a></li>
+                                    <li><a href="#">PORTFOLIO</a></li>
+                                    <li><a href="#">GALLERY</a></li>
+                                </ul>
+                            </div>
+                            <div id="tab-lap-nav-list">
+
+
+                                <ul>
+                                    <li><a href="#">HOME</a></li>
+                                    <li><a href="#">STYLE DEMO</a></li>
+                                    <li><a href="#">FULL WIDTH</a></li>
+                                    <li><a href="#">DROPDOWN</a></li>
+                                    <li><a href="#">PORTFOLIO</a></li>
+                                    <li><a href="#">GALLERY</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Header Ends Here -->
+    </div>
+
+    <script>
+        function mobileIcon() {
+            if (document.getElementById("mobile-nav-list").style.display == "block") {
+                document.getElementById("mobile-nav-list").style.display = "none";
+            } else {
+                document.getElementById("mobile-nav-list").style.transition = "delay 2s";
+                document.getElementById("mobile-nav-list").style.display = "block"
+            }
+        }
+    </script>
+
+</body>
+
+</html>
