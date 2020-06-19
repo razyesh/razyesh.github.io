@@ -142,11 +142,12 @@ header {
 
 .service-content {
     display: inline-block;
+    margin-top: -15px;
 }
 
-.service1, .service2, .service3 {
+.service {
     width: 100%;
-    margin: 10px 0px;
+    padding: 15px 0px;
 }
 
 .service-image {
@@ -279,6 +280,32 @@ header {
 
     /* End of Main CSS for Tablet*/
 
+    /* Start of CSS for Service Section */
+
+    .service-content {
+        margin-top: 0px;
+    }
+
+    .service {
+        width: 100%;
+    }
+
+    .service1 {
+        float: left;
+        width: 50%;
+    }
+
+    .service2 {
+        float: right;
+        width: 50%;
+    }
+
+    .service-info {
+        width: 65%;
+    }
+
+    /* End of CSS for Service Section*/
+
     
 }
 
@@ -368,17 +395,80 @@ header {
     /* Start of Main Section for Desktop*/
 
     .contact-text {
-        width: 65%;
+        width: 64%;
         font-size: 31px;
+        padding: 0 20px;
     }
 
     .contact-btn .btn {
         width: 280px;
         height: 57px;
+        padding-right: 20px;
+    }
+
+    .contact-btn {
+        padding-right: 20px;
+        padding-left: 10px;
+        float: right;
     }
 
 
     /* End of Main Section for Desktop*/
+
+    /* start of service section for Desktop */
+
+    .service-content {
+        margin-top: 0px;
+    }
+
+    .service {
+        width: 100%;
+    }
+
+    .service1 {
+        float: left;
+        width: 66.67%;
+    }
+
+    .service1 .serv1 {
+        float: left;
+        width: 50%;
+    }
+
+    .service1 .serv2 {
+        float: right;
+        width: 50%;
+    }
+
+    .service-image img {
+        height: 98px;
+    }
+
+    .service2 {
+        float: right;
+        width: 33.33%;
+    }
+
+    .service-info {
+        width: 58%;
+        padding: 0;
+    }
+
+    .service-info .service-heading {
+        text-align: left;
+    }
+
+
+    .service-info .service-detail {
+        font-size: 13px;
+        color: #979797;
+    }
+
+    .service-section {
+        padding: 20px 20px;
+    }
+
+    /* end of service section for desktop*/
     
 }
 
