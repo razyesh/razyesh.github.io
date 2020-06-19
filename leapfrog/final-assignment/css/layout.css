@@ -5,8 +5,10 @@ header {
 }
 
 
-.search-field {
+.search-box {
     margin-top: 10px;
+    margin-right: 10px;
+    width: 100%;
 }
 
 .right-nav-header {
@@ -15,8 +17,7 @@ header {
 
 .left-nav-header a {
     display: inline-block;
-    margin-top: 50px;
-    padding-left: 10px;
+    margin-top: 15px;
 }
 
 .logo {
@@ -26,11 +27,11 @@ header {
 #mobile-nav-list{
     display: none;
     position: fixed;
-    width: 100%;
     height: 100vh;
     background-color: #2c3e50;
     opacity: 0.6;
-    top: 144px;
+    top: 108px;
+    width: 100%;
     left: 0;
     text-align: center;
 
@@ -53,11 +54,10 @@ header {
 
 
 .search-field {
-    margin-right: 10px;
     height: 25px;
     color: #cccccc;
     background-color: #1f232c;
-    width: 210px;
+    width: 95%;
     border-radius: 40px;
     border-color: transparent;
     padding-left: 10px;
@@ -66,21 +66,19 @@ header {
 
 .fa-search {
     position: absolute;
-    top: 15px;
+    top: 5px;
     color: #ffffff;
-    right: 105px;
+    right: 10px;
 }
 
 .left-nav-header {
     position: relative;
 }
 
-.fa-bars {
-    display: block;
-    position: absolute;
-    
-    top: 40px;
-    right: 30px;
+.menu-icon {
+    float: right;
+    margin-top: 16px;
+    margin-right: 12px;
     color: #ffffff;
 }
 
@@ -88,94 +86,6 @@ header {
     background-color:  rgb(31, 34, 44);
     border: none;
 }
-
-/* Main Section CSS */
-
-.img-content {
-    height: 365px;
-    background-color: #333333;
-}
-
-.contact-info {
-    height: 160px;
-    background-color: #e7e7e7;
-}
-
-.contact-text {
-    padding-top: 25px;
-    padding-left: 15px;
-    padding-right: 15px;
-
-}
-
-.contact-btn {
-    padding-top: 20px;
-    padding-left: 20px;
-}
-
-.contact-btn .btn {
-    background-color: #1f232c;
-    border-radius: 15px;
-    border: transparent;
-    width: 280px;
-    color: #fff;
-    height: 36px;
-    font-size: 16px;
-}
-
-.contact-text p {
-    text-align: justify;
-}
-
-.contact-separator {
-    height: 5px;
-    background-color: #dadada;
-}
-
-/* End of Main CSS */
-
-/* Start of Service CSS */
-
-.service-section {
-    padding: 20px 0;
-}
-
-.service-content {
-    display: inline-block;
-    margin-top: -15px;
-}
-
-.service {
-    width: 100%;
-    padding: 15px 0px;
-}
-
-.service-image {
-    width: 25%;
-    float: left;
-    padding-left: 15px
-}
-
-.service-info {
-    width: 55%;
-    float: right;
-    padding: 0 10px;
-}
-
-.service-info p {
-    text-align: justify;
-}
-
-.service-underline {
-    margin: 5px 0;
-    width: 70px;
-    height: 2px;
-    background-color: #000;
-}
-
-/* END of Service CSS*/
-
-
 
 @media only screen and (min-width: 768px){
 
@@ -200,7 +110,9 @@ header {
     }
 
     .left-nav-header a {
-        margin-bottom: 15px;
+        margin-bottom: 20px;
+        margin-top: 50px;
+
     }
 
     .fa-search {
@@ -239,6 +151,12 @@ header {
         font-size: 13px;
     }
 
+    #tab-lap-nav-list ul li a:hover {
+        background-color: #fff;
+        color: #000;
+        transition: 500ms ease-in;
+    }
+
     .logo {
         width: 100%;
     }
@@ -248,64 +166,6 @@ header {
     }
 
     /* End of Header CSS for Tablet */
-
-    /* Start of Main CSS for Tablet */
-
-    .contact-info {
-        height: 120px;
-        padding-top: 40px;
-    }
-
-    .contact-text {
-        float: left;
-        width: 65%;
-        font-size: 25px;
-        padding-top: 10px;
-    }
-
-    .contact-btn {
-        padding-right: 10px;
-        padding-left: 15px;
-        float: right;
-    }
-
-    .contact-btn .btn {
-        width: 200px;
-        height: 40px;
-        font-size: 18px;
-    }
-
-
-
-
-    /* End of Main CSS for Tablet*/
-
-    /* Start of CSS for Service Section */
-
-    .service-content {
-        margin-top: 0px;
-    }
-
-    .service {
-        width: 100%;
-    }
-
-    .service1 {
-        float: left;
-        width: 50%;
-    }
-
-    .service2 {
-        float: right;
-        width: 50%;
-    }
-
-    .service-info {
-        width: 65%;
-    }
-
-    /* End of CSS for Service Section*/
-
     
 }
 
@@ -324,6 +184,7 @@ header {
 
     .left-nav-header a {
         padding-bottom: 40px;
+        margin-top: 50px;
     }
     
     .right-nav-header {
@@ -391,84 +252,6 @@ header {
     }
 
     /* End of Header Section for Desktop */
-
-    /* Start of Main Section for Desktop*/
-
-    .contact-text {
-        width: 64%;
-        font-size: 31px;
-        padding: 0 20px;
-    }
-
-    .contact-btn .btn {
-        width: 280px;
-        height: 57px;
-        padding-right: 20px;
-    }
-
-    .contact-btn {
-        padding-right: 20px;
-        padding-left: 10px;
-        float: right;
-    }
-
-
-    /* End of Main Section for Desktop*/
-
-    /* start of service section for Desktop */
-
-    .service-content {
-        margin-top: 0px;
-    }
-
-    .service {
-        width: 100%;
-    }
-
-    .service1 {
-        float: left;
-        width: 66.67%;
-    }
-
-    .service1 .serv1 {
-        float: left;
-        width: 50%;
-    }
-
-    .service1 .serv2 {
-        float: right;
-        width: 50%;
-    }
-
-    .service-image img {
-        height: 98px;
-    }
-
-    .service2 {
-        float: right;
-        width: 33.33%;
-    }
-
-    .service-info {
-        width: 58%;
-        padding: 0;
-    }
-
-    .service-info .service-heading {
-        text-align: left;
-    }
-
-
-    .service-info .service-detail {
-        font-size: 13px;
-        color: #979797;
-    }
-
-    .service-section {
-        padding: 20px 20px;
-    }
-
-    /* end of service section for desktop*/
     
 }
 
