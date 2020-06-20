@@ -144,6 +144,10 @@
     background-color: #000;
 }
 
+.service-title {
+    padding-left: 10px;
+}
+
 /* END of Service CSS*/
 
 /* Separator */
@@ -182,6 +186,7 @@
 
 .card-detail img {
     width: 100%;
+    vertical-align: middle;
 }
 
 figcaption {
@@ -207,10 +212,11 @@ figcaption p {
 
 .view-all-btn {
     padding: 10px;
-    float: right;
+    margin-left: 42%;
     background-color: #400fc5;
     color: #fff;
     border: transparent;
+    border-radius: 30px;
 }
 
 /* End of CSS for Card*/
@@ -274,6 +280,10 @@ figcaption p {
 
     .service-info {
         width: 65%;
+    }
+
+    .service-title {
+        display: none;
     }
 
     /* End of CSS for Service Section*/
