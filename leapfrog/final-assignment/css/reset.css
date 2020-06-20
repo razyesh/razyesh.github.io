@@ -22,3 +22,8 @@ a {
 }
 
 
+.card-detail:hover {
+    box-shadow: 25px 25px 25px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+

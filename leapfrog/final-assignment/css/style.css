@@ -1,14 +1,66 @@
 /* Main Section CSS */
 
 .img-content {
-    height: 253px;
+    height: 212px;
     width: 100%;
+    overflow: hidden;
 }
 
-.img-content img {
-    width: 100%;
-    height: 100%;
+@keyframes slide{
+    0%{
+        left: 0;
+    }
+
+    10%{
+        left: 0;
+    }
+
+    20%{
+
+        left: -100%;
+    }
+
+    30% {
+        left: -100%;
+    }
+
+
+    40% {
+        left: -200%;
+    }
+
+    50% {
+        left: -200%;
+    }
+
+    60% {
+        left: -200%;
+    }
+
+    70%{
+         left: -300%;
+    }
+
+    80% {
+        left: 0;
+    }
+
 }
+
+.img-content figure img {
+    float: left;
+    width: 25%;
+
+}
+
+.img-content figure {
+    position: relative;
+    width: 400%;
+    animation: slide 8s infinite;
+    animation-direction: alternate-reverse;
+
+}
+
 
 .contact-info {
     height: 160px;
@@ -68,13 +120,17 @@
 .service-image {
     width: 25%;
     float: left;
-    padding-left: 15px
+}
+
+.service-image img {
+    width: 100%;
 }
 
 .service-info {
-    width: 55%;
+    width: 68%;
     float: right;
     padding: 0 10px;
+    font-size: 12px;
 }
 
 .service-info p {
@@ -83,7 +139,7 @@
 
 .service-underline {
     margin: 5px 0;
-    width: 70px;
+    width: 78px;
     height: 2px;
     background-color: #000;
 }
@@ -159,66 +215,14 @@ figcaption p {
 
 /* End of CSS for Card*/
 
-/* CSS for footer */
 
-footer {
-    margin-top: 80px;
-    background-color: #eeeeee;
-    padding: 0 15px;
-}
-
-footer .contact-us ul li {
-    display: block;
-}
-
-footer .contact-us {
-
-    padding: 25px 0;
-}
-
-.quick-links, .from-the-blog {
-    display: none;
-}
-
-footer h3 {
-    margin-bottom: 15px;
-}
-
-footer input[type="text"], input[type="email"] {
-    border: transparent;
-    border-radius: 25px ;
-    width: 100%;
-    margin-bottom: 10px;
-    height: 25px;
-}
-
-.submit-button {
-    width: 100%;
-    margin-bottom: 50px;
-    height: 30px;
-    background-color: #000;
-    color: #fff;
-}
-
-/* End of CSS for Footer*/
-
-.copyright-footer {
-    height: 60px;
-    background-color: #1f232c;
-    color: #979797;
-    padding-top: 30px;
-}
-
-.copyright-footer .left-content {
-    float: left;
-}
-
-.copyright-footer .right-content {
-    float: right;
-}
 
 
 @media only screen and (min-width: 768px){
+
+    .img-content {
+        height: 343px;
+    }
 
     /* Start of Main CSS for Tablet */
 
@@ -305,29 +309,7 @@ footer input[type="text"], input[type="email"] {
 
     /* end of css for card */
 
-    /* Footer for CSS */
-    footer {
-        margin-top: 630px;
-    }
-    footer .contact-us {
-        float: left;
-        width: 50%;
-    }
-
-    footer input[type="text"], input[type="email"]{
-        width: 50%;
-    }
-
-    .news-letter {
-        padding-top: 25px;
-    }
-
-    footer .submit-button {
-        width: 25%;
-        border-radius: 25px;
-    }
-
-    /* End of Footer for CSS*/
+    
 
 }
 
@@ -341,7 +323,6 @@ footer input[type="text"], input[type="email"] {
     }
 
     .img-content img {
-        width: 100%;
         height: 100%;
     }
     .contact-text {
@@ -368,7 +349,8 @@ footer input[type="text"], input[type="email"] {
     /* start of service section for Desktop */
 
     .service-content {
-        margin-top: 0px;
+        padding-top: 80px;
+        padding-bottom: 90px;
     }
 
     .service {
@@ -390,8 +372,13 @@ footer input[type="text"], input[type="email"] {
         width: 50%;
     }
 
+    .service-image {
+        width: 40%;
+        height: 100px;
+    }
+
     .service-image img {
-        height: 98px;
+        height: 100px;
     }
 
     .service2 {
@@ -406,6 +393,14 @@ footer input[type="text"], input[type="email"] {
 
     .service-info .service-heading {
         text-align: left;
+    }
+
+    .service-detail {
+        font-size: 13px;
+    }
+
+    .service-heading {
+        font-size: 20px;
     }
 
 
@@ -425,6 +420,8 @@ footer input[type="text"], input[type="email"] {
     .card {
         width: 100%;
         padding: 0;
+        padding-top: 47px;
+        padding-bottom: 80px;
     }
 
     .separator .right-separator {
@@ -475,90 +472,6 @@ footer input[type="text"], input[type="email"] {
 
     /* end of css for card */
 
-    /* CSS for Footer */
-
-    .footer-content {
-        padding: 50px 20px;
-    }
-
-    footer  {
-        background-color: #eeeeee;
-        overflow: hidden;
-    }
-
-    footer .contact-us {
-        padding: 0;
-        width: 25%;
-    }
-
-    footer .contact-us ul li {
-        font-size: 12px;
-        color: #979797;
-    }
-
-
-
-    .quick-links .links {
-        font-size: 12px;
-        padding: 5px;
-        line-height: 30px;
-
-    }
-
-    .quick-links hr {
-        color: #979797;
-    }
-
-    .quick-links, .from-the-blog{
-        display: block;
-        width: 25%;
-        float: left;
-    }
-
-    footer .blog-content {
-        color: #979797;
-        font-size: 12px;
-
-    }
-
-    footer .blog-content .read-more {
-        text-align: right;
-        
-    }
-
-    footer .news-letter {
-        float: left;
-        width: 25%;
-        padding: 0;
-    }
-
-    footer input[type="text"], input[type="email"]{
-        width: 100%;
-    }
-
-    footer .submit-button {
-        width: 50%;
-        border-radius: 5px;
-
-    }
-
-    .copyright-footer {
-        height: 60px;
-        background-color: #1f232c;
-        color: #979797;
-        padding-top: 30px;
-    }
-
-    .copyright-footer .left-content {
-        float: left;
-    }
-
-    .copyright-footer .right-content {
-        float: right;
-    }
     
-
-
-    /* End of CSS for Footer*/
 
 }
