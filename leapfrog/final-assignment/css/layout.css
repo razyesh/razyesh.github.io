@@ -180,6 +180,7 @@ header {
 
     .left-nav-header {
         float: left;
+        margin-top: 15px;
     }
 
     .left-nav-header a {
@@ -191,6 +192,8 @@ header {
         float: right;
         position: relative;
     }
+
+   
 
     .fa-search {
         position: absolute;
