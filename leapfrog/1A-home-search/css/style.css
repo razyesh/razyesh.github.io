@@ -14,6 +14,11 @@
     padding: 0 20px;
 }
 
+.entries h2 {
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
 .entries ul li {
     display: inline-block;
 }
@@ -89,7 +94,7 @@
 }
 
 .searches .recent-searches2 ul {
-    height: 488px;
+    height: 510px;
 }
 
 .searches ul li:hover, .video-tutorials ul li:hover {
@@ -108,7 +113,7 @@
 }
 
 .video-tutorials ul {
-    height: 610px;
+    height: 625px;
 }
 
 
