@@ -344,7 +344,7 @@ figcaption p {
     .contact-btn .btn {
         width: 280px;
         height: 57px;
-        padding-right: 20px;
+        padding: 22px 20px 22px 20px;
     }
 
     .contact-btn {
@@ -353,14 +353,15 @@ figcaption p {
         float: right;
     }
 
+    
 
     /* End of Main Section for Desktop*/
 
     /* start of service section for Desktop */
 
     .service-content {
-        padding-top: 80px;
-        padding-bottom: 90px;
+        padding-top: 30px;
+        padding-bottom: 50px;
     }
 
     .service {
@@ -389,6 +390,7 @@ figcaption p {
 
     .service-image img {
         height: 100px;
+        width: 100%;
     }
 
     .service2 {
