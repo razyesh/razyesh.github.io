@@ -137,6 +137,12 @@
     padding: 15px 5px;
 }
 
+.footer-content .left-content ul li a:hover {
+    background-color: #fff;
+    padding: 5px;
+    color: #000;
+}
+
 .footer-content .left-content ul li a {
     color: #fff;
 }

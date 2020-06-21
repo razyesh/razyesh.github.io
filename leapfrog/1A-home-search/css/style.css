@@ -34,29 +34,29 @@
 
 .all-members p, .new-entries p {
     position: absolute;
-    top: 38px;
-    left: 20px;
+    top: 40px;
+    left: 34px;
     font-size: 12px;
 }
 
 .new-comments p {
     position: absolute;
-    top: 38px;
-    left: 121px;
+    top: 40px;
+    left: 131px;
     font-size: 12px;
 
 }
 
 .friends p {
     position: absolute;
-    top: 38px;
-    left: 135px;
+    top: 40px;
+    left: 145px;
     font-size: 12px;
 }
 
 .all-entries ul li img, .subscribed ul li img {
     width: 100px;
-    padding-left: 8px;
+    padding-left: 18px;
 }
 
 .all-members img, .new-entries img {
