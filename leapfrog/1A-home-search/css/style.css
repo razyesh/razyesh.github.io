@@ -1,221 +1,180 @@
-.main-section {
-    margin: 30px 100px 0 130px;
-}
-
 .searches-entries {
-    float:left;
+    float: left;
+    width: 80%;
 }
 
 .searches {
-    width: 250px;
-    height: 670px;
-    background-color: #f2f2f2;
     float: left;
-}
-
-.searches ul li {
-    display: inline-block;
-    width: 240px;
-    padding: 10px;
-    cursor: pointer;
-}
-
-
-.searches ul li:hover {
-    background-color: white;
-
-}
-
-.searches .recent-search1 {
-    font-size: 20px;
-    background-color:#34c1da ;
-    height: 30px;
-    color: #ffffff;
-    padding: 10px;
-    
-}
-
-
-
-.title-background {
-    width: 200px;
-}
-
-.searches .recent-search2 {
-    font-size: 20px;
-    background-color:#34c1da ;
-    height: 30px;
-    color: #ffffff;
-    padding: 10px;
+    width: 30%;
 }
 
 .entries {
     float: right;
-    margin-left: 50px;
-    margin-bottom: 30px;
-    margin-right: 50px;
-    width: 560px;
-    height: 670px;
+    width: 64.5%;
+    padding: 0 20px;
 }
 
-.entries h1 {
-    font-size: x-large;
+.entries ul li {
+    display: inline-block;
 }
 
-.all-entries {
-    background-color: #f2f2f2;
-    width: 278px;
-    text-align: center;
-    padding-top: 8px;
+.entries ul li img {
+    width: 240px;
 }
 
-.entries-subscribed {
-    text-align: center;
-    width: 278px;
-    background-color: #f2f2f2;
-    padding-top: 8px;
+.all-entries, .subscribed {
+    position: relative;
 }
 
-.all-members {
-    background-image: url('../images/tab-bg-active.png');
-    padding: 5px;
+.all-entries p , .subscribed p {
+    position: absolute;
+    top: 10px;
+    left: 70px;
+}
+
+.all-members p, .new-entries p {
+    position: absolute;
+    top: 38px;
+    left: 20px;
+    font-size: 12px;
+}
+
+.new-comments p {
+    position: absolute;
+    top: 38px;
+    left: 121px;
+    font-size: 12px;
+
+}
+
+.friends p {
+    position: absolute;
+    top: 38px;
+    left: 135px;
+    font-size: 12px;
+}
+
+.all-entries ul li img, .subscribed ul li img {
     width: 100px;
+    padding-left: 8px;
+}
+
+.all-members img, .new-entries img {
+    position: absolute;
+    top: 36px;
+}
+
+.friends img, .new-comments img {
+    position: absolute;
+    top: 36px;
+    left: 105px;
+}
+
+
+
+.searches h3, .video-tutorials h3 {
+    background-color: #88e2f2;
+    padding: 15px;
+}
+
+.searches ul, .video-tutorials ul  {
+    background-color: #f5f5f5;
+    overflow: hidden;
 
 }
 
-.all-members a {
-    color: #ffffff;
+.searches ul li, .video-tutorials ul li {
+    display: block;
+    padding: 10px;
 }
 
-.friends, .new-entries, .new-comments, .all-members {
+.searches .recent-searches2 ul {
+    height: 488px;
+}
+
+.searches ul li:hover, .video-tutorials ul li:hover {
+    background-color: #fff;
     cursor: pointer;
 }
 
-
-
-.friends {
-    background-image: url('../images/tab-bg.png');
-    padding: 5px;
-    width: 100px;
-}
-
-.new-entries {
-    background-image: url('../images/tab-bg.png');
-    padding: 5px;
-    width: 100px;
-}
-
-.new-comments {
-    background-image: url('../images/tab-bg.png');
-    width: 100px;
-    padding: 5px;
-    text-align: left;
-
-}
-
-.new-entries:hover, .new-comments:hover, .friends:hover, .all-members:hover {
-    background-image: url('../images/tab-bg-active.png');
-
-}
-
-.timeline {
-    margin-top: 10px;
-}
-
-.entries-list {
-    margin-top: 5px;
-}
-
-.avatar {
-    width: 100px;
-}
-.avatar img {
-    height: 80px;
-    width: 80px;
-    margin-top: 10px;
-}
-
-.info {
-    margin-left: 100px;
-    margin-top: -85px;
-}
-
-.entries-break {
-    margin-top: 40px;
+.searches ul li span {
+    float: right;
+    
 }
 
 .video-tutorials {
     float: right;
-    width: 250px;
-    height: 670px;
-    background-color: #f2f2f2;
-    margin-right: 26px;
-
+    width: 20%;
 }
 
-.video-tutorials .video-tutorial-title {
-    font-size: 20px;
-    background-color:#34c1da ;
-    height: 30px;
-    color: #ffffff;
-    padding: 10px;
-   
-
+.video-tutorials ul {
+    height: 610px;
 }
 
 
-.video-tutorials ul li {
-    width: 250px;
-    padding: 15px;
-    cursor: pointer;
+.line {
+    background-color: #88e2f2;
+    height: 3px;
+    border: transparent;
+    margin-top: -16px;
 }
 
-.video-tutorials ul li a {
-    width: 250px;
+.entries-lists {
+    padding-top: 10px;
 }
 
-
-.video-tutorials ul li:hover {
-    background-color: #ffffff;
+.entries-list {
+    padding: 18px 0;
 }
 
-.fa {
-    margin-left: 220px;
+.avatar {
+    float: left;
+    width: 16%;
+}
+
+.avatar img {
+    width: 100%;
+}
+
+.info {
+    float: right;
+    width: 82%;
+}
+
+.entries-break {
+    
+    margin-top: 75px;
+}
+
+.info {
+    font-size: 13px;
+    
+}
+
+.sub-info {
+    padding-top: 10px;
 }
 
 .title {
+
     font-weight: bold;
-    padding-bottom: 5px;;
+    font-size: 14px;
 }
 
-.author, .topic-box {
-    color: #1fd3f3;
-    text-decoration: none;
+.author {
+    color: #1ac5e4;
 }
 
-.subscribed {
+.subscribed-status {
     color: green;
 }
 
-.new-action {
-    color: #1fd3f3;
+.new-action, .topic-box {
+    color: #1ac5e4;
     font-weight: bold;
 }
 
 .title-danger {
     color: red;
     font-weight: bold;
-}
-
-i {
-    opacity: 0.5;
-}
-
-.side-icon {
-    float: right;
-    margin-right: 16px;
-}
-
-.invite {
-    margin-left: -20px;
 }
