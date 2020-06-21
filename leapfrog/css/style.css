@@ -4,6 +4,16 @@
 	padding: 0px;
 }
 
+.container {
+	max-width: 1000px;
+	margin: 0 auto;
+	border: 1px solid ;
+}
+
+.card h1 {
+	text-align: center;
+}
+
 
 
 .info img {
@@ -44,4 +54,24 @@ table {
 
 caption {
 	font-size: 20px;
+}
+
+a:hover {
+	background-color: #000;
+	color: #fff;
+	padding: 5px 0 ;
+}
+
+.ninja {
+	position: absolute;
+	top: 65px;
+	left: 466px;
+}
+
+.fa-html5 {
+	color: rgb(170, 114, 9);
+}
+
+.fa-css3 {
+	color: rgb(10, 158, 226);
 }
