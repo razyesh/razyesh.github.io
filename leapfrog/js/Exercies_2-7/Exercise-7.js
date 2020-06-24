@@ -21,13 +21,43 @@ var input = {
     }
   };
 
-  children = Array()
+newObj = {}
+output = {}
 
-  for (var i=1; i<=input.length; i++){
-      for (var j=0; j<input[`${i}`]['children'].length; j++){
-            console.log('ok')
-            children.push(input[i]['children'][j])
+function normalize(){
+  for (const detail in input){
+    if (input[detail]['children']){
+      newObj['id'] = input[detail]['id'];
+      newObj['name'] = input[detail]['name'];
+      newObj['children'] = (input[detail]['children']).map(function (child){ return child['id'];})
+      output[`${newObj['id']}`] = newObj
+      newObj = {}
+      for (var i=0; i<input[detail]['children'].length ; i++){
+       if(input[detail]['children'][i]['children']){
+         input[detail]['children'][i]['children'].forEach(updateFunction);
+       }
+        newObj['id'] = input[detail]['children'][i]['id'];
+        newObj['name'] = input[detail]['children'][i]['name'];
+        output[`${newObj['id']}`] = newObj;
+        newObj = {}
       }
-  }
 
-  console.log(children)
+    } else {
+      newObj['id'] = input[detail]['id'];
+      newObj['name'] = input[detail]['name'];
+      output[`${newObj['id']}`] = newObj
+    }
+  }
+  
+  console.log(output)
+  
+}
+
+function updateFunction(item, index){
+  newObj['id'] = item['id'];
+  newObj['name'] = item['name'];
+  output[`${item['id']}`] = newObj;
+  newObj = {}
+}
+
+normalize();
