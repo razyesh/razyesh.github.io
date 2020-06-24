@@ -24,6 +24,8 @@ var input = {
 newObj = {}
 output = {}
 
+
+
 function normalize(){
   for (const detail in input){
     if (input[detail]['children']){
@@ -60,4 +62,7 @@ function updateFunction(item, index){
   newObj = {}
 }
 
-normalize();
+
+document.getElementById('normalize').onclick = function(){
+  normalize();
+}

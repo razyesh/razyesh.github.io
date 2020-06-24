@@ -1,47 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Question Answer</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+    <div class="container">
+        <h3>Practise Question of Javascript</h3>
+        <h5 class="note">Note: Please Check the console for output</h5>
+        <h3>Q.2</h3>
+        <p>Ques: Write a function to render the following pattern in the console: <br>
+            * * * * *<br>
+            * * * *<br>
+            * * *<br>
+            * * <br>
+            *<br>
 
-    <h3>Q.2</h3>
-    <p>Ques: Write a function to render the following pattern in the console: <br>
-        * * * * *<br>
-        * * * *<br>
-        * * *<br>
-        * * <br>
-        *<br>
-        
-        The function needs to take a number as a parameter which represents how many asterisks are rendered on the first row.</p>
+            The function needs to take a number as a parameter which represents how many asterisks are rendered on the
+            first row.</p>
 
-    <button id="q2">View Answer</button>
+        <button id="q2">View Answer</button>
 
-    <h3>Q.3</h3>
-    <p>ques: Define an object containing information about yourself. The object needs to include 'name', 'address', 'emails', 'interests' and 'education'. The 'education' key needs to be an array of objects containing keys 'name' and 'enrolledDate'.</p>
+        <h3>Q.3</h3>
+        <p>ques: Define an object containing information about yourself. The object needs to include 'name', 'address',
+            'emails', 'interests' and 'education'. The 'education' key needs to be an array of objects containing keys
+            'name' and 'enrolledDate'.</p>
 
-    <button id="q3">View Answer</button>
+        <button id="q3">View Answer</button>
 
-    <h3>Q.4</h3>
-    <p>Ques: Write a function that searches for an object by a specific key value in an array of objects:</p>
-    <button id="searchByName">Search By Name</button> <button id="searchByKey">Search By Key</button>
+        <h3>Q.4</h3>
+        <p>Ques: Write a function that searches for an object by a specific key value in an array of objects:</p>
+        <button id="searchByName">Search By Name</button> <button id="searchByKey">Search By Key</button>
 
-    <h3>Q.5</h3>
-    <p>Ques: Write a function that transforms an array of inputs into a new array based on a provided transformation function.
+        <h3>Q.5</h3>
+        <p>Ques: Write a function that transforms an array of inputs into a new array based on a provided transformation
+            function.
 
-        var numbers = [1, 2, 3, 4]
+            var numbers = [1, 2, 3, 4]
 
-    </p>
-    <button id="transform">Transform</button>
+        </p>
+        <button id="transform">Transform</button>
 
-    <h3>Q.6</h3>
-    <p>
-        Ques: Write a program to sort an array of object by a target key. The original array should remain unchanged.
-    </p>
+        <h3>Q.6</h3>
+        <p>
+            Ques: Write a program to sort an array of object by a target key. The original array should remain
+            unchanged.
+        </p>
 
-    <button id="sort">Sort</button>
+        <button id="sort">Sort</button>
+
+        <h3>Q.7</h3>
+        <p>
+            write a program to normalize a given input to get the expected output. <br>
+            // From this<br>
+            var input = { <br>
+            '1': { <br>
+            id: 1, <br>
+            name: 'John', <br>
+            children: [ <br>
+            { id: 2, name: 'Sally' },<br>
+            { id: 3, name: 'Mark', children: [{ id: 4, name: 'Harry' }] }<br>
+            ]<br>
+            },<br>
+            '5': {<br>
+            id: 5,<br>
+            name: 'Mike',<br>
+            children: [{ id: 6, name: 'Peter' }]<br>
+            }<br>
+            };<br>
+
+            // To this<br>
+            var output = {<br>
+            '1': { id: 1, name: 'John', children: [2, 3] },<br>
+            '2': { id: 2, name: 'Sally' },<br>
+            '3': { id: 3, name: 'Mark', children: [4] },<br>
+            '4': { id: 4, name: 'Harry' },<br>
+            '5': { id: 5, name: 'Mike', children: [6] },<br>
+            '6': { id: 6, name: 'Peter' }<br>
+            };<br>
+        </p>
+
+        <button id="normalize">Normalize</button>
+
+    </div>
 
 
     <script src="Exercise-2.js"></script>
@@ -51,4 +96,5 @@
     <script src="Exercise-6.js"></script>
     <script src="Exercise-7.js"></script>
 </body>
+
 </html>
