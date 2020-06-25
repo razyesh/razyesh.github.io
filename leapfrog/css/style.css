@@ -59,12 +59,12 @@ caption {
 a:hover {
 	background-color: #000;
 	color: #fff;
-	padding: 5px 0 ;
+	padding: 5px 2px ;
 }
 
 .ninja {
 	position: absolute;
-	top: 65px;
+	top: 39px;
 	left: 466px;
 }
 
@@ -74,4 +74,11 @@ a:hover {
 
 .fa-css3 {
 	color: rgb(10, 158, 226);
+}
+
+
+.assignment-table {
+	margin: 20px;
+
+
 }
