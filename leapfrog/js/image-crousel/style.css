@@ -1,0 +1,69 @@
+.clearfix:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.carousel-container {
+    width: 400px;
+    height: 250px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+
+}
+
+.carousel-image-wrapper {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1600px;
+}
+
+.slide {
+    width: 400px;
+    float: left;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    opacity: 0.5;
+}
+
+button {
+    position: absolute;
+}
+
+#next {
+    position: absolute;
+    top: 112px;
+    left: 356px;
+}
+
+#previous {
+    top: 112px;
+}
+
+
+.activePointer{
+    position: absolute;
+    border-color: #000;
+    left: 160px;
+}
+
+.first {
+    display: none;
+}
+
+
+.caption {
+    color: #000;
+    position: absolute;
+    top: 155px;
+    text-align: center;
+}
+
+#radio3 {
+    display: none;
+}
