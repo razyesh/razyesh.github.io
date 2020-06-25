@@ -27,7 +27,7 @@ output = {}
 
 
 function normalize(){
-  for (const detail in input){
+  for (var detail in input){
     if (input[detail]['children']){
       newObj['id'] = input[detail]['id'];
       newObj['name'] = input[detail]['name'];
