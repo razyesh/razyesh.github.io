@@ -1,6 +1,3 @@
-
-
-
 /**
  * @param {Number} LIMIT The width limit of carousel
  * @param {Number} currentIndex The current index of carousel
@@ -127,5 +124,18 @@ document.getElementById('previous').onclick = function () {
     carousel.slideLeft();
 }
 
+
+document.getElementById('radio0').onclick = function (){
+    document.querySelector('.carousel-image-wrapper').style.left = "0px";
+}
+document.getElementById('radio1').onclick = function (){
+    document.querySelector('.carousel-image-wrapper').style.left = "-400px";
+}
+document.getElementById('radio2').onclick = function (){
+    document.querySelector('.carousel-image-wrapper').style.left = "-800px";
+}
+document.getElementById('radio3').onclick = function (){
+    document.querySelector('.carousel-image-wrapper').style.left = "-1200px";
+}
 
 
