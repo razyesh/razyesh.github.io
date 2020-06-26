@@ -7,17 +7,18 @@
 .carousel-container {
     width: 400px;
     height: 250px;
-    margin: 0 auto;
+    margin: 300px auto;
     overflow: hidden;
     position: relative;
 
 }
 
+
 .carousel-image-wrapper {
     position: absolute;
     left: 0px;
     top: 0px;
-    width: 1600px;
+    width: 2000px;
 }
 
 .slide {
@@ -26,19 +27,20 @@
     position: relative;
 }
 
-.slide img {
+.slide img{
     width: 100%;
     opacity: 0.5;
 }
 
 button {
     position: absolute;
+    padding: 10px;
 }
 
 #next {
     position: absolute;
     top: 112px;
-    left: 356px;
+    left: 375px;
 }
 
 #previous {
@@ -60,10 +62,12 @@ button {
 .caption {
     color: #000;
     position: absolute;
-    top: 155px;
+    top: 200px;
     text-align: center;
+    line-height: 0px;
 }
 
-#radio3 {
-    display: none;
+.caption p {
+    margin-left: 25px;
 }
+
