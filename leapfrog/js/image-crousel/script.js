@@ -108,18 +108,16 @@ document.getElementById('previous').onclick = function () {
     slideLeft();
 }
 
+radioButton = document.querySelectorAll('.radio');
+radioButton.forEach(onClickEvent);
 
-document.getElementById('radio0').onclick = function () {
-    document.querySelector('.carousel-image-wrapper').style.left = "0px";
+function onClickEvent(item, index){
+    item.onclick = function(){
+        document.querySelector('.carousel-image-wrapper').style.left = -(LIMIT*index)+"px";
+    }
+
 }
-document.getElementById('radio1').onclick = function () {
-    document.querySelector('.carousel-image-wrapper').style.left = "-400px";
-}
-document.getElementById('radio2').onclick = function () {
-    document.querySelector('.carousel-image-wrapper').style.left = "-800px";
-}
-document.getElementById('radio3').onclick = function () {
-    document.querySelector('.carousel-image-wrapper').style.left = "-1200px";
-}
+
+
 
 
