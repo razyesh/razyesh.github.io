@@ -9,12 +9,10 @@
 
 var currentIndex = 0;
 var LIMIT = 400;
-var leftswap = 0;
 var sliderImages = document.querySelectorAll('.slide');
 var imageWrapper = document.querySelector('.carousel-image-wrapper');
 var UNIT = 'px';
 var INITIALPOINT = "0px";
-var FINALPOINT = "1200px"
 var isMoving = false;
 
 
@@ -24,10 +22,10 @@ function slideRight() {
     if (currentIndex < sliderImages.length) {
         window.requestAnimationFrame(imageSliderRight);
     } else if (currentIndex == sliderImages.length) {
-        currentIndex = 1;
-        imageWrapper.style.left = INITIALPOINT;
+        currentIndex = 0;
+        imageWrapper.style.left = LIMIT + UNIT;
         imageSliderRight();
-    }
+    } 
 }
 
 
@@ -45,6 +43,7 @@ function slideLeft() {
 function imageSliderRight() {
     var leftPx = parseInt(window.getComputedStyle(imageWrapper).left) - 30;
     imageWrapper.style.left = leftPx + UNIT;
+    
     if (parseInt(leftPx) != -(LIMIT * currentIndex)) {
         if (parseInt(leftPx) < -(LIMIT * currentIndex)) {
             isMoving = false;
@@ -58,13 +57,14 @@ function imageSliderRight() {
 
 
 function radioActive(status) {
-    for (var i = 1; i <= sliderImages.length - 1; i++) {
-        if (window.getComputedStyle(imageWrapper).left == -(LIMIT * (sliderImages.length - 1)) + UNIT || imageWrapper.style.left == INITIALPOINT) {
+    for (var i = 1; i <= sliderImages.length-1; i++) {
+        if (window.getComputedStyle(imageWrapper).left == -(LIMIT * (sliderImages.length)) + UNIT || imageWrapper.style.left == INITIALPOINT) {
             document.querySelector('#radio0').checked = true;
         }
+        console.log(LIMIT * i)
         if (imageWrapper.style.left == -(LIMIT * i) + UNIT) {
             if (status == "left") {
-                document.querySelector(`#radio${i - 1}`).checked = true;
+                document.querySelector(`#radio${i-1}`).checked = true;
             }
             else {
                 try {
@@ -86,7 +86,6 @@ function imageSliderLeft() {
     if (rightPx != -(LIMIT * currentIndex)) {
         if (parseInt(rightPx) > -(LIMIT * currentIndex)) {
             isMoving = false;
-
             imageWrapper.style.left = -(LIMIT * currentIndex) + UNIT;
         } else {
             window.requestAnimationFrame(imageSliderLeft);
@@ -96,13 +95,13 @@ function imageSliderLeft() {
 }
 
 function firstToEnd() {
-    currentIndex = sliderImages.length - 2;
-    document.querySelector(`#radio${sliderImages.length - 2}`).checked = true;
+    currentIndex = sliderImages.length - 1;
+    document.querySelector(`#radio${sliderImages.length - 1}`).checked = true;
     if (window.getComputedStyle(imageWrapper).left == INITIALPOINT || imageWrapper.style.left == INITIALPOINT) {
         function end() {
             var rightPx = (parseInt(window.getComputedStyle(imageWrapper).left) - 100);
             imageWrapper.style.left = rightPx + UNIT;
-            if (rightPx != -1200) {
+            if (rightPx != -(LIMIT*currentIndex)) {
                 window.requestAnimationFrame(end);
             } else {
                 isMoving = false;
