@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Crousel</title>
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/carousel.css">
 
@@ -12,7 +13,8 @@
 
 <body>
     <div class="transition-input">
-        <input type="text" placeholder="Transition Time">
+        <input type="number" placeholder="Transition Time">
+        <br>
         <button>Submit</button>
     </div>
     <div class="carousel-container" id="carousel">
@@ -20,44 +22,24 @@
         <div class="carousel-image-wrapper clearfix">
             
             <div class="slide slide1">
-                <img src="img/img1.jpg" alt="Image" />
-                <div class="caption">
-
-                    <h3>Image1</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
+                <img src="img/img11.jpg" alt="Image" />
+                
             </div>
             <div class="slide slide2">
-                <img src="img/img2.jpg" alt="Image" />
-                <div class="caption">
-
-                    <h3>Image2</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
+                <img src="img/img12.jpg" alt="Image" />
+                
             </div>
             <div class="slide slide3">
-                <img src="img/img3.jpg" alt="Image" />
-                <div class="caption">
-
-                    <h3>Image3</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
+                <img src="img/img13.jpg" alt="Image" />
+                
             </div>
             <div class="slide slide4">
-                <img src="img/2.jpg" alt="Image" />
-                <div class="caption">
-
-                    <h3>Image4</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
+                <img src="img/img14.jpg" alt="Image" />
+                
             </div>
             <div class="slide slide2">
-                <img src="img/img2.jpg" alt="Image" />
-                <div class="caption">
-
-                    <h3>Image2</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
+                <img src="img/img4.jpg" alt="Image" />
+                
             </div>
         </div>
         <div class="activePointer">
@@ -67,14 +49,70 @@
             <input type="radio" name="currentPosition"  class="radio" id="radio3">
             <input type="radio" name="currentPosition"  class="radio" id="radio4">
 
+        </div>
 
+        <button class="slide-change" id="previous1"><</button>
+        <button class="slide-change" id="next1">></button>
+        
+    </div>
+    <!-- <div class="carousel-container" id="carousel">
+        
+        <div class="carousel-image-wrapper2 clearfix">
+            
+            <div class="slide0 slide1">
+                <img src="img/img1.jpg" alt="Image" />
+                <div class="caption">
+
+                    <h3>Image1</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+            </div>
+            <div class="slide0 slide2">
+                <img src="img/img2.jpg" alt="Image" />
+                <div class="caption">
+
+                    <h3>Image2</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+            </div>
+            <div class="slide0 slide3">
+                <img src="img/img3.jpg" alt="Image" />
+                <div class="caption">
+
+                    <h3>Image3</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+            </div>
+            <div class="slide0 slide4">
+                <img src="img/2.jpg" alt="Image" />
+                <div class="caption">
+
+                    <h3>Image4</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+            </div>
+            <div class="slide0 slide2">
+                <img src="img/img2.jpg" alt="Image" />
+                <div class="caption">
+
+                    <h3>Image2</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+            </div>
+        </div>
+        <div class="activePointer">
+            <input type="radio"  name="currentPosition"  checked=True>
+            <input type="radio" name="currentPosition"  >
+            <input type="radio" name="currentPosition" >
+            <input type="radio" name="currentPosition"  >
+            <input type="radio" name="currentPosition" >
 
         </div>
 
-        <button id="previous"><</button>
-        <button id="next">></button>
+        <button class="slide-change" id="previous2"><</button>
+        <button class="slide-change" id="next2">></button>
         
-    </div>
+    </div> -->
     <script src="script/carousel.js"></script>
 
 </body>

@@ -7,10 +7,6 @@
  * @param {animator} imageSliderRight To slide image to right on certain interval 
  */
 
-var currentIndex = 0;
-var LIMIT = 400;
-
-var imageWrapper = document.querySelector('.carousel-image-wrapper');
 var UNIT = 'px';
 var INITIALPOINT = "0px";
 var isMoving = false;
@@ -18,25 +14,28 @@ var radioButton = document.querySelectorAll('.radio');
 
 
 
-function Carousel(sliderImages) {
+function Carousel(sliderImages, imageWrapper, width) {
     this.animateTo = "";
     this.INITIALPOINT = "0px";
     this.sliderImages = sliderImages;
     var self = this;
-
+    this.currentIndex = 0;
+    this.imageWrapper = imageWrapper;
+    this.width = parseInt(window.getComputedStyle(document.querySelector('.slide')).width);
     // setInterval(function(){
     //     carousel1.slideRight()
     // }, 3000)
 
     this.slideRight = function () {
+        this.width = parseInt(window.getComputedStyle(document.querySelector('.slide')).width);
         if (!isMoving) {
-            currentIndex++;
-            if (currentIndex < this.sliderImages.length) {
+            self.currentIndex++;
+            if (self.currentIndex < this.sliderImages.length) {
                 isMoving = true;
                 window.requestAnimationFrame(this.imageSliderRight);
-            } else if (currentIndex == this.sliderImages.length) {
-                currentIndex = 0;
-                imageWrapper.style.left = LIMIT + UNIT;
+            } else if (self.currentIndex == this.sliderImages.length) {
+                self.currentIndex = 0;
+                imageWrapper.style.left = self.width + UNIT;
                 this.imageSliderRight();
                 isMoving = false;
             }
@@ -46,12 +45,14 @@ function Carousel(sliderImages) {
 
 
     this.slideLeft = function () {
+        this.width = parseInt(window.getComputedStyle(document.querySelector('.slide')).width);
+
         if (!isMoving){
-            currentIndex--;
-            if (currentIndex < 0) {
+            self.currentIndex--;
+            if (self.currentIndex < 0) {
                 isMoving = true;
                 window.requestAnimationFrame(this.firstToEnd);
-            } else if (currentIndex >= 0) {
+            } else if (self.currentIndex >= 0) {
                 isMoving = true;
                 window.requestAnimationFrame(this.imageSliderLeft);
             }
@@ -60,11 +61,11 @@ function Carousel(sliderImages) {
 
     function radioActive(status) {
         for (var i = 1; i <= self.sliderImages.length -1; i++) {
-            if (window.getComputedStyle(imageWrapper).left == -(LIMIT * (self.sliderImages.length)) + UNIT || imageWrapper.style.left == this.INITIALPOINT) {
+            if (window.getComputedStyle(imageWrapper).left == -(self.width * (self.sliderImages.length)) + UNIT || imageWrapper.style.left == this.INITIALPOINT) {
                 document.querySelector('#radio0').checked = true;
             }
     
-            if (imageWrapper.style.left == -(LIMIT * i) + UNIT) {
+            if (imageWrapper.style.left == -(self.width * i) + UNIT) {
                 if (status == "left") {
                     document.querySelector(`#radio${i-1}`).checked = true;
                 }
@@ -83,13 +84,13 @@ function Carousel(sliderImages) {
 
     this.imageSliderRight = function () {
         function slider() {
-            var leftPx = parseInt(window.getComputedStyle(imageWrapper).left) - 40;
+            var leftPx = parseInt(window.getComputedStyle(imageWrapper).left) - 100;
             imageWrapper.style.left = leftPx + UNIT;
             radioActive("right");
 
-            if (leftPx < -(LIMIT * currentIndex)) {
+            if (leftPx < -(self.width * self.currentIndex)) {
                 isMoving = false;
-                imageWrapper.style.left = -(LIMIT * currentIndex) + UNIT;
+                imageWrapper.style.left = -(self.width * self.currentIndex) + UNIT;
             }
             else {
                 window.requestAnimationFrame(slider);
@@ -102,11 +103,11 @@ function Carousel(sliderImages) {
     this.imageSliderLeft = function () {
         function slider() {
             radioActive("left");
-            var rightPx = parseInt(imageWrapper.style.left) + 30;
+            var rightPx = parseInt(imageWrapper.style.left) + 101;
             imageWrapper.style.left = rightPx + UNIT;
-            if (rightPx > -(LIMIT * currentIndex)) {
+            if (rightPx > -(self.width * self.currentIndex)) {
                 isMoving = false;
-                imageWrapper.style.left = -(LIMIT * currentIndex) + UNIT;
+                imageWrapper.style.left = -(self.width * self.currentIndex) + UNIT;
             }
             else {
                 window.requestAnimationFrame(slider);
@@ -118,16 +119,18 @@ function Carousel(sliderImages) {
 
 
     this.firstToEnd = function () {
-        currentIndex = self.sliderImages.length - 1;
+        self.currentIndex = self.sliderImages.length - 1;
         document.querySelector(`#radio${self.sliderImages.length - 1}`).checked = true;
         if (window.getComputedStyle(imageWrapper).left == INITIALPOINT || imageWrapper.style.left == INITIALPOINT) {
             function end() {
-                var rightPx = (parseInt(window.getComputedStyle(imageWrapper).left) - 100);
-                imageWrapper.style.left = rightPx + UNIT;
-                if (rightPx != -(LIMIT * currentIndex)) {
+                var rightPx = (parseInt(window.getComputedStyle(imageWrapper).left) - 200);
+                if (rightPx >= -(self.width * self.currentIndex)) {
+                    self.imageWrapper.style.left = rightPx + UNIT;
                     window.requestAnimationFrame(end);
                 } else {
                     isMoving = false;
+                    self.imageWrapper.style.left = (this.width * sliderImages.length) + UNIT;
+
                 }
             }
             window.requestAnimationFrame(end)
@@ -137,7 +140,7 @@ function Carousel(sliderImages) {
 
     this.onClickEvent = function (item, index) {
         item.onclick = function () {
-            document.querySelector('.carousel-image-wrapper').style.left = -(LIMIT * index) + "px";
+            document.querySelector('.carousel-image-wrapper').style.left = -(self.width * index) + "px";
         }
     }
 
@@ -145,20 +148,14 @@ function Carousel(sliderImages) {
 
 
 
-var carousel1 = new Carousel(document.querySelectorAll('.slide'))
-var carousel2 = new Carousel(document.querySelectorAll('.slide0'))
+var carousel1 = new Carousel(document.querySelectorAll('.slide'), document.querySelector('.carousel-image-wrapper'));
 
-
-
-document.getElementById('next').onclick = function () {
+document.getElementById('next1').onclick = function () {
     carousel1.slideRight();
 }
 
-// var slideMove = setInterval(function () { carousel1.slideRight() }, 3000);
-
-document.getElementById('previous').onclick = function () {
+document.getElementById('previous1').onclick = function () {
     carousel1.slideLeft();
 }
-
 radioButton.forEach(carousel1.onClickEvent);
 
