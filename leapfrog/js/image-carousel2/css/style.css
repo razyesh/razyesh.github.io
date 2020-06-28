@@ -14,18 +14,18 @@
     padding: 10px;
 }
 
-#next1 {
+#next1, #next2 {
     position: absolute;
     top: 112px;
     left: 290px;
 }
 
-#previous1 {
+#previous1, #previous2 {
     top: 112px;
 }
 
 
-.activePointer{
+.activePointer, .activePointer2{
     position: absolute;
     border-color: #000;
     left: 160px;
@@ -55,12 +55,12 @@
         left: 350px;
     }
 
-    #next1 {
+    #next1, #next2 {
         top: 250px;
         left: 670px; 
     }
 
-    #previous1 {
+    #previous1, #previous2 {
         top: 250px;
     }
 
@@ -73,12 +73,12 @@
         left: 350px;
     }
 
-    #next1 {
+    #next1, #next2 {
         top: 250px;
         left: 768px; 
     }
 
-    #previous1 {
+    #previous1, #previous2 {
         top: 250px;
     }
 

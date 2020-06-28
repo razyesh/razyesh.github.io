@@ -16,7 +16,7 @@
     width: 2000px;
 }
 
-.slide {
+.slide , .slide0{
     width: 400px;
     float: left;
     position: relative;
@@ -39,11 +39,11 @@
         margin: 0 auto;
     }
     
-    .carousel-image-wrapper {
+    .carousel-image-wrapper, .carousel-image-wrapper2 {
         width: 3500px;
     }
     
-    .slide {
+    .slide, .slide0 {
         width: 700px;
     }
     
@@ -66,7 +66,7 @@
         width: 4000px;
     }
     
-    .slide {
+    .slide, .slide0 {
         width: 800px;
     }
     

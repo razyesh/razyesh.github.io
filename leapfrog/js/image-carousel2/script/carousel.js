@@ -10,23 +10,20 @@
 var UNIT = 'px';
 var INITIALPOINT = "0px";
 var isMoving = false;
-var radioButton = document.querySelectorAll('.radio');
+var radioButton1 = document.querySelectorAll('.radio');
 
 
-
-function Carousel(sliderImages, imageWrapper, width) {
+function Carousel(sliderImages, imageWrapper, selector) {
     this.animateTo = "";
     this.INITIALPOINT = "0px";
     this.sliderImages = sliderImages;
     var self = this;
-    this.currentIndex = 0;
     this.imageWrapper = imageWrapper;
+    this.currentIndex = 0;
     this.width = parseInt(window.getComputedStyle(document.querySelector('.slide')).width);
-    // setInterval(function(){
-    //     carousel1.slideRight()
-    // }, 3000)
 
     this.slideRight = function () {
+
         this.width = parseInt(window.getComputedStyle(document.querySelector('.slide')).width);
         if (!isMoving) {
             self.currentIndex++;
@@ -59,34 +56,12 @@ function Carousel(sliderImages, imageWrapper, width) {
         }
     }
 
-    function radioActive(status) {
-        for (var i = 1; i <= self.sliderImages.length -1; i++) {
-            if (window.getComputedStyle(imageWrapper).left == -(self.width * (self.sliderImages.length)) + UNIT || imageWrapper.style.left == this.INITIALPOINT) {
-                document.querySelector('#radio0').checked = true;
-            }
-    
-            if (imageWrapper.style.left == -(self.width * i) + UNIT) {
-                if (status == "left") {
-                    document.querySelector(`#radio${i-1}`).checked = true;
-                }
-                else {
-                    try {
-                        document.querySelector(`#radio${i}`).checked = true;
-                    } catch (e) {
-
-                    }
-                }
-            }
-        }
-
-    }
 
 
     this.imageSliderRight = function () {
         function slider() {
-            var leftPx = parseInt(window.getComputedStyle(imageWrapper).left) - 100;
+            var leftPx = parseInt(window.getComputedStyle(imageWrapper).left) - 20;
             imageWrapper.style.left = leftPx + UNIT;
-            radioActive("right");
 
             if (leftPx < -(self.width * self.currentIndex)) {
                 isMoving = false;
@@ -102,8 +77,7 @@ function Carousel(sliderImages, imageWrapper, width) {
 
     this.imageSliderLeft = function () {
         function slider() {
-            radioActive("left");
-            var rightPx = parseInt(imageWrapper.style.left) + 101;
+            var rightPx = parseInt(imageWrapper.style.left) + 21;
             imageWrapper.style.left = rightPx + UNIT;
             if (rightPx > -(self.width * self.currentIndex)) {
                 isMoving = false;
@@ -121,6 +95,8 @@ function Carousel(sliderImages, imageWrapper, width) {
     this.firstToEnd = function () {
         self.currentIndex = self.sliderImages.length - 1;
         document.querySelector(`#radio${self.sliderImages.length - 1}`).checked = true;
+        document.querySelector(`#radio0${self.sliderImages.length - 1}`).checked = true;
+
         if (window.getComputedStyle(imageWrapper).left == INITIALPOINT || imageWrapper.style.left == INITIALPOINT) {
             function end() {
                 var rightPx = (parseInt(window.getComputedStyle(imageWrapper).left) - 200);
@@ -140,22 +116,58 @@ function Carousel(sliderImages, imageWrapper, width) {
 
     this.onClickEvent = function (item, index) {
         item.onclick = function () {
-            document.querySelector('.carousel-image-wrapper').style.left = -(self.width * index) + "px";
+            imageWrapper.style.left = -(self.width * index) + "px";
         }
     }
 
 }
 
+function radioActive(selector){
+
+
+
+}
 
 
 var carousel1 = new Carousel(document.querySelectorAll('.slide'), document.querySelector('.carousel-image-wrapper'));
 
 document.getElementById('next1').onclick = function () {
     carousel1.slideRight();
+    document.querySelector(`#radio${carousel1.currentIndex}`).checked = true;
 }
+
+setInterval(function(){
+    carousel1.slideRight();
+    document.querySelector(`#radio${carousel1.currentIndex}`).checked = true;
+
+}, 3000)
 
 document.getElementById('previous1').onclick = function () {
     carousel1.slideLeft();
+    document.querySelector(`#radio${carousel1.currentIndex}`).checked = true;
 }
-radioButton.forEach(carousel1.onClickEvent);
+radioButton1.forEach(carousel1.onClickEvent);
+
+
+
+var carousel2 = new Carousel(document.querySelectorAll('.slide0'), document.querySelector('.carousel-image-wrapper2'));
+var radioButton2 = document.querySelectorAll('.radio1');
+document.getElementById('next2').onclick = function () {
+    carousel2.slideRight();
+    document.querySelector(`#radio0${carousel2.currentIndex}`).checked = true;
+}
+
+setInterval(function(){
+    carousel2.slideRight();
+    document.querySelector(`#radio0${carousel2.currentIndex}`).checked = true;
+
+}, 2000)
+
+
+document.getElementById('previous2').onclick = function () {
+    carousel2.slideLeft();
+    document.querySelector(`#radio0${carousel2.currentIndex}`).checked = true;
+}
+radioButton2.forEach(carousel2.onClickEvent);
+
 
