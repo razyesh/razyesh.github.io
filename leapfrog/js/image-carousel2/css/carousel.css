@@ -1,27 +1,22 @@
-.clearfix:after {
-    content: '';
-    display: table;
-    clear: both;
-}
-
 .carousel-container {
-    width: 400px;
-    height: 250px;
-    margin: 300px auto;
+    max-width: 400px;
+    width: 100%;
+    height: 30vh;
+    margin: 100px auto;
     overflow: hidden;
     position: relative;
-
+    
 }
 
 
-.carousel-image-wrapper, .carousel-image-wrapper0 {
+.carousel-image-wrapper, .carousel-image-wrapper2 {
     position: absolute;
     left: 0px;
     top: 0px;
     width: 2000px;
 }
 
-.slide, .slide0 {
+.slide , .slide0{
     width: 400px;
     float: left;
     position: relative;
@@ -29,45 +24,55 @@
 
 .slide img, .slide0 img{
     width: 100%;
-    opacity: 0.5;
-}
-
-button {
-    position: absolute;
-    padding: 10px;
-}
-
-#next {
-    position: absolute;
-    top: 112px;
-    left: 375px;
-}
-
-#previous {
-    top: 112px;
+    height: 30vh;
 }
 
 
-.activePointer{
-    position: absolute;
-    border-color: #000;
-    left: 160px;
+
+
+
+@media only screen and (min-width:762px){
+    .carousel-container {
+        max-width: 700px;
+        width: 100%;
+        height: 60vh; 
+        margin: 0 auto;
+    }
+    
+    .carousel-image-wrapper, .carousel-image-wrapper2 {
+        width: 3500px;
+    }
+    
+    .slide, .slide0 {
+        width: 700px;
+    }
+    
+    .slide img, .slide0 img{
+        width: 100%;
+        height: 60vh;
+    }
 }
 
-.first {
-    display: none;
+
+@media only screen and (min-width: 962px){
+    .carousel-container {
+        max-width: 800px;
+        width: 100%;
+        height: 60vh;
+        
+    }
+    
+    .carousel-image-wrapper, .carousel-image-wrapper2 {
+        width: 4000px;
+    }
+    
+    .slide, .slide0 {
+        width: 800px;
+    }
+    
+    .slide img, .slide0 img{
+        width: 100%;
+        height: 60vh;
+    }
+    
 }
-
-
-.caption {
-    color: #000;
-    position: absolute;
-    top: 200px;
-    text-align: center;
-    line-height: 0px;
-}
-
-.caption p {
-    margin-left: 25px;
-}
-
