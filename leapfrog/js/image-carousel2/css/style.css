@@ -17,7 +17,7 @@
 #next1, #next2 {
     position: absolute;
     top: 112px;
-    left: 290px;
+    right: 0;
 }
 
 #previous1, #previous2 {
