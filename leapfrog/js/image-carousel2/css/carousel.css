@@ -16,6 +16,10 @@
     width: 2000px;
 }
 
+.carousel-image-wrapper2 {
+    margin-top: 20px;
+}
+
 .slide , .slide0{
     width: 400px;
     float: left;

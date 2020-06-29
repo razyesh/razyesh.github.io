@@ -48,6 +48,16 @@
     margin-left: 25px;
 }
 
+.submit-btn {
+    background-color: #000;
+    color: #fff;
+    padding: 5px;
+}
+
+#info, #info2 {
+    color: red;
+}
+
 @media only screen and (min-width: 768px){
 
 

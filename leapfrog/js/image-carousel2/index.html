@@ -13,12 +13,16 @@
 
 <body>
     <div class="transition-input">
-        <input type="number" placeholder="Transition Time">
-        <br>
-        <button>Submit</button>
+        <form action="" name="transitionForm" onsubmit="transitionDefine1();return false">
+            <div id="errorInfo"></div>
+            <input type="number" placeholder="Transition Time" name="transitionTime" class="transition1">
+            <div id="info"></div>
+            <button class="submit-btn" type="submit" id="submit1">Submit</button>
+        </form>
+        <h4>You can configure transition time on your own.</h4>
+        <h4>Hold Time: 3 sec</h4>
     </div>
     <div class="carousel-container" id="carousel">
-        
         <div class="carousel-image-wrapper clearfix">
             
             <div class="slide slide1">
@@ -57,8 +61,8 @@
     </div>
     <div class="carousel-container">
         
+        <h4>Second slide is configure to play auto and is configured to play at 2 sec and 20 frame/milisecond</h4>
         <div class="carousel-image-wrapper2 clearfix">
-            
             <div class="slide0 slide1">
                 <img src="img/img1.jpg" alt="Image" />
                 
