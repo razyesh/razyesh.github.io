@@ -62,3 +62,17 @@ function checkCollision(ant, nextant){
 
     }
 }
+
+/**
+ * 
+ * @param {number} x1 position of onmouse down
+ * @param {number} y1 position of onmouse up
+ * @param {*} x2 position of ant x-direction
+ * @param {*} y2 position of ant y-direction
+ */
+
+function getDistance(x1, y1, x2, y2){
+    let xDistance = x2 - x1;
+    let yDistance = y2 - y1;
+    return Math.sqrt(Math.pow(xDistance, 2) + Math.pow(yDistance, 2));
+}

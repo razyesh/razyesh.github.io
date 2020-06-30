@@ -1,6 +1,7 @@
 
 let ants;
 let score = 0;
+let numberOfAnt = 20;
 
 /**
  * function initializing
@@ -9,11 +10,11 @@ let score = 0;
 function init(){
     ants = [];
 
-    for (var i=0; i<20; i++){
+    for (var i=0; i<numberOfAnt; i++){
         let x = Math.random() * 600 ;
         let y = Math.random() * 800;
-        const height = 30;
-        const width = 40;
+        const height = 40;
+        const width = 50;
         if (i != 0){
             for (var j=0; j < ants.length; j++){
 
@@ -33,23 +34,27 @@ function randomNumber(min, max) {
     return Math.random() * (max - min) + min; 
 }  
 
-document.getElementById('myCanvas').addEventListener('click', function(e){
-    for (var i=0; i<ants.length; i++){
-        console.log(e.clientX)
-        console.log(e.clientY)
-        console.log(ants[i].positionX);
-        if ((ants[i].positionX +  - e.clientX)+80 < 1 || (ants[i].positionX - e.clientX)+80 > 0) {
-            
+
+
+
+document.getElementById('myCanvas').addEventListener('mousedown', function(e){
+
+    for (i=0; i<ants.length; i++){
+        if (getDistance(event.pageX, event.pageY, parseInt(ants[i].positionX), parseInt(ants[i].positionY)) <= 50){
+            console.log(getDistance(event.pageX, event.pageY, parseInt(ants[i].positionX), parseInt(ants[i].positionY)))
+
             score ++;
-            console.log(score)
-            index = ants.indexOf(ants[i])
+            document.getElementById('score').innerHTML = score;
+            index = ants.indexOf(ants[i]);
             ants.splice(index, 1);
-            continue;
-            
+            break;
         }
     }
-    if (score == ants.length){
-        console.log("Winner")
+
+    if (score == numberOfAnt){
+        document.getElementById('score').innerHTML = "Winner, Refresh to play again";
+
+
     }
 })
 

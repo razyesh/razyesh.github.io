@@ -4,7 +4,7 @@ let ctx = canvas.getContext('2d');
 
 
 canvas.height = 800;
-canvas.width = 600;
+canvas.width = 900;
 
 class Ant {
     constructor(positionX, positionY, width, height){
@@ -19,7 +19,7 @@ class Ant {
         this.mass = 1;
 
     }
-    draw() {
+    getAnt() {
         let base_image = new Image();
         base_image.src = 'img/ant.png';
         ctx.drawImage(base_image, this.positionX, this.positionY, this.width, this.height);
@@ -27,7 +27,7 @@ class Ant {
     }
 
     update(ants){
-        this.draw();
+        this.getAnt();
         for (var i=0; i<ants.length; i++){
             if (this == ants[i]){
                 continue;
@@ -37,7 +37,7 @@ class Ant {
             }
         }
 
-        if (this.positionX <=0 || this.positionX >= 500){
+        if (this.positionX <=0 || this.positionX >= 900){
             this.speed.x = -this.speed.x;
         }
 
@@ -45,15 +45,11 @@ class Ant {
             this.speed.y = -this.speed.y;
         }
 
-        this.positionX  += this.speed.x ;
-        this.positionY += this.speed.y ;
+        this.positionX  += this.speed.x * 3;
+        this.positionY += this.speed.y * 3;
     }
 
 }
 
-function getDistance(x1, y1, x2, y2){
-    let xDistance = x2 - x1;
-    let yDistance = y2 - y1;
-    return Math.sqrt(Math.pow(xDistance, 2) + Math.pow(yDistance, 2));
-}
+
 
