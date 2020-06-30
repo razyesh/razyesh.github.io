@@ -11,16 +11,16 @@ function init(){
     ants = [];
 
     for (var i=0; i<numberOfAnt; i++){
-        let x = Math.random() * 600 ;
-        let y = Math.random() * 800;
+        let x = Math.random() * 850 ;
+        let y = Math.random() * 900;
         const height = 40;
         const width = 50;
         if (i != 0){
             for (var j=0; j < ants.length; j++){
 
                 if (getDistance(x, y, ants[j].positionX, ants[j].positionY) < 0){
-                    x = Math.random() * 600;
-                    y = Math.random() * 800;
+                    x = Math.random() * 850;
+                    y = Math.random() * 900;
                     j = -1;
                 }
             }

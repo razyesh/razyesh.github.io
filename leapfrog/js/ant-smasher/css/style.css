@@ -5,4 +5,6 @@
 
 .info {
     margin: 20px;
+    float: right;
+    margin-right: 30%;
 }

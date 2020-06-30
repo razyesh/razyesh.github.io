@@ -3,7 +3,7 @@ const canvas = document.getElementById('myCanvas');
 let ctx = canvas.getContext('2d');
 
 
-canvas.height = 800;
+canvas.height = 850;
 canvas.width = 900;
 
 class Ant {
@@ -37,11 +37,11 @@ class Ant {
             }
         }
 
-        if (this.positionX <=0 || this.positionX >= 900){
+        if (this.positionX <=0 || this.positionX >= 850){
             this.speed.x = -this.speed.x;
         }
 
-        if (this.positionY <=0 || this.positionY >= 750){
+        if (this.positionY <=0 || this.positionY >= 800){
             this.speed.y = -this.speed.y;
         }
 
