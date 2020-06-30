@@ -26,16 +26,6 @@ function init(){
         }
         ants.push(new Ant(x, y, width, height))
     }
-    h4 = document.createElement('h4');
-    h4.innerHTML = `Total number of balls ${ants.length}`;
-    document.querySelector('.info').appendChild(h4);
-
-    h4 = document.createElement('h4');
-    ants.forEach(ant => {
-        h4.innerHTML = `Total balls were moving at speed x-direction: ${ant.speed.x}, y-direction: ${ant.speed.y}`;
-        document.querySelector('.info').appendChild(h4);
-    })
-
     
 }
 
@@ -46,8 +36,9 @@ function randomNumber(min, max) {
 document.getElementById('myCanvas').addEventListener('click', function(e){
     for (var i=0; i<ants.length; i++){
         console.log(e.clientX)
+        console.log(e.clientY)
         console.log(ants[i].positionX);
-        if ((ants[i].positionX - e.clientX) == 1) {
+        if ((ants[i].positionX +  - e.clientX)+80 < 1 || (ants[i].positionX - e.clientX)+80 > 0) {
             
             score ++;
             console.log(score)
