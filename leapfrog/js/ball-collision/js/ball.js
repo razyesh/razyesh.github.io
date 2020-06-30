@@ -8,7 +8,7 @@ canvas.width = innerWidth;
 let x = 100;
 let y = 100;
 
-class Circle {
+class Ball {
     constructor(positionX, positionY, radius, color){
         this.positionX = positionX;
         this.positionY = positionY;
@@ -30,14 +30,14 @@ class Circle {
     
     }
 
-    update(circles){
+    update(balls){
         this.draw();
-        for (var i=0; i<circles.length; i++){
-            if (this == circles[i]){
+        for (var i=0; i<balls.length; i++){
+            if (this == balls[i]){
                 continue;
             }
-            if (getDistance(this.positionX, this.positionY, circles[i].positionX, circles[i].positionY)- this.radius * 2 < 0){
-                checkCollision(this, circles[i]);
+            if (getDistance(this.positionX, this.positionY, balls[i].positionX, balls[i].positionY)- this.radius * 2 < 0){
+                checkCollision(this, balls[i]);
             }
         }
 

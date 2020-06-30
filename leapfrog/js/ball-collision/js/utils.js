@@ -22,8 +22,8 @@ function rotate(speed, angle){
 
 /**
  * 
- * @param {object} Circle particle 
- * @param {object} Circle nextParticle 
+ * @param {object} Ball particle 
+ * @param {object} Ball nextParticle 
  */
 
 function checkCollision(particle, nextParticle){
