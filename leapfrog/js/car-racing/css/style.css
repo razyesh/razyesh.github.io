@@ -96,3 +96,16 @@
     background-color: royalblue;
     position: absolute;
 }
+
+.score {
+    text-align: center;
+}
+
+.play p {
+    padding: 10px;
+}
+
+.aware {
+    color: skyblue;
+    font-weight: bold;
+}
