@@ -149,7 +149,7 @@ class Car {
             document.getElementById('vehicleDestroy').innerHTML = this.bulletCount;
             let bullet = document.createElement('div');
             bullet.setAttribute('class', `bullet`);
-            bullet.top = 400 ;
+            bullet.top = 300 ;
             bullet.style.left = document.querySelector('.playerCar').style.left;
             bullet.style.top = bullet.top + 'px';
             document.querySelector('.playground').appendChild(bullet);
