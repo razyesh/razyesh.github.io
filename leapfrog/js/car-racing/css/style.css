@@ -31,6 +31,12 @@
     margin-left: 200px;
 }
 
+.bullet {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    background-color: #fff;
+}
 .lane2 {
     height: 100px;
     width: 10px;
@@ -82,4 +88,11 @@
 
 .after-crash {
     display: none;
+}
+
+.healer {
+    height: 20px;
+    width: 50px;
+    background-color: royalblue;
+    position: absolute;
 }
