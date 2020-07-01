@@ -11,7 +11,6 @@
     bottom: 0px;
     left: 100px;
     right: 0px;
-    background-color: #fff;
 }
 
 .playground {
@@ -54,15 +53,12 @@
 .enemyCar1 {
     top: 100px;
     left: 100px;
-    background-color: royalblue;
 
 }
 
 .enemyCar2 {
     top: 500px;
     left: 300px;
-    background-color: red;
-
 
 
 }
@@ -77,9 +73,11 @@
     position: absolute;
     background-color: red;
     padding: 25px;
-    top: 400px;
+    top: 462px;
     z-index: 1;
-    left: 450px;
+    left: 300px;
+    color: #fff;
+    font-size: 14px;
 }
 
 .play-again {

@@ -16,14 +16,14 @@ class Car {
     playerCar = () => {
         let car = document.createElement('img');
         car.setAttribute('class', 'playerCar');
-        car.src = "img/1.png";
+        car.src = "img/Police.png";
         document.querySelector('.playground').appendChild(car);
     }
 
-    enemyCar = (n) => {
+    enemyCar = (n, filename) => {
         let enemyCar = document.createElement('img');
         enemyCar.setAttribute('class', `enemyCar${n}`);
-        enemyCar.src = "img/1.png";
+        enemyCar.src = filename;
         document.querySelector('.playground').appendChild(enemyCar);
     }
 
