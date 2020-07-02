@@ -32,7 +32,7 @@ function init() {
 
 //Capturing the each step of player playing the flappy bird
 function step() {
-    if (playing) {
+    if (playing && document.querySelector('#canvas').style.display == 'block') {
 
         for (var i = 0; i < pipes.length; ++i) {
             pipes[i].x -= SPEED;

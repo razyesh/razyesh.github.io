@@ -1,9 +1,9 @@
 bgSprite = {
-    x : 10,
-    y: 254,
+    x : 0,
+    y: 0,
     w : 288,
     h : 512, 
-    
+    scale: 1
 }
 
 floorSprite = {
