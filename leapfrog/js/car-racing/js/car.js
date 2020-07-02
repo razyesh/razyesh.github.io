@@ -30,7 +30,6 @@ class Car {
     playerCarPosition = () => {
         this.carLeft = parseInt(window.getComputedStyle(document.querySelector('.playerCar')).left);
     }
-
     reset = () => {
         document.querySelector('.enemyCar1').style.top = 0;
     }
@@ -43,13 +42,9 @@ class Car {
             top : parseInt(window.getComputedStyle(enemy).top),
         }
         var self = this;
-        let count = 0;
 
-
-        
         //Not a good practise
         function move() {
-
             let healers = document.querySelectorAll('.healer');
             if (healers){
                 healers.forEach(function(healer) {
@@ -57,18 +52,13 @@ class Car {
                         healer.top = -(Math.random() *500) + 'px';
                     }
                     healer.style.top = healer.top + 5 + 'px';
-                    console.log(healer.style.top)
                 })
             }
-
             if (document.querySelector('.bullet')){
-                
-
                 var bullet = document.querySelector('.bullet');
                 if (parseInt(bullet.style.top) - parseInt(enemy.style.top) < 10 && parseInt(bullet.style.left) == parseInt(window.getComputedStyle(enemy).left)){
                     console.log(parseInt(bullet.style.left))
                     bullet.remove();
-                    console.log(count++);
                     enemy.style.display = 'none';
                     if( self.bulletCount < 5){
                         self.initHealer();
