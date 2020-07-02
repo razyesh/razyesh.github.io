@@ -47,7 +47,7 @@ class Car {
 
 
         
-
+        //Not a good practise
         function move() {
 
             let healers = document.querySelectorAll('.healer');
