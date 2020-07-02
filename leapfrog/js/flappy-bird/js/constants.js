@@ -3,7 +3,7 @@
 
 const CANVAS_WIDTH = 285; //Width of our canvas
 const CANVAS_HEIGHT = 500; //Height of our canvas
-const FLAPPING = 2; //to move at 7 frame/sec
+const FLAPPING = 7; //to move at 7 frame/sec
 const W = 288, H = 400; //Playground Width and Height
 const BIRD_WIDTH = 34; //Bird Width
 const BIRD_HEIGHT = 26; //Bird Height
