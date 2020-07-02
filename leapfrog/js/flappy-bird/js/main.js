@@ -7,7 +7,6 @@ ctx.imageSmoothingEnabled = false;
 
 
 //Actual function rending all the Playground Stuffs.
-
 function main(){
     ctx.clearRect(0, 0, W, H);
     p1 = new PlayGround()

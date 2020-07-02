@@ -1,5 +1,3 @@
-
-
 let bird;
 let pipes = [];
 let playing;
@@ -83,6 +81,8 @@ function step() {
 init();
 step();
 
+
+//function to perform dom manipulation
 function hideUnhideDom(){
     document.querySelector('.after-crash').style.display = 'block';
     document.getElementById('score').innerHTML = score;
@@ -90,13 +90,14 @@ function hideUnhideDom(){
 
 }
 
+
 //Getting the pipes of differest sizes
 function spawnGate() {
-    gateY = Math.floor(Math.random() * (H - PIPE_HEIGHT) + PIPE_HEIGHT/2)
-    gateY = Math.max(PIPE_HEIGHT, gateY);
-    gateY = Math.min(H - PIPE_HEIGHT, gateY);
-    pipes.push({x: W, y: 0, w: PIPE_WIDTH, h: gateY - PIPE_HEIGHT/2});
-    pipes.push({x: W, y: gateY + PIPE_HEIGHT/2, w: PIPE_WIDTH, h: H - gateY - PIPE_HEIGHT/2});
+    gateY = Math.floor(Math.random() * (H - TWO_PIPE_HEIGHT_DIFF) + TWO_PIPE_HEIGHT_DIFF/2)
+    gateY = Math.max(TWO_PIPE_HEIGHT_DIFF, gateY);
+    gateY = Math.min(H - TWO_PIPE_HEIGHT_DIFF, gateY);
+    pipes.push({x: W, y: 0, w: PIPE_WIDTH, h: gateY - TWO_PIPE_HEIGHT_DIFF/2});
+    pipes.push({x: W, y: gateY + TWO_PIPE_HEIGHT_DIFF/2, w: PIPE_WIDTH, h: H - gateY - TWO_PIPE_HEIGHT_DIFF/2});
 }
 
 //Controller that is used to start the game and control the flappy
