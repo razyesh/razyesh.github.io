@@ -1,14 +1,14 @@
 let bird;
 let pipes = [];
-let playing;
+let flapping;
 let time;
 let score;
 
 
 //Not Displaying the Gates that were out of our player ground
-function removeInvisibleGates() {
-    s = pipes.length;
-    pipes = pipes.filter(function (item) {
+function hideUndisplayPipes() {
+    s = displayPipes.length;
+    pipes = displayPipes.filter(function (item) {
         return item.x + item.w >= 0;
     });
 }
@@ -21,45 +21,45 @@ function init() {
             w: BIRD_WIDTH,
             h: BIRD_HEIGHT,
             dy: 0};
-    playing = true;
+    flapping = true;
     time = 0;
     score = 0;
-    pipes = [];
+    displayPipes = [];
 }
 
 
 //Capturing the each step of player playing the flappy bird
 function step() {
-    if (playing && document.querySelector('#canvas').style.display == 'block') {
+    if (flapping && document.querySelector('#canvas').style.display == 'block') {
 
-        for (var i = 0; i < pipes.length; ++i) {
-            pipes[i].x -= SPEED;
+        for (var i = 0; i < displayPipes.length; ++i) {
+            displayPipes[i].x -= SPEED;
         }
-        removeInvisibleGates();
+        hideUndisplayPipes();
         if (time % PIPE_SPACING == 0) {
             spawnGate();
         }
 
         bird.dy += GRAVITY;
-        newBirdBox = {x: bird.x, y: bird.y - bird.dy, w: bird.w, h: bird.h}
+        newBird= {x: bird.x, y: bird.y - bird.dy, w: bird.w, h: bird.h}
 
         // collisions
-        for (var i = 0; i < pipes.length; ++i) {
-            if (detectStrike(newBirdBox, pipes[i])) {
-                playing = false;
+        for (var i = 0; i < displayPipes.length; ++i) {
+            if (detectStrike(newBird, displayPipes[i])) {
+                flapping = false;
                 hideUnhideDom();
                 main();
                 break;
             }
         }
-        if (newBirdBox.y + bird.h >= H) {
-            playing = false;
+        if (newBird.y + bird.h >= H) {
+            flapping = false;
             hideUnhideDom()
             main();
         }
-        if (playing) {
-            bird.y = newBirdBox.y;
-            if (newBirdBox.y < 0) {
+        if (flapping) {
+            bird.y = newBird.y;
+            if (newBird.y < 0) {
                 bird.y = 0;
                 bird.dy = 0;
             }
@@ -93,32 +93,41 @@ function hideUnhideDom(){
 
 //Getting the pipes of differest sizes
 function spawnGate() {
-    gateY = Math.floor(Math.random() * (H - TWO_PIPE_HEIGHT_DIFF) + TWO_PIPE_HEIGHT_DIFF/2)
-    gateY = Math.max(TWO_PIPE_HEIGHT_DIFF, gateY);
-    gateY = Math.min(H - TWO_PIPE_HEIGHT_DIFF, gateY);
-    pipes.push({x: W, y: 0, w: PIPE_WIDTH, h: gateY - TWO_PIPE_HEIGHT_DIFF/2});
-    pipes.push({x: W, y: gateY + TWO_PIPE_HEIGHT_DIFF/2, w: PIPE_WIDTH, h: H - gateY - TWO_PIPE_HEIGHT_DIFF/2});
+    gateUp = Math.floor(Math.random() * (H - TWO_PIPE_HEIGHT_DIFF) + TWO_PIPE_HEIGHT_DIFF/2)
+    gateUp = Math.max(TWO_PIPE_HEIGHT_DIFF, gateUp);
+    gateUp = Math.min(H - TWO_PIPE_HEIGHT_DIFF, gateUp);
+    displayPipes.push({x: W, y: 0, w: PIPE_WIDTH, h: gateUp - TWO_PIPE_HEIGHT_DIFF/2});
+    displayPipes.push({x: W, y: gateUp + TWO_PIPE_HEIGHT_DIFF/2, w: PIPE_WIDTH, h: H - gateUp - TWO_PIPE_HEIGHT_DIFF/2});
 }
 
 //Controller that is used to start the game and control the flappy
-document.onkeydown = function (e) {
+document.onclick = function (e) {
 
     document.getElementById('canvas').style.display = 'block';
     document.querySelector('.before-start').style.display = 'none';
 
-    if (e.keyCode === 32) {
-    document.querySelector('.after-crash').style.display = 'none';
-        init();
-        
-    }
-    else if (e.keyCode === 38)
-        if (playing) {
-            bird.dy = FLAPPING;
-        }
-    else if (e.keyCode === 82) {
-        if (!playing) {
+    
+    
+if (e.keyCode === 82) {
+        if (!flapping) {
+            GRAVITY = -0.5;
             init();
         }
     }
 };
+
+document.onkeydown = function (e){
+    document.getElementById('canvas').style.display = 'block';
+    document.querySelector('.before-start').style.display = 'none';
+    if (e.keyCode === 32) {
+        document.querySelector('.after-crash').style.display = 'none';
+            init();
+            
+        }
+
+    else if (e.keyCode === 38)
+    if (flapping) {
+        bird.dy = FLAPPING;
+    }
+}
 

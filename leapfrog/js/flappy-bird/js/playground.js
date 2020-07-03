@@ -10,12 +10,12 @@ class PlayGround {
     }
 
     //drawing stripe with the background image
-    renderBackground = () => {
+    displayBackground = () => {
         drawSprite(bgSprite, 0, 0);
     }
 
     //rendering the bottom graphics on our canvas
-    renderFloor = () => {
+    displayFloor = () => {
         // animate floor
         floorSprite.x = 292 + (time * SPEED % 14);
         drawSprite(floorSprite, 0, 400);
@@ -23,7 +23,7 @@ class PlayGround {
 
 
     //rending pipes into our playing area
-    renderPipes = () => {
+    displayPipes = () => {
         for (var i = 0; i < pipes.length; ++i) {
             if (pipes[i].y === 0) {
                 drawSprite(topPipeSprite, pipes[i].x, pipes[i].h - topPipeSprite.h);
@@ -36,7 +36,7 @@ class PlayGround {
 
 
     //displaying scores on top of out playground
-    renderScore = () => {
+    displayScore = () => {
         let numbers = score.toString(10).split("").map(Number);
         let scale = numSprite[0].scale;
         let width = numSprite[0].w;
@@ -49,7 +49,7 @@ class PlayGround {
     }
 
     //displaying flappy bird
-    renderBird = () =>  {
+    displayBird = () =>  {
         // iterating through sprites (flap animation)
         let birdState = Math.floor((time % (4 *  this.birdSpeed)) / this.birdSpeed);
         ctx.save();
@@ -60,7 +60,7 @@ class PlayGround {
     }
 
     //displaying game over
-    renderGameOver = () => {
+    displayGameOver = () => {
         let sprite = {x: 292, y: 397, w: 188, h: 39};
         drawSprite(sprite, 50, 200);
     }

@@ -10,11 +10,11 @@ ctx.imageSmoothingEnabled = false;
 function main(){
     ctx.clearRect(0, 0, W, H);
     p1 = new PlayGround()
-    p1.renderBackground();
-    p1.renderFloor();
-    p1.renderBird();
-    p1.renderPipes();
-    p1.renderScore();
+    p1.displayBackground();
+    p1.displayFloor();
+    p1.displayBird();
+    p1.displayPipes();
+    p1.displayScore();
     setTimeout(main, 20);
 }
 
