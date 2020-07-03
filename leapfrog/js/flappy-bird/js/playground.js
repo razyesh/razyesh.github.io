@@ -11,14 +11,14 @@ class PlayGround {
 
     //drawing stripe with the background image
     displayBackground = () => {
-        drawSprite(bgSprite, 0, 0);
+        displaySprite(bgSprite, 0, 0);
     }
 
     //rendering the bottom graphics on our canvas
     displayFloor = () => {
         // animate floor
         floorSprite.x = 292 + (time * SPEED % 14);
-        drawSprite(floorSprite, 0, 400);
+        displaySprite(floorSprite, 0, 400);
     }
 
 
@@ -26,10 +26,10 @@ class PlayGround {
     displayPipes = () => {
         for (var i = 0; i < pipes.length; ++i) {
             if (pipes[i].y === 0) {
-                drawSprite(topPipeSprite, pipes[i].x, pipes[i].h - topPipeSprite.h);
+                displaySprite(topPipeSprite, pipes[i].x, pipes[i].h - topPipeSprite.h);
             }
             else {
-                drawSprite(bottomPipeSprite, pipes[i].x, pipes[i].y);
+                displaySprite(bottomPipeSprite, pipes[i].x, pipes[i].y);
             }
         }
     }
@@ -44,7 +44,7 @@ class PlayGround {
         offset -= numbers.length * width/2 * scale; // left to center numbers
         offset -= this.padding * (numbers.length - 1); // left to adjust for padding
         for (var i = 0; i < numbers.length; ++i) {
-            drawSprite(numSprite[numbers[i]], offset + i*width*scale + i*this.padding*2, 50);
+            displaySprite(numSprite[numbers[i]], offset + i*width*scale + i*this.padding*2, 50);
         }
     }
 
@@ -55,13 +55,13 @@ class PlayGround {
         ctx.save();
         ctx.translate(bird.x + birdSprite[0].w/2, bird.y + birdSprite[0].h/2);
         ctx.rotate(-bird.dy * 5 * (Math.PI/180));
-        drawSprite(birdSprite[birdState], -birdSprite[0].w/2, -birdSprite[0].h/2);
+        displaySprite(birdSprite[birdState], -birdSprite[0].w/2, -birdSprite[0].h/2);
         ctx.restore();
     }
 
     //displaying game over
     displayGameOver = () => {
         let sprite = {x: 292, y: 397, w: 188, h: 39};
-        drawSprite(sprite, 50, 200);
+        displaySprite(sprite, 50, 200);
     }
 }

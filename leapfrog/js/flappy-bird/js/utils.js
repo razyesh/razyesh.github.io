@@ -1,5 +1,5 @@
 //drawing sprite images on our playground
-function drawSprite(sprite, x, y) {
+function displaySprite(sprite, x, y) {
     ctx.drawImage(sprites, sprite.x, sprite.y, sprite.w, sprite.h,
                   x, y, sprite.scale*sprite.w, sprite.scale*sprite.h);
 }
