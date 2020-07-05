@@ -1,0 +1,20 @@
+canvas {
+	border: 1px solid black;
+	display: block;
+	margin: 0 auto;
+}
+
+#source {
+	display: none;
+}
+
+#play {
+	margin-top: 350;
+	margin-left: 400;
+	position: absolute;
+    left: 200px;
+    top: 450px;
+    padding: 15px;
+    background-color: darkgreen;
+    color: #fff;
+}
