@@ -8,9 +8,6 @@ window.onload = function () {
         ctx.fillStyle = "#fff";
         ctx.font = "18px Arial";
         ctx.fillText("Loading", 350, 450);
-        ctx.beginPath();
-        ctx.rect(350, 450, 200, 10);
-        ctx.stroke();
         intro.play();
         
     }
