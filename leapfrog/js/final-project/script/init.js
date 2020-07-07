@@ -12,7 +12,12 @@ const image = document.getElementById('source');
 const image2 = new Image()
 image2.src = 'img/intro.png'
 
+
 const intro = new Audio()
 intro.src = 'sound/coc-intro.mp3'
+
+const image3 = new Image();
+image3.src = 'img/character.png';
+
 
 
