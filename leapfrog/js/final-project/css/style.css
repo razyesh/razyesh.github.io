@@ -2,9 +2,10 @@ canvas {
 	border: 1px solid black;
 	display: block;
 	margin: 0 auto;
+	background-color: #6d9421;
 }
 
-#source {
+#source2 {
 	display: none;
 }
 

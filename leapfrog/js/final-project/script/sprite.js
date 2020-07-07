@@ -19,106 +19,52 @@ const bg = {
 }
 
 const townHall = {
+	sw: 38,
+	sh: 37,
+	dw: 80,
+	dh: 80,
 
-	sx: 280,
-	sy: 266,
-	sw: 40,
-	sh: 40,
-	dx: 350,
-	dy: 175,
-	dw: 60,
-	dh: 60,
-
-	draw: function(x, y){
-		if (x && y){
-			ctx.drawImage(image, this.sx, this.sy, this.sw, this.sh, x, y, this.dw, this.dh);
-		} else {
-			ctx.drawImage(image, this.sx, this.sy, this.sw, this.sh, this.dx, this.dy, this.dw, this.dh);
-
-		}
+	draw: function(sx, sy, dx, dy, image){
+		
+		ctx.drawImage(image, sx, sy, this.sw, this.sh, dx, dy, this.dw, this.dh);
 
 	}
 
 }
 
-const verticalBar = {
+const wall = {
 
-	sx: 329,
-	sy: 239,
-	sw: 16,
-	sh: 92,
-	dx: 410,
-	dy: 170,
-	dw: 16,
-	dh: 92,
+	sw: 11,
+	sh: 13,
+	dw: 11,
+	dh: 13,
 
-	draw: function(x, y){
-		if (x && y){
-
-		ctx.drawImage(image, this.sx, this.sy, this.sw, this.sh, x, y, this.dw, this.dh);
-		ctx.drawImage(image, this.sx, this.sy, this.sw, this.sh, x , y + 92, this.dw, this.dh);
-	} else {
-		ctx.drawImage(image, this.sx, this.sy, this.sw, this.sh, this.dx, this.dy, this.dw, this.dh);
-		ctx.drawImage(image, this.sx, this.sy, this.sw, this.sh, this.dx , this.dy + 92, this.dw, this.dh);
-	}
-
+	draw: function(sx, sy, dx, dy, image){
+		ctx.drawImage(image, sx, sy, this.sw, this.sh, dx, dy, this.dw, this.dh);
 	}
 
 }
 
-const horizontalBar = {
-	sx: 210,
-	sy: 255,
-	sw: 61,
-	sh: 16,
-	dx: 210,
-	dy: 255,
-	dw: 61,
-	dh: 16,
-
-	draw: function(x, y){
-		if (x && y){
-			ctx.drawImage(image, this.sx, this.sy, this.sw, this.sh, x, y, this.dw, this.dh);
-		} else {
-			ctx.drawImage(image, this.sx, this.sy, this.sw, this.sh, this.dx, this.dy, this.dw, this.dh);
-
-		}
-
-	}
-}
 
 const canon = {
-	sx: 227,
-	sy: 272,
 	sw: 42,
 	sh: 42,
-	dx: 360,
-	dy: 250,
-	dw: 42,
-	dh: 42,
-	name:'canon',
+	dw: 62,
+	dh: 62,
 
-	draw: function(x, y){
-		if (x && y){
-			ctx.drawImage(image, this.sx, this.sy, this.sw, this.sh, x, y, this.dw, this.dh);
-		} else {
-			ctx.drawImage(image, this.sx, this.sy, this.sw, this.sh, this.dx, this.dy, this.dw, this.dh);
-
-		}
+	draw: function(sx, sy, dx, dy, image){
+		ctx.drawImage(image, sx, sy, this.sw, this.sh, dx, dy, this.dw, this.dh);
 	}
 }
 
 const goldStorage = {
-
-	sx: 227,
-	sy: 272,
-	sw: 42,
-	sh: 42,
+	sw: 26,
+	sh: 27,
 	dw: 42,
 	dh: 42,
 
-	draw: function(x, y){
-		ctx.drawImage(image, this.sx, this.sy, this.sw, this.sh, x, y, this.dw, this.dh);
+	draw: function(sx, sy, dx, dy, image){
+		ctx.drawImage(image, sx, sy, this.sw, this.sh, dx, dy, this.dw, this.dh);
 
 	}
 
@@ -126,15 +72,13 @@ const goldStorage = {
 
 
 const campFire = {
-	sx: 150,
-	sy: 388,
 	sw: 52,
 	sh: 43,
 	dw: 45,
 	dh: 43,
 
-	draw: function(x, y){
-		ctx.drawImage(image, this.sx, this.sy, this.sw, this.sh, x, y, this.dw, this.dh);
+	draw: function(sx, sy, dx, dy, image){
+		ctx.drawImage(image, sx, sy, this.sw, this.sh, dx, dy, this.dw, this.dh);
 
 	}
 }
