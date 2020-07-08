@@ -54,7 +54,20 @@ const canon = {
 
 	draw: function(sx, sy, dx, dy, image){
 		ctx.drawImage(image, sx, sy, this.sw, this.sh, dx, dy, this.dw, this.dh);
-	}
+	},
+
+
+}
+
+const canonBall = {
+	sw: 6,
+	sh: 7,
+	dw: 6,
+	dh: 7,
+
+	draw: function(sx, sy, dx, dy, image){
+		ctx.drawImage(image, sx, sy, this.sw, this.sh, dx, dy, this.dw, this.dh);
+	},
 }
 
 const goldStorage = {
@@ -80,5 +93,51 @@ const campFire = {
 	draw: function(sx, sy, dx, dy, image){
 		ctx.drawImage(image, sx, sy, this.sw, this.sh, dx, dy, this.dw, this.dh);
 
+	}
+}
+
+const elixirCollector = {
+	sw: 40,
+	sh: 45,
+	dw: 45,
+	dh: 43,
+
+	draw: function(sx, sy, dx, dy, image){
+		ctx.drawImage(image, sx, sy, this.sw, this.sh, dx, dy, this.dw, this.dh);
+	}
+}
+
+const goldCollector = {
+	sw: 33,
+	sh: 32,
+	dw: 45,
+	dh: 43,
+
+	draw: function(sx, sy, dx, dy, image){
+		ctx.drawImage(image, sx, sy, this.sw, this.sh, dx, dy, this.dw, this.dh);
+	}
+}
+
+
+const getMine = {
+	sw: 14,
+	sh: 15,
+	dw: 14,
+	dh: 15,
+
+	draw: function(sx, sy, dx, dy, image){
+		ctx.drawImage(image, sx, sy, this.sw, this.sh, dx, dy, this.dw, this.dh);
+	}
+}
+
+
+const barrack = {
+	sw: 23,
+	sh: 28,
+	dw: 23,
+	dh: 28,
+
+	draw: function(sx, sy, dx, dy, image){
+		ctx.drawImage(image, sx, sy, this.sw, this.sh, dx, dy, this.dw, this.dh);
 	}
 }

@@ -1,8 +1,17 @@
+/**
+ * Playground is the actual Base or Village that is pre-defined on our set
+ */
+
 class PlayGround {
     constructor() {
 
+        this.collector = true;
+	    this.elixirStorage = 1000;
+
     }
 
+
+    // draw method simply draws different sprites on our village
     draw = () => {
         for (var x = 0; x < 40; x++) {
             for (var y = 0; y < 30; y++) {
@@ -20,14 +29,37 @@ class PlayGround {
                 this.drawEdgeTileTop(x, y);
             }
         }
-        townHall.draw(150, 73, -35, 245, image);
-        for (var i = 0; i < 5; i++) {
-            wall.draw(185, 50, -30 - (i * 10), 245 + (i * 5), image);
-        }
-        canon.draw(101, 87, -30, 330, image);
+        this.horizontalWall(6, 40, 280);
+		this.horizontalWall(2, -45, 263);
+		this.verticalWall(6, -65, 275);
+		this.horizontalWall(6, 20, 320);
+		this.verticalWall(2, 0, 310);
+		this.verticalWall(2, 40, 270);
+        townHall.draw(150, 73, -35, 225, image);
+        canon.draw(101, 87, -40, 305, image);
         goldStorage.draw(58, 129, 60, 280, image);
         campFire.draw(25, 203, -80, 305, image);
+        barrack.draw(225, 100, 60, 260, image);
+		if (this.collector){
+			getMine.draw(20, 123, -50, 353, image);
+		}
+		this.displayScore();
+		elixirCollector.draw(32, 21, -60, 365, image);
+		goldCollector.draw(148, 194, 60, 340, image);
     }
+
+    horizontalWall = (n, x, y) => {
+		for (var i=0;i<n; i++){
+			wall.draw(185, 50, x - (i * 10), y + (i * 5), image);
+		}
+
+	}
+
+	verticalWall = (n, x, y) => {
+		for (var i=0;i<n; i++){
+			wall.draw(185, 50, x + (i * 10), y + (i * 5), image);
+		}
+	}
 
     drawImageTile = (x, y) => {
         ctx.save();
@@ -56,6 +88,22 @@ class PlayGround {
         ctx.drawImage(image4, 0, 0, 60, 45, 140, -132, 60, 45);
         ctx.restore();
     }
+
+    displayScore = () => {
+        ctx.font = "18px Georgia";
+        var gradient = ctx.createLinearGradient(0, 0, 850, 0);
+        gradient.addColorStop("0"," magenta");
+        gradient.addColorStop("0.5", "blue");
+        gradient.addColorStop("1.0", "red");
+        ctx.fillStyle = gradient;
+        getMine.draw(20, 123, 280, 85, image)
+        ctx.fillText(`Elixir: ${this.elixirStorage}`, 300, 100);
+    }
+
+    minerCollectorCollectTrue = () => {
+        this.collector = true;
+        this.draw();
+	}
 }
 
 
