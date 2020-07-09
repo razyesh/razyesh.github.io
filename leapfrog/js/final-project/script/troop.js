@@ -40,13 +40,13 @@ class Troop {
         }
         if (this.dx < this.dy) {
             clearInterval(this.leftMove);
-            this.rightMove = setInterval(this.moveRight, 100)
+            // this.rightMove = setInterval(this.moveRight, 100)
 
         }
     }
 
     move = () => {
-        this.rightMove = setInterval(this.moveRight, 100);
+    this.moveLeft();
     }
 
 

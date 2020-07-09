@@ -6,10 +6,12 @@ class PlayGround {
     constructor() {
 
         this.collector = true;
-	    this.elixirStorage = 1000;
+        this.elixirStorage = 1000;
+        this.attack = false;
+        this.fx = -5;
+        this.fy = 323;
 
     }
-
 
     // draw method simply draws different sprites on our village
     draw = () => {
@@ -42,7 +44,11 @@ class PlayGround {
         barrack.draw(225, 100, 60, 260, image);
 		if (this.collector){
 			getMine.draw(20, 123, -50, 353, image);
-		}
+        }
+        
+        if (this.attack){
+            this.fire();
+        }
 		this.displayScore();
 		elixirCollector.draw(32, 21, -60, 365, image);
 		goldCollector.draw(148, 194, 60, 340, image);
@@ -63,7 +69,7 @@ class PlayGround {
 
     drawImageTile = (x, y) => {
         ctx.save();
-        ctx.translate((x - y) * 60 / 2, (x + y) * 30 / 2);
+        ctx.translate((x - y) * 60 / 2, (x + y) * 20 / 2);
         ctx.drawImage(image4, 336, 0, 60, 45, -200 / 2, 0, 60, 45);
         ctx.restore();
     }
@@ -77,7 +83,7 @@ class PlayGround {
     
     drawEdgeTileTop = (x, y) => {
         ctx.save();
-        ctx.translate((x - y) * 60 / 2, (x + y) * 25 / 2);
+        ctx.translate((x - y) * 60 / 2, (x + y) * 30 / 2);
         ctx.drawImage(image4, 505, 0, 60, 45, -400, -140, 60, 45);
         ctx.restore();
     }
@@ -90,20 +96,41 @@ class PlayGround {
     }
 
     displayScore = () => {
+
+        ctx.clearRect(0, 0, 400, 110);
         ctx.font = "18px Georgia";
         var gradient = ctx.createLinearGradient(0, 0, 850, 0);
         gradient.addColorStop("0"," magenta");
         gradient.addColorStop("0.5", "blue");
         gradient.addColorStop("1.0", "red");
         ctx.fillStyle = gradient;
-        getMine.draw(20, 123, 280, 85, image)
-        ctx.fillText(`Elixir: ${this.elixirStorage}`, 300, 100);
+        getMine.draw(20, 123, 180, 85, image);
+        ctx.fillText(`Elixir: ${this.elixirStorage}`, 200, 100);
     }
 
     minerCollectorCollectTrue = () => {
         this.collector = true;
         this.draw();
-	}
+    }
+    
+    fire = () => {
+        ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+        init();
+        this.fx += 5;
+        this.fy += 5;
+        ctx.beginPath();
+        ctx.arc(this.fx, this.fy, 5, 0, 2 * Math.PI);
+        ctx.fillStyle = '#000';
+        ctx.fill();
+        ctx.closePath();
+
+        if (this.fy < 350){
+            requestAnimationFrame(this.fire);
+        } else {
+            this.fx = -5;
+            this.fy = 323;
+        }
+    }
 }
 
 
