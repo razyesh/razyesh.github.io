@@ -127,8 +127,7 @@ class PlayGround {
         if (this.fy < 350){
             requestAnimationFrame(this.fire);
         } else {
-            this.fx = -5;
-            this.fy = 323;
+            this.attack = false;
         }
     }
 }

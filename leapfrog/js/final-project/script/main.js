@@ -2,10 +2,9 @@ let p1;
 function init() {
     p1 = new PlayGround();
     p1.draw();
-    canvas.addEventListener('mousedown', function(e){
-        ctx.arc(-25, 355, 5, 0, 2 * Math.PI);
-        ctx.fillStyle = 'red';
-        ctx.fill();
+    t1 = new Troop(p1, -5, 330);
+    t1.move();
+    canvas.addEventListener('click', function(e){
         p1.attack = true;
     })
     
