@@ -26,7 +26,6 @@ function init() {
                 characters[i].draw();
                 characters[i].update();
                 for (let key of Object.keys(obstaclePosition)){    
-                    
                     if (characters[i].y - obstaclePosition[key].y === 0 && (obstaclePosition[key].x  - characters[i].x === 0 || obstaclePosition[key].x + characters[i].x === 0)){
                         delete obstaclePosition[key];
                         characters[i].destroy = true;

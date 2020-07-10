@@ -10,6 +10,7 @@ class PlayGround {
         this.attack = false;
         this.fx = -5;
         this.fy = 323;
+        this.speed = 3;
 
     }
 
@@ -114,8 +115,8 @@ class PlayGround {
     }
     
     fire = () => {
-        this.fx += 1;
-        this.fy += 1;
+        this.fx += this.speed;
+        this.fy += this.speed;
         ctx.beginPath();
         ctx.arc(this.fx, this.fy, 5, 0, 2 * Math.PI);
         ctx.fillStyle = '#000';

@@ -5,10 +5,10 @@ class Character {
         this.frameX = 3;
         this.frameY = 3;
         this.x = 45;
-        this.y = Math.floor(Math.random()) * 450;
+        this.y = 380;
         this.dWidth = 50;
         this.dHeight = 40;
-        this.speed = 1;
+        this.speed = 5;
         this.life = 5;
         this.action = 'up';
         this.destroy = false;
