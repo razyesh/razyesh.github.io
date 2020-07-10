@@ -135,16 +135,27 @@ const obstaclePosition = {
 	},
 	elixirCollector: {
 		x: -60,
-		y: 365
+		y: 340
 	},
 
 	canon: {
-		x: -40,
+		x: -60,
 		y: 305
 	},
 
 	goldStorage: {
 		x: 60,
 		y: 280,
+	},
+
+	campFire: {
+		x: -80,
+		y: 320
+	},
+
+	wall: {
+		x: [-80, -65, -45, -30, 0, 20, 40],
+		y: [280, 263, 275, 320, 310, 270, 320, 290],
+
 	}
 }

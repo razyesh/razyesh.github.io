@@ -11,6 +11,8 @@ class PlayGround {
         this.fx = -5;
         this.fy = 323;
         this.speed = 3;
+        this.decorateHeight = 50;
+        this.decorateWidth = 25;
 
     }
 
@@ -37,13 +39,25 @@ class PlayGround {
 		this.verticalWall(6, -65, 275);
 		this.horizontalWall(6, 20, 320);
 		this.verticalWall(2, 0, 310);
-		this.verticalWall(2, 40, 270);
+        this.verticalWall(2, 40, 270);
+        this.verticalWall(5, -80, 320);
+        this.horizontalWall(6, -30, 290);
+
         townHall.draw(150, 73, -35, 225, image);
-        canon.draw(101, 87, -35, 305, image);
+        canon.draw(101, 87, -50, 305, image);
         goldStorage.draw(58, 129, 60, 280, image);
-        campFire.draw(25, 203, -80, 305, image);
-        barrack.draw(225, 100, 60, 260, image);
-		if (this.collector){
+        campFire.draw(25, 203, -100, 340, image);
+        barrack.draw(225, 100, 40, 240, image);
+
+        for (let i = 0; i<10; i++){
+            this.tree(image5, 70, 254,  - ( i * 90), i * 50);
+        }
+
+        for (let i = 0; i<3; i++){
+            this.tree(image5, 401, 111,  ( i * 30),  i * 190);
+        }
+
+		if (this.collector && !this.attack){
 			getMine.draw(20, 123, -50, 353, image);
         }
         this.displayScore();
@@ -123,6 +137,12 @@ class PlayGround {
         ctx.fill();
         ctx.closePath();
     }
+
+    tree = (image, sx, sy, dx, dy) => {
+        ctx.drawImage(image, sx, sy, 105, 145, dx, dy, this.decorateWidth, this.decorateHeight);
+    }
+
+
 }
 
 

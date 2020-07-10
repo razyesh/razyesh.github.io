@@ -12,6 +12,7 @@ class Character {
         this.life = 5;
         this.action = 'up';
         this.destroy = false;
+        this.wall = false;
 
         if (this.action === 'up') {
             this.frameY = 0;
@@ -33,6 +34,11 @@ class Character {
                 this.action = 'up';
             } 
         }
+
+        if (this.wall){
+            this.frameY = 8;
+            this.wall = false;
+        }
         drawSprite(image3, this.width * this.frameX,
             this.height * this.frameY, this.width, this.height,
             this.x, this.y, this.dWidth, this.dHeight
@@ -48,6 +54,7 @@ class Character {
     update() {
         if (this.action === 'right') {
             this.x += this.speed;
+            
         } else if (this.action === 'up') {
             this.y -= this.speed;
             if (this.y < 300){

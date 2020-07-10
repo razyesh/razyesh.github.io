@@ -24,6 +24,9 @@ const image4 = document.getElementById('source2');
 
 ctx.translate(CANVAS_WIDTH/2 + 50, 0);
 
+const image5 = new Image();
+image5.src = 'img/decorate.png';
+
 
 
 
