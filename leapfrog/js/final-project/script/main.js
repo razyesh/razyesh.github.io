@@ -3,6 +3,7 @@ const characterActions = ['up'];
 let playerMove;
 const characters = [];
 let isMoving = false;
+let loaded = false;
 
 const numberofCharacters = 1;
 function init() {
@@ -72,5 +73,6 @@ function init() {
 
 }
 window.onload = function () {
+    loaded = true;
     init();
 }
