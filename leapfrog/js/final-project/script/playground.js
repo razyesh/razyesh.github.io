@@ -38,20 +38,20 @@ class PlayGround {
 		this.verticalWall(2, 0, 310);
 		this.verticalWall(2, 40, 270);
         townHall.draw(150, 73, -35, 225, image);
-        canon.draw(101, 87, -40, 305, image);
+        canon.draw(101, 87, -35, 305, image);
         goldStorage.draw(58, 129, 60, 280, image);
         campFire.draw(25, 203, -80, 305, image);
         barrack.draw(225, 100, 60, 260, image);
 		if (this.collector){
 			getMine.draw(20, 123, -50, 353, image);
         }
-        
-        if (this.attack){
-            this.fire();
+        this.displayScore();
+        if (obstaclePosition.elixirCollector){
+            elixirCollector.draw(32, 21, -60, 365, image);
         }
-		this.displayScore();
-		elixirCollector.draw(32, 21, -60, 365, image);
-		goldCollector.draw(148, 194, 60, 340, image);
+        if (obstaclePosition.goldCollector){
+            goldCollector.draw(148, 194, 35, 340, image);
+        }
     }
 
     horizontalWall = (n, x, y) => {
@@ -114,21 +114,13 @@ class PlayGround {
     }
     
     fire = () => {
-        ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-        init();
-        this.fx += 5;
-        this.fy += 5;
+        this.fx += 1;
+        this.fy += 1;
         ctx.beginPath();
         ctx.arc(this.fx, this.fy, 5, 0, 2 * Math.PI);
         ctx.fillStyle = '#000';
         ctx.fill();
         ctx.closePath();
-
-        if (this.fy < 350){
-            requestAnimationFrame(this.fire);
-        } else {
-            this.attack = false;
-        }
     }
 }
 

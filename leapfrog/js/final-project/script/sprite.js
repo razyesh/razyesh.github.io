@@ -125,3 +125,26 @@ const barrack = {
 		ctx.drawImage(image, sx, sy, this.sw, this.sh, dx, dy, this.dw, this.dh);
 	}
 }
+
+
+
+const obstaclePosition = {
+	goldCollector : {
+		x: 45,
+		y: 340
+	},
+	elixirCollector: {
+		x: -60,
+		y: 365
+	},
+
+	canon: {
+		x: -40,
+		y: 305
+	},
+
+	goldStorage: {
+		x: 60,
+		y: 280,
+	}
+}

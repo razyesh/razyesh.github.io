@@ -18,7 +18,7 @@ const intro = new Audio()
 intro.src = 'sound/coc-intro.mp3'
 
 const image3 = new Image();
-image3.src = 'img/character.png';
+image3.src = 'img/char.png';
 
 const image4 = document.getElementById('source2');
 
