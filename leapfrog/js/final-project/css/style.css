@@ -10,11 +10,9 @@ canvas {
 }
 
 #play {
-	margin-top: 350;
-	margin-left: 400;
 	position: absolute;
-    left: 200px;
-    top: 450px;
+    left: 400px;
+    top: 250px;
     padding: 15px;
     background-color: darkgreen;
     color: #fff;

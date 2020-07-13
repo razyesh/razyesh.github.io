@@ -4,16 +4,17 @@ let playerMove;
 const characters = [];
 let isMoving = false;
 let loaded = false;
+const tempObstacle = obstaclePosition;
 
-const numberofCharacters = 2;
+const numberofCharacters = 1;
 
 let direction;
 
 
 function init() {
-    let life = 10;
     let x = -125;
     direction = 'down';
+    ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     p1 = new PlayGround();
     p1.draw();
     for (let i = 0; i < numberofCharacters; i++) {
@@ -23,22 +24,23 @@ function init() {
     function animate() {
         if (characters.length > 0) {
             isMoving = true;
+            p1.isAttacking = true;
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             p1.draw();
             for (let i = 0; i < numberofCharacters; i++) {
-                if (life > 0){
+                try {
                     characters[i].draw(direction);
                     characters[i].update(direction);
                     bow = setInterval(p1.fire(), 100);
-
-                }
-                try {
                     if (characters[i].x === obstaclePosition[playgroundItem[item]].x) {
                         if (characters[i].x - p1.fx < 5){
-                            x += 5;
+                            x += 10;
                             p1.fx = x;
                             p1.fy = 265;
-                            life--;
+                            characters[i].life--;
+                            if (characters[i].life < 0){
+                                delete characters[i];
+                            }
                             clearInterval(bow);
                             setInterval(bow);
                         }
@@ -48,7 +50,6 @@ function init() {
                             if (obstaclePosition[playgroundItem[item]].y - characters[i].y < 30) {
                                 delete obstaclePosition[playgroundItem[item]];
                                 item++;
-                                characters[i].isAttacking = false;
                                 characters[i].verticalMove = false;
                                 clearInterval(fire);
                             }
@@ -85,5 +86,5 @@ setInterval(p1.minerCollectorCollectTrue, 20000);
 }
 window.onload = function () {
     loaded = true;
-    init();
+    introPlay();
 }

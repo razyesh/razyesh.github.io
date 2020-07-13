@@ -15,6 +15,7 @@ class Character {
         this.wall = false;
         this.horizontalMove = false;
         this.verticalMove = true;
+        this.life = 5;
     }
 
 

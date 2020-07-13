@@ -1,15 +1,13 @@
-
-
 function introPlay() {
-    ctx.drawImage(image2, 0, 4, 1128, 628, 0, 0, 958, 500);
+    ctx.drawImage(image2, 0, 4, 1128, 628, -450, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     document.getElementById('play').onclick = function (e) {
         document.getElementById('play').style.display = 'none';
-        ctx.drawImage(image2, 54, 636, 1014, 588, 0, 0, 958, 500);
+        ctx.drawImage(image2, 54, 636, 1014, 588, -450, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
         ctx.fillStyle = "#fff";
-        ctx.font = "18px Arial";
-        ctx.fillText("Loading", 350, 450);
+        ctx.font = "28px Arial";
+        ctx.fillText("Loading", -100, 400);
         intro.play();
-        init();
+        setTimeout(init, 5000);
         
     }
 }

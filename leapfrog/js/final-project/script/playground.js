@@ -14,6 +14,7 @@ class PlayGround {
         this.speed = 3;
         this.decorateHeight = 50;
         this.decorateWidth = 25;
+        this.isAttacking = false;
 
     }
 
@@ -51,7 +52,11 @@ class PlayGround {
         goldStorage.draw(58, 129, 60, 280, image);
         campFire.draw(25, 203, -100, 321, image);
         barrack.draw(225, 100, 40, 240, image);
-        attackButton.draw(224, 2094, -440, CANVAS_HEIGHT - 100, image6);
+        if (this.isAttacking){
+            endBattle.draw(1575, 70, -440, CANVAS_HEIGHT - 100, image6);
+        } else {
+            attackButton.draw(224, 2094, -440, CANVAS_HEIGHT - 100, image6);
+        }
         trophy.draw(222, 956, -440, 0, image6);
         gemDisplay.draw(1678, 250, 200, 100, image6);
         shopClick.draw(1980, 2102, 240, CANVAS_HEIGHT - 100, image6);

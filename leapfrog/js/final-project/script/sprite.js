@@ -203,6 +203,16 @@ const archerTower = {
 	}
 } 
 
+const endBattle = {
+	sw: 140,
+	sh: 50,
+	dw: 100,
+	dh: 50,
+	draw: function(sx, sy, dx, dy, image){
+		ctx.drawImage(image, sx, sy, this.sw, this.sh, dx, dy, this.dw, this.dh);
+	}
+}
+
 const playgroundItem = ['townHall', 'canon', 'elixirCollector', 'goldCollector', 'campFire']
 
 
