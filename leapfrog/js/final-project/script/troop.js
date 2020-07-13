@@ -1,69 +1,61 @@
 class Character {
     constructor() {
-        this.width = 103.0625;
-        this.height = 113.125;
-        this.frameX = 3;
-        this.frameY = 3;
-        this.x = 45;
-        this.y = 380;
+        this.width = 529;
+        this.height = 311;
+        this.frameX = 1394;
+        this.frameY = 1872;
+        this.x = -42;
+        this.y = 120;
         this.dWidth = 50;
         this.dHeight = 40;
-        this.speed = 5;
+        this.speed = 1;
         this.life = 5;
         this.action = 'up';
         this.destroy = false;
         this.wall = false;
-
-        if (this.action === 'up') {
-            this.frameY = 0;
-        } else if (this.action === 'down'){
-            this.frameY = 6;
-        } else if (this.action === 'left'){
-            this.frameY = 5;
-        }
+        this.horizontalMove = false;
+        this.verticalMove = true;
     }
 
 
-    draw() {
-        if (this.destroy){
+    draw(direction) {
+        if (this.destroy) {
             this.destroy = false;
             if (this.action === 'up') {
                 this.action = 'left';
             }
             else if (this.action === 'left') {
                 this.action = 'up';
-            } 
+            }
         }
 
-        if (this.wall){
-            this.frameY = 8;
-            this.wall = false;
+        if (direction === 'down') {
+            drawSprite(image6, this.frameX,
+                this.frameY, this.width, this.height,
+                this.x, this.y, this.dWidth, this.dHeight
+            );
         }
-        drawSprite(image3, this.width * this.frameX,
-            this.height * this.frameY, this.width, this.height,
-            this.x, this.y, this.dWidth, this.dHeight
-        );
-        if (this.frameX < 13) {
-            this.frameX++;
-        } else {
-            this.frameX = 3;
+        if (direction === 'right'){
+            this.frameX = 1280;
+            this.frameY = 948;
+            this.width = 360;
+            this.height = 556;
+            this.x = -63;
+            this.y = 420;
+            drawSprite(image6, this.frameX,
+                this.frameY, this.width, this.height,
+                this.x, this.y, this.dWidth, this.dHeight
+            );
         }
     }
 
 
-    update() {
-        if (this.action === 'right') {
-            this.x += this.speed;
-            
-        } else if (this.action === 'up') {
-            this.y -= this.speed;
-            if (this.y < 300){
-                this.y = 340
-            } 
-        } else if (this.action === 'down'){
+    update(direction) {
+        if (this.verticalMove && direction === 'down') {
             this.y += this.speed;
-        } else if (this.action === 'left'){
-            this.x -= this.speed;
+        }
+        if (this.verticalMove && direction === 'right'){
+            this.x += this.speed;
         }
     }
 
