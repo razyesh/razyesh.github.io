@@ -1,62 +1,54 @@
-class Character {
-    constructor() {
-        this.width = 529;
-        this.height = 311;
-        this.frameX = 1394;
-        this.frameY = 1872;
-        this.x = -42;
-        this.y = 120;
+class Troop {
+    constructor(x, y, direction, sx, sy, swidth, sheight) {
+        this.width = swidth;
+        this.height = sheight;
+        this.frameX = sx;
+        this.frameY = sy;
+        this.theta = 30/180 * Math.PI
+        this.x = Math.floor(Math.cos(this.theta) * x);
+        this.y = y;
         this.dWidth = 50;
         this.dHeight = 40;
         this.speed = 1;
         this.life = 5;
-        this.action = 'up';
-        this.destroy = false;
-        this.wall = false;
-        this.horizontalMove = false;
-        this.verticalMove = true;
+        this.direction = direction;
         this.life = 5;
+        this.attacking = false;
     }
 
 
-    draw(direction) {
-        if (this.destroy) {
-            this.destroy = false;
-            if (this.action === 'up') {
-                this.action = 'left';
-            }
-            else if (this.action === 'left') {
-                this.action = 'up';
-            }
-        }
-
-        if (direction === 'down') {
-            drawSprite(image6, this.frameX,
-                this.frameY, this.width, this.height,
-                this.x, this.y, this.dWidth, this.dHeight
-            );
-        }
-        if (direction === 'right'){
-            this.frameX = 1280;
-            this.frameY = 948;
-            this.width = 360;
-            this.height = 556;
-            this.x = -63;
-            this.y = 420;
-            drawSprite(image6, this.frameX,
-                this.frameY, this.width, this.height,
-                this.x, this.y, this.dWidth, this.dHeight
-            );
-        }
+    draw() {
+        drawSprite(image6, this.frameX,
+            this.frameY, this.width, this.height,
+            this.x, this.y, this.dWidth, this.dHeight
+        );
     }
 
 
-    update(direction) {
-        if (this.verticalMove && direction === 'down') {
-            this.y += this.speed;
+    update() {
+        if (this.direction === 'down') {
+            if (!this.attacking){
+                this.y += this.speed;
+                this.x -= 1;
+                
+            }
+            
         }
-        if (this.verticalMove && direction === 'right'){
-            this.x += this.speed;
+        else if (this.direction === 'right'){
+            if (!this.attacking){
+                this.x += this.speed;  
+                if (this.x > 100){
+                    this.frameX = 1095;
+                    this.frameY = 1113;
+                    this.width = 203;
+                    this.height = 157;
+                    this.direction = 'down';
+                }
+            }
+            
+            setTimeout(function(){
+                this.attacking = false;
+            }, 3000);
         }
     }
 

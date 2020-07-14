@@ -9,8 +9,8 @@ class PlayGround {
         this.elixirStorage = 1000;
         this.goldStorage = 1000;
         this.attack = false;
-        this.fx = -125;
-        this.fy = 265;
+        this.fx = 20;
+        this.fy = 210;
         this.speed = 3;
         this.decorateHeight = 50;
         this.decorateWidth = 25;
@@ -44,14 +44,39 @@ class PlayGround {
         this.verticalWall(5, -5, 250);
         this.verticalWall(5, -80, 320);
         this.horizontalWall(6, -30, 290);
+        this.verticalWall(4, -100, 250);
+        this.horizontalWall(6, -110, 255);
+        this.verticalWall(7, -150, 290);
+        this.verticalWall(7, 50, 210);
+        this.horizontalWall(7, 40, 210);
+        this.horizontalWall(7, 110, 250);
+
+
+        if (!this.isAttacking){
+            baseTroop.draw(587, 2119, -120, 320, image6);
+        }
 
         if (obstaclePosition.canon){
             canon.draw(101, 87, -42, 305, image);
         }
-        archerTower.draw(208, 1300, -145, 245, image6);
-        goldStorage.draw(58, 129, 60, 280, image);
-        campFire.draw(25, 203, -100, 321, image);
-        barrack.draw(225, 100, 40, 240, image);
+        if (obstaclePosition.archerTower){
+            archerTower.draw(300, 1308, -125, 230, image6);
+        }
+
+        if (obstaclePosition.archerTower2){
+            archerTower.draw(300, 1308, 30, 200, image6);
+        }
+
+
+        if (obstaclePosition.goldStorage){
+            goldStorage.draw(58, 129, 50, 300, image);
+        }
+        if (obstaclePosition.campFire){
+            campFire.draw(25, 203, -40, 200, image);
+        }
+        if (obstaclePosition.barrack){
+            barrack.draw(225, 100, 80, 280, image);
+        }
         if (this.isAttacking){
             endBattle.draw(1575, 70, -440, CANVAS_HEIGHT - 100, image6);
         } else {
@@ -65,15 +90,11 @@ class PlayGround {
             this.tree(image5, 70, 254,  - ( i * 90), i * 50);
         }
 
-        for (let i = 0; i<3; i++){
-            this.tree(image5, 401, 111,  ( i * 30),  i * 190);
-        }
-
         if (obstaclePosition.townHall){
             townHall.draw(860, 2016, -42, 220, image6);
         }
 
-		if (this.collector && !this.attack){
+		if (this.collector && !this.isAttacking){
 			getMine.draw(20, 123, -25, 334, image);
         }
         this.displayScore();
@@ -81,7 +102,7 @@ class PlayGround {
             elixirCollector.draw(32, 21, -42, 350, image);
         }
         if (obstaclePosition.goldCollector){
-            goldCollector.draw(148, 194, 0, 325, image);
+            goldCollector.draw(148, 194, 10, 335, image);
         }
     }
 
@@ -142,13 +163,11 @@ class PlayGround {
     }
     
     fire = () => {
-        this.fx += this.speed;
+        this.fx -= this.speed;
         this.fy -= this.speed;
-            ctx.beginPath();
-            ctx.drawImage(image6, 944, 230, 138, 128, this.fx, this.fy, 25, 15);
-            ctx.fillStyle = '#000';
-            ctx.fill();
-            ctx.closePath();
+        ctx.beginPath();
+        ctx.drawImage(image6, 1202, 284, 172, 33, this.fx, this.fy, 25, 15);
+        ctx.closePath();
     }
 
     tree = (image, sx, sy, dx, dy) => {

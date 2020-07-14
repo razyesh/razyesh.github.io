@@ -213,7 +213,15 @@ const endBattle = {
 	}
 }
 
-const playgroundItem = ['townHall', 'canon', 'elixirCollector', 'goldCollector', 'campFire']
+const baseTroop = {
+	sw: 86,
+	sh: 150,
+	dw: 15,
+	dh: 30,
+	draw: function(sx, sy, dx, dy, image){
+		ctx.drawImage(image, sx, sy, this.sw, this.sh, dx, dy, this.dw, this.dh);
+	}
+}
 
 
 const obstaclePosition = {
@@ -237,19 +245,26 @@ const obstaclePosition = {
 	},
 
 	campFire: {
-		x: -100,
-		y: 330
-	},
-
-	wall: {
-		x: [-80, -65, -45, -30, 0, 20, 40],
-		y: [280, 263, 275, 320, 310, 270, 320, 290],
-
+		x: -40,
+		y: 200
 	},
 
 	townHall: {
 		x: -42,
 		y: 220
+	},
+
+	archerTower: {
+		x: -145,
+		y: 245
+	}, 
+	archerTower2: {
+		x: 30, 
+		y: 200
+	},
+	barrack: {
+		x: 40,
+		y: 240
 	}
 }
 

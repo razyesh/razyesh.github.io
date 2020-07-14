@@ -1,8 +1,11 @@
 canvas {
-	border: 1px solid black;
 	display: block;
 	margin: 0 auto;
-	background-color: #6d9421;
+	background-image: #6d9421;
+}
+
+body {
+	background-color: rgb(7, 80, 7);
 }
 
 #source2 {

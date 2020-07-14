@@ -6,7 +6,6 @@ let isMoving = false;
 let loaded = false;
 const tempObstacle = obstaclePosition;
 
-const numberofCharacters = 1;
 
 let direction;
 
@@ -17,74 +16,95 @@ function init() {
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     p1 = new PlayGround();
     p1.draw();
-    for (let i = 0; i < numberofCharacters; i++) {
-        characters.push(new Character());
-    }
-    item = 0;
+    c1 = new Troop(-280, 290, 'right', 1281, 952, 360, 552);
+    c2 = new Troop(-120, 180, 'right', 1281, 952, 360, 552);
+    c3 = new Troop(-240, 240, 'right', 1281, 952, 360, 552);
+
+
+    characters.push(c1);
+    characters.push(c2);
+    characters.push(c3);
+    let bow;
+
     function animate() {
+        p1.isAttacking = true;
         if (characters.length > 0) {
             isMoving = true;
-            p1.isAttacking = true;
+            fx = 20;
+            fy = 210;
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             p1.draw();
-            for (let i = 0; i < numberofCharacters; i++) {
-                try {
-                    characters[i].draw(direction);
-                    characters[i].update(direction);
-                    bow = setInterval(p1.fire(), 100);
-                    if (characters[i].x === obstaclePosition[playgroundItem[item]].x) {
-                        if (characters[i].x - p1.fx < 5){
-                            x += 10;
-                            p1.fx = x;
-                            p1.fy = 265;
-                            characters[i].life--;
-                            if (characters[i].life < 0){
-                                delete characters[i];
+            characters.forEach(function (item) {
+                item.draw();
+                item.update();
+                len = Object.keys(obstaclePosition).length
+                obstacle = Object.keys(obstaclePosition)
+                if (len >0) {
+                    for (var j = 0; j < len; j++) {
+                        if (obstaclePosition[obstacle[j]].y - item.y < 30) {
+                            if (item.direction === 'right') {
+                                if (obstaclePosition[obstacle[j]].x - item.x < 30) {
+                                    ctx.drawImage(image6, 1562, 1598, 166, 180, item.x + 40, item.y + 30, 30, 20);
+                                    ctx.beginPath();
+                                    ctx.rect(obstaclePosition[obstacle[j]].x - 10, obstaclePosition[obstacle[j]].y - 10, 40, 5);
+                                    ctx.stroke();
+                                    item.attacking = true;
+                                    setTimeout(function () {
+                                        item.attacking = false;
+                                    }, 3000);
+                                }
+                                if (obstaclePosition[obstacle[j]].x - item.x < 20) {
+                                    delete obstaclePosition[obstacle[j]]
+                                }
+                            } else if (item.direction === 'down') {
+                                if (obstaclePosition[obstacle[j]].x - item.x < 30) {
+                                    ctx.drawImage(image6, 1562, 1598, 166, 180, item.x + 30, item.y + 50, 30, 20);
+                                    item.attacking = true;
+                                    setTimeout(function () {
+                                        item.attacking = false;
+                                    }, 3000);
+                                }
+                                if (obstaclePosition[obstacle[j]].y - item.y < 10) {
+                                    delete obstaclePosition[obstacle[j]]
+                                }
                             }
-                            clearInterval(bow);
-                            setInterval(bow);
-                        }
-                        characters[i].verticalMove = true;
-                        if (obstaclePosition[playgroundItem[item]].y - characters[i].y < 50) {
-                            fire = setInterval(ctx.drawImage(image6, 1472, 1512, 246, 273, characters[i].x + 20, characters[i].y + 30, 10, 30), 100);
-                            if (obstaclePosition[playgroundItem[item]].y - characters[i].y < 30) {
-                                delete obstaclePosition[playgroundItem[item]];
-                                item++;
-                                characters[i].verticalMove = false;
-                                clearInterval(fire);
+                        } else {
+                            if (obstaclePosition[obstacle[j]].y > item.y) {
+                                item.direction === 'down'
                             }
                         }
                     }
-                } catch (e) {
-
+                } else {
+                    ctx.drawImage(image6, 12, 2549, 935, 646, 0, 0, -450, 0);
                 }
-            }
-    }
-}
+            })
 
-
-document.addEventListener('click', function (e) {
-    p1.attack = true;
-    if (e.clientX - 520 < 5 && CANVAS_HEIGHT - e.clientY < 50) {
-        playerMove = setInterval(animate, 100);
-    }
-})
-
-
-
-canvas.addEventListener('click', function (e) {
-    if (e.clientY - 354 < 20 && e.clientY - 354 > 0) {
-        if (p1.collector) {
-            p1.elixirStorage += 500;
         }
-        p1.collector = false;
-        p1.draw();
     }
-})
-setInterval(p1.minerCollectorCollectTrue, 20000);
+
+
+    document.addEventListener('click', function (e) {
+        p1.attack = true;
+        if (e.clientX - 520 < 5 && CANVAS_HEIGHT - e.clientY < 50) {
+            playerMove = setInterval(animate, 100);
+        }
+    })
+
+
+
+    canvas.addEventListener('click', function (e) {
+        if (e.clientY - CANVAS_WIDTH < 20 && CANVAS_HEIGHT - 354 > 0) {
+            if (p1.collector) {
+                p1.elixirStorage += 500;
+            }
+            p1.collector = false;
+            p1.draw();
+        }
+    })
+    setInterval(p1.minerCollectorCollectTrue, 20000);
 
 }
 window.onload = function () {
     loaded = true;
-    introPlay();
+    init();
 }
