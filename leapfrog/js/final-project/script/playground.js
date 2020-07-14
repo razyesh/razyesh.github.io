@@ -11,10 +11,11 @@ class PlayGround {
         this.attack = false;
         this.fx = 20;
         this.fy = 210;
-        this.speed = 3;
+        this.speed = 1;
         this.decorateHeight = 50;
         this.decorateWidth = 25;
         this.isAttacking = false;
+        this.count = 0;
 
     }
 
@@ -163,11 +164,14 @@ class PlayGround {
     }
     
     fire = () => {
-        this.fx -= this.speed;
-        this.fy -= this.speed;
-        ctx.beginPath();
-        ctx.drawImage(image6, 1202, 284, 172, 33, this.fx, this.fy, 25, 15);
-        ctx.closePath();
+        // this.fx -= this.speed;
+        // this.fy -= this.speed;
+        if (this.count === 1){
+            this.fx -= this.speed;
+            ctx.beginPath();
+            ctx.drawImage(image6, 1202, 284, 172, 33, this.fx, this.fy, 25, 15);
+            ctx.closePath();
+        }
     }
 
     tree = (image, sx, sy, dx, dy) => {

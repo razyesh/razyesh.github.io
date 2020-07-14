@@ -42,12 +42,20 @@ function init() {
                 if (len >0) {
                     for (var j = 0; j < len; j++) {
                         if (obstaclePosition[obstacle[j]].y - item.y < 30) {
+                            p1.count++;
+                            bow = setInterval(p1.fire, 100);
+                            if (p1.fx < 0){
+                                console.log(p1.fx);
+                                clearInterval(bow);
+                            }
                             if (item.direction === 'right') {
                                 if (obstaclePosition[obstacle[j]].x - item.x < 30) {
-                                    ctx.drawImage(image6, 1562, 1598, 166, 180, item.x + 40, item.y + 30, 30, 20);
+                                    ctx.drawImage(image6, 2232, 2520, 219, 252, item.x + 30, item.y + 20, 30, 20);
                                     ctx.beginPath();
                                     ctx.rect(obstaclePosition[obstacle[j]].x - 10, obstaclePosition[obstacle[j]].y - 10, 40, 5);
-                                    ctx.stroke();
+                                    ctx.fillStyle = 'blue';
+                                    ctx.fill();
+                                    
                                     item.attacking = true;
                                     setTimeout(function () {
                                         item.attacking = false;
@@ -58,7 +66,8 @@ function init() {
                                 }
                             } else if (item.direction === 'down') {
                                 if (obstaclePosition[obstacle[j]].x - item.x < 30) {
-                                    ctx.drawImage(image6, 1562, 1598, 166, 180, item.x + 30, item.y + 50, 30, 20);
+                                    
+                                    ctx.drawImage(image6, 2682, 2484, 198, 240, item.x + 10, item.y + 40, 30, 20);
                                     item.attacking = true;
                                     setTimeout(function () {
                                         item.attacking = false;

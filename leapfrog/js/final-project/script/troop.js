@@ -38,10 +38,10 @@ class Troop {
             if (!this.attacking){
                 this.x += this.speed;  
                 if (this.x > 100){
-                    this.frameX = 1095;
-                    this.frameY = 1113;
-                    this.width = 203;
-                    this.height = 157;
+                    this.frameX = 2391;
+                    this.frameY = 1143;
+                    this.width = 423;
+                    this.height = 381;
                     this.direction = 'down';
                 }
             }
