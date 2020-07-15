@@ -37,7 +37,7 @@ class Troop {
         else if (this.direction === 'right'){
             if (!this.attacking){
                 this.x += this.speed;  
-                if (this.x > 100){
+                if (this.x > 90){
                     this.frameX = 2391;
                     this.frameY = 1143;
                     this.width = 423;

@@ -55,30 +55,30 @@ class PlayGround {
 
         if (!this.isAttacking){
             baseTroop.draw(606, 1215, -60, 160, image6);
-            baseTroop.draw(1404, 1862, -20, 160, image6);
+            baseTroop.draw(1404, 1862, -40, 160, image6);
 
         }
 
         if (obstaclePosition.canon){
-            canon.draw(101, 87, -42, 305, image);
+            canon.draw(101, 87, obstaclePosition['canon'].x, obstaclePosition['canon'].y, image);
         }
         if (obstaclePosition.archerTower){
-            archerTower.draw(300, 1308, -125, 230, image6);
+            archerTower.draw(300, 1308, obstaclePosition['archerTower'].x, obstaclePosition['archerTower'].y, image6);
         }
 
         if (obstaclePosition.archerTower2){
-            archerTower.draw(300, 1308, 30, 200, image6);
+            archerTower.draw(300, 1308, obstaclePosition['archerTower2'].x, obstaclePosition['archerTower2'].y, image6);
         }
 
 
         if (obstaclePosition.goldStorage){
-            goldStorage.draw(58, 129, 50, 300, image);
+            goldStorage.draw(58, 129, obstaclePosition['goldStorage'].x, obstaclePosition['goldStorage'].y, image);
         }
         if (obstaclePosition.campFire){
-            campFire.draw(25, 203, -40, 200, image);
+            campFire.draw(25, 203, obstaclePosition['campFire'].x, obstaclePosition['campFire'].y, image);
         }
         if (obstaclePosition.barrack){
-            barrack.draw(225, 100, 80, 280, image);
+            barrack.draw(225, 100, obstaclePosition['barrack'].x, obstaclePosition['barrack'].y, image);
         }
         if (this.isAttacking){
             endBattle.draw(1575, 70, -440, CANVAS_HEIGHT - 100, image6);
@@ -94,7 +94,7 @@ class PlayGround {
         }
 
         if (obstaclePosition.townHall){
-            townHall.draw(860, 2016, -42, 220, image6);
+            townHall.draw(860, 2016, obstaclePosition['townHall'].x, obstaclePosition['townHall'].y, image6);
         }
 
 		if (this.collector && !this.isAttacking){
@@ -102,10 +102,10 @@ class PlayGround {
         }
         this.displayScore();
         if (obstaclePosition.elixirCollector){
-            elixirCollector.draw(32, 21, -42, 350, image);
+            elixirCollector.draw(32, 21, obstaclePosition['elixirCollector'].x, obstaclePosition['elixirCollector'].y, image);
         }
         if (obstaclePosition.goldCollector){
-            goldCollector.draw(148, 194, 10, 335, image);
+            goldCollector.draw(148, 194, obstaclePosition['goldCollector'].x, obstaclePosition['goldCollector'].y, image);
         }
     }
 

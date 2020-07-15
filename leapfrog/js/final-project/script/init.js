@@ -20,7 +20,7 @@ intro.src = 'sound/coc-intro.mp3'
 
 const image4 = document.getElementById('source2');
 
-ctx.translate(CANVAS_WIDTH/2 + 50, 0);
+ctx.translate(CANVAS_WIDTH/2 + 50, 10);
 
 const image5 = new Image();
 image5.src = 'img/decorate.png';

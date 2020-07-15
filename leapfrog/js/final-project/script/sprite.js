@@ -198,6 +198,8 @@ const archerTower = {
 	sh: 459,
 	dw: 100,
 	dh: 80,
+	sx: 300,
+	sy: 1308,
 	draw: function(sx, sy, dx, dy, image){
 		ctx.drawImage(image, sx, sy, this.sw, this.sh, dx, dy, this.dw, this.dh);
 	}
@@ -227,44 +229,60 @@ const baseTroop = {
 let obstaclePosition = {
 	goldCollector : {
 		x: 0,
-		y: 325
+		y: 325,
+		OffSetX: 480,
+		OffSetY: 280,
 	},
 	elixirCollector: {
 		x: -42,
-		y: 350
+		y: 350,
+		OffSetX: 430,
+		OffSetY: 390,
 	},
 
 	canon: {
 		x: -42,
-		y: 305
+		y: 305,
+		OffSetX: 425,
+		OffSetY: 330,
 	},
 
 	goldStorage: {
 		x: 60,
-		y: 280,
+		y: 300,
+		OffSetX: 525,
+		OffSetY: 330,
 	},
 
 	campFire: {
-		x: -40,
-		y: 200
+		x: -20,
+		y: 200,
+		OffSetX: 425,
 	},
 
 	townHall: {
 		x: -42,
-		y: 220
+		y: 220,
+		OffSetX: 450,
 	},
 
 	archerTower: {
-		x: -145,
-		y: 245
+		x: -125,
+		y: 235,
+		OffSetX: 355,
+		OffSetY: 220
 	}, 
 	archerTower2: {
 		x: 30, 
-		y: 200
+		y: 200,
+		OffSetX: 515,
+		OffSetY: 240,
 	},
 	barrack: {
-		x: 40,
-		y: 240
+		x: 80,
+		y: 280,
+		OffSetX: 540,
+		OffSetY: 300
 	}
 }
 

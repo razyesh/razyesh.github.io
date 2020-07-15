@@ -9,7 +9,6 @@ const randomCharacters = [];
 
 let direction;
 
-
 function init() {
     let x = -125;
     direction = 'down';
@@ -31,7 +30,7 @@ function init() {
     }
 
     function randomCharAnimation() {
-        ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+        ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT + 200);
         p1.draw();
         for (i = 0; i < randomCharacters.length; i++) {
             randomCharacters[i].draw();
@@ -59,30 +58,30 @@ function init() {
                 len = Object.keys(obstaclePosition).length
                 obstacle = Object.keys(obstaclePosition)
                 if (len > 0) {
-                    if (obstaclePosition['archerTower2']){
-                        if (flag) {
-                            console.log(flag);
-                            fx -= 10;
-                            fy -= 1;
-                            ctx.drawImage(image6, 1202, 284, 172, 33, fx, fy, 25, 15), 100;
-                            ctx.drawImage(image6, 1202, 284, 172, 33, fx, fy, 25, 15), 100;
-                            if (fx < -50) {
-                                fx = 20;
-                                fy = 210 
-                            }
-                        }
-                    }
+                    // if (obstaclePosition['archerTower2']){
+                    //     if (flag) {
+                    //         console.log(flag);
+                    //         fx -= 1;
+                    //         fy -= 1;
+                    //         ctx.drawImage(image6, 1202, 284, 172, 33, fx, fy, 25, 15), 100;
+                    //         ctx.drawImage(image6, 1202, 284, 172, 33, fx, fy, 25, 15), 100;
+                    //         if (fx < -50) {
+                    //             fx = 20;
+                    //             fy = 210 
+                    //         }
+                    //     }
+                    // }
                     flag = true;
                     for (var j = 0; j < len; j++) {
-                        
+
                         if (obstaclePosition[obstacle[j]].y - item.y < 30) {
-                           
-                            if (obstaclePosition[obstacle[j]].y - fy === 34){
-                                flag = false;
-                                delete characters[1];
-                                console.log(item);
-                            }
-                            
+                            console.log(obstaclePosition[obstacle[j]].y - fy);
+                            // if (obstaclePosition[obstacle[j]].y - fy === 35){
+                            //     flag = false;
+                            //     delete characters[1];
+                            //     console.log(item);
+                            // }
+
                             if (item.direction === 'right') {
                                 if (obstaclePosition[obstacle[j]].x - item.x < 30) {
                                     ctx.drawImage(image6, 2232, 2520, 219, 252, item.x + 30, item.y + 20, 30, 20);
@@ -148,24 +147,54 @@ function init() {
     document.addEventListener('click', function (e) {
         if (e.clientX - 520 < 5 && CANVAS_HEIGHT - e.clientY < 50) {
             p1.isAttacking = true;
-
             playerMove = setInterval(animate, 100);
         }
     })
 
-    canvas.addEventListener('mousedown', function (e) {
-        let len = Object.values(obstaclePosition);
+
+    canvas.addEventListener('mousedown', handleMouseDown, true);
+
+    function handleMouseDown(e){
         obstacle = Object.keys(obstaclePosition);
-        console.log(e.clientX - (obstaclePosition[obstacle[0]].x + 450));
-        obstacle.forEach(function (item, index) {
-            if (e.clientX - (obstaclePosition[item].x + 450) < 150 && e.clientX - (obstaclePosition[item].x + 450) > 100 && e.clientY + 50 - obstaclePosition[item].y < 50) {
-                console.log(item);
+        obstacle.forEach(function (item) {
+            if ((e.offsetX - obstaclePosition[item].OffSetX < 10 && e.offsetX - obstaclePosition[item].OffSetX > 0) &&
+                (e.offsetY - obstaclePosition[item].OffSetY < 30)) {
+                    ctx.fillText(`${item}`, obstaclePosition[item].x, obstaclePosition[item].y);
+                    ctx.drawImage(image6, 2096, 2919, 873, 194, -250, 400, 200, 40);
+                
             }
         })
+    }
+
+    // canvas.addEventListener('click', function(e){
+    //     obstacle = Object.keys(obstaclePosition);
+    //     obstacle.forEach(function (item) {
+    //         if ((e.offsetX - obstaclePosition[item].OffSetX < 10 && e.offsetX - obstaclePosition[item].OffSetX > 0) &&
+    //             (e.offsetY - obstaclePosition[item].OffSetY < 30)) {
+    //             ctx.fillText(`${item}`, obstaclePosition[item].x, obstaclePosition[item].y);
+    //             ctx.drawImage(image6, )
+    //         }
+    //     })
+    // });
+
+
+    function handleMouseMove(e, item){
+        console.log(e.clientX);
+        console.log(e.clientY);
+        obstaclePosition[item].x = e.clientX - 600;
+        obstaclePosition[item].y = e.clientY;
+        obstaclePosition[item].OffSetX = e.clientX;
+        obstaclePosition[item].OffSetY = e.clientY;
+        ctx.fillText(`${item}`, e.clientX, e.clientY);
+    }
+
+    canvas.addEventListener('mouseup', function(e){
+        canvas.removeEventListener('mousedown', handleMouseDown, false);
+        canvas.removeEventListener('mousemove', handleMouseMove, false);
     })
 
     canvas.addEventListener('click', function (e) {
-        if (e.clientY - CANVAS_WIDTH < 20 && CANVAS_HEIGHT - 354 > 0) {
+        if (e.clientY - CANVAS_WIDTH < 30 && CANVAS_HEIGHT - 385 > 0) {
             if (p1.collector) {
                 p1.elixirStorage += 500;
             }
