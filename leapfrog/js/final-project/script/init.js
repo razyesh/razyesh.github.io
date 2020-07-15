@@ -17,8 +17,6 @@ image2.src = 'img/intro.png'
 const intro = new Audio()
 intro.src = 'sound/coc-intro.mp3'
 
-const image3 = new Image();
-image3.src = 'img/char.png';
 
 const image4 = document.getElementById('source2');
 
@@ -30,6 +28,8 @@ image5.src = 'img/decorate.png';
 const image6 = new Image();
 image6.src = 'img/drag-edit.png';
 
+images.player = new Image();
+images.player.src = 'img/char.png';
 
 
 

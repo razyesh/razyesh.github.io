@@ -11,7 +11,7 @@ class PlayGround {
         this.attack = false;
         this.fx = 20;
         this.fy = 210;
-        this.speed = 1;
+        this.speed = 2;
         this.decorateHeight = 50;
         this.decorateWidth = 25;
         this.isAttacking = false;
@@ -54,7 +54,9 @@ class PlayGround {
 
 
         if (!this.isAttacking){
-            baseTroop.draw(587, 2119, -120, 320, image6);
+            baseTroop.draw(606, 1215, -60, 160, image6);
+            baseTroop.draw(1404, 1862, -20, 160, image6);
+
         }
 
         if (obstaclePosition.canon){
@@ -84,7 +86,7 @@ class PlayGround {
             attackButton.draw(224, 2094, -440, CANVAS_HEIGHT - 100, image6);
         }
         trophy.draw(222, 956, -440, 0, image6);
-        gemDisplay.draw(1678, 250, 200, 100, image6);
+        gemDisplay.draw(1883, 1196, 200, 100, image6);
         shopClick.draw(1980, 2102, 240, CANVAS_HEIGHT - 100, image6);
 
         for (let i = 0; i<10; i++){
@@ -164,9 +166,9 @@ class PlayGround {
     }
     
     fire = () => {
-        // this.fx -= this.speed;
-        // this.fy -= this.speed;
-        if (this.count === 1){
+        this.fx -= this.speed;
+        this.fy += this.speed;
+        if (this.count === 0){
             this.fx -= this.speed;
             ctx.beginPath();
             ctx.drawImage(image6, 1202, 284, 172, 33, this.fx, this.fy, 25, 15);

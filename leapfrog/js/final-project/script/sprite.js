@@ -214,17 +214,17 @@ const endBattle = {
 }
 
 const baseTroop = {
-	sw: 86,
-	sh: 150,
-	dw: 15,
-	dh: 30,
+	sw: 495,
+	sh: 396,
+	dw: 50,
+	dh: 40,
 	draw: function(sx, sy, dx, dy, image){
 		ctx.drawImage(image, sx, sy, this.sw, this.sh, dx, dy, this.dw, this.dh);
 	}
 }
 
 
-const obstaclePosition = {
+let obstaclePosition = {
 	goldCollector : {
 		x: 0,
 		y: 325

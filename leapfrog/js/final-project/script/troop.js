@@ -58,3 +58,102 @@ class Troop {
 function drawSprite(img, sx, sy, sw, sh, dx, dy, dw, dh) {
     ctx.drawImage(img, sx, sy, sw, sh, dx, dy, dw, dh);
 }
+
+class Character {
+    constructor(){
+        this.width = 40;
+        this.height = 43.875;
+        this.frameX = 3;
+        this.x = Math.random() * -450 ;
+        this.y = Math.random() * 500 ;
+        this.speed = (Math.random() * 2) + 1;
+        this.minFrame = 0;
+        this.action = characterActions[Math.floor(Math.random() * characterActions.length)];
+        if (this.action === 'up') {
+            this.frameY = 0; 
+            this.minFrame = 4;
+            this.maxFrame = 15;
+        }
+        else if (this.action === 'top right') {
+            this.frameY = 1; 
+            this.minFrame = 4;
+            this.maxFrame = 14;
+        }
+        else if (this.action === 'right') {
+            this.frameY = 3; 
+            this.minFrame = 3;
+            this.maxFrame = 13;
+        }
+        else if (this.action === 'down right') {
+            this.frameY = 4;
+            this.minFrame = 4;
+            this.maxFrame = 15;
+        } 
+        else if (this.action === 'down') {
+            this.minFrame = 0;
+            this.frameY = 6;
+            this.maxFrame = 12;
+        }
+        else if (this.action === 'jump') {
+            this.minFrame = 0;
+            this.frameY = 7; 
+            this.maxFrame = 9;
+        }
+
+    }
+    draw(){
+        drawSprite(images.player, this.width * this.frameX, this.height * this.frameY, this.width, this.height, this.x, this.y, this.width - 10, this.height - 20);
+        
+        if (this.frameX < this.maxFrame) this.frameX++;
+        else this.frameX = this.minFrame;
+    }
+    update(){
+        if (this.action === 'up') {
+            if (this.y < 0 - (this.height * 5)) {
+                 this.y = CANVAS_HEIGHT + this.height;
+                 this.x = Math.random() * CANVAS_WIDTH;
+                 this.speed = (Math.random() * 2) + 3;
+             } else {
+                 this.y -= this.speed;  
+             }
+         }
+         else if (this.action === 'top right') {
+             if (this.y < 0 - this.height && this.x > CANVAS_WIDTH + this.width) {
+                 this.y = CANVAS_HEIGHT + this.height
+                 this.x = Math.random() * 100;
+                 this.speed = (Math.random() * 2) + 3;
+             } else {
+                 this.y -= this.speed; 
+                 this.x += this.speed; 
+             }
+         }
+         else if (this.action === 'right') {
+             if (this.x > CANVAS_WIDTH + (this.width * 5)) {
+                 this.x = 0 - this.width;
+                 this.y = Math.random() * CANVAS_HEIGHT; 
+                 this.speed = (Math.random() * 2) + 3;
+             } else {
+                 this.x += this.speed; 
+             }
+         }
+         else if (this.action === 'down right') {
+             if (this.y > CANVAS_HEIGHT + this.height && this.x > CANVAS_WIDTH + this.width) {
+                 this.y = 0 - this.height
+                 this.x = Math.random() * CANVAS_WIDTH;
+                 this.speed = (Math.random() * 2) + 3;
+             } else {
+                 this.y += this.speed; 
+                 this.x += this.speed; 
+             }
+         } 
+         else if (this.action === 'down') {
+             if (this.y > CANVAS_HEIGHT + (this.height * 5)) {
+                 this.y = 0 - this.height;
+                 this.x = Math.random() * CANVAS_WIDTH;
+                 this.speed = (Math.random() * 2) + 3;
+             } else {
+                 this.y += this.speed;  
+             }
+         }
+    }
+}

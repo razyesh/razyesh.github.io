@@ -5,3 +5,6 @@ const MAX_CHARACTER_WIDTH = 120;
 
 const PLAYGROUND_MAX_HEIGHT = 350;
 const PLAYGROUND_MAX_WIDTH = 280;
+
+const characterActions = ['up', 'top right', 'right', 'down right', 'down'];
+const images = {};
