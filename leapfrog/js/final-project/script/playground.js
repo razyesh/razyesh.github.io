@@ -21,6 +21,58 @@ class PlayGround {
 
     // draw method simply draws different sprites on our village
     draw = () => {
+        
+        this.drawPlayGroundEdges();
+        this.drawWall();
+        if (!this.isAttacking){
+            baseTroop.draw(606, 1215, -60, 160, image6);
+            baseTroop.draw(1404, 1862, -40, 160, image6);
+        }
+        if (obstaclePosition.canon){
+            canon.draw(101, 87, obstaclePosition['canon'].x, obstaclePosition['canon'].y, image);
+        }
+        if (obstaclePosition.archerTower){
+            archerTower.draw(300, 1308, obstaclePosition['archerTower'].x, obstaclePosition['archerTower'].y, image6);
+        }
+
+        if (obstaclePosition.archerTower2){
+            archerTower.draw(300, 1308, obstaclePosition['archerTower2'].x, obstaclePosition['archerTower2'].y, image6);
+        }
+        if (obstaclePosition.goldStorage){
+            goldStorage.draw(58, 129, obstaclePosition['goldStorage'].x, obstaclePosition['goldStorage'].y, image);
+        }
+        if (obstaclePosition.campFire){
+            campFire.draw(25, 203, obstaclePosition['campFire'].x, obstaclePosition['campFire'].y, image);
+        }
+        if (obstaclePosition.barrack){
+            barrack.draw(225, 100, obstaclePosition['barrack'].x, obstaclePosition['barrack'].y, image);
+        }
+        if (this.isAttacking){
+            endBattle.draw(1575, 70, -440, CANVAS_HEIGHT - 100, image6);
+        } else {
+            attackButton.draw(224, 2094, -440, CANVAS_HEIGHT - 100, image6);
+        }
+        
+        if (obstaclePosition.townHall){
+            townHall.draw(860, 2016, obstaclePosition['townHall'].x, obstaclePosition['townHall'].y, image6);
+        }
+
+		if (this.collector && !this.isAttacking){
+			getMine.draw(20, 123, -25, 334, image);
+        }
+        this.displayScore();
+        if (obstaclePosition.elixirCollector){
+            elixirCollector.draw(32, 21, obstaclePosition['elixirCollector'].x, obstaclePosition['elixirCollector'].y, image);
+        }
+        if (obstaclePosition.goldCollector){
+            goldCollector.draw(148, 194, obstaclePosition['goldCollector'].x, obstaclePosition['goldCollector'].y, image);
+        }
+        trophy.draw(222, 956, -440, 0, image6);
+        gemDisplay.draw(1883, 1196, 200, 100, image6);
+        shopClick.draw(1980, 2102, 240, CANVAS_HEIGHT - 100, image6);
+    }
+
+    drawPlayGroundEdges = () => {
         for (var x = 0; x < 40; x++) {
             for (var y = 0; y < 30; y++) {
                 this.drawImageTile(x, y);
@@ -37,6 +89,12 @@ class PlayGround {
                 this.drawEdgeTileTop(x, y);
             }
         }
+        for (let i = 0; i<10; i++){
+            this.tree(image5, 70, 254,  - ( i * 90), i * 50);
+        }
+    }
+
+    drawWall = () => {
         this.horizontalWall(6, 40, 280);
 		this.horizontalWall(5, -15, 250);
 		this.verticalWall(6, -65, 275);
@@ -51,62 +109,6 @@ class PlayGround {
         this.verticalWall(7, 50, 210);
         this.horizontalWall(7, 40, 210);
         this.horizontalWall(7, 110, 250);
-
-
-        if (!this.isAttacking){
-            baseTroop.draw(606, 1215, -60, 160, image6);
-            baseTroop.draw(1404, 1862, -40, 160, image6);
-
-        }
-
-        if (obstaclePosition.canon){
-            canon.draw(101, 87, obstaclePosition['canon'].x, obstaclePosition['canon'].y, image);
-        }
-        if (obstaclePosition.archerTower){
-            archerTower.draw(300, 1308, obstaclePosition['archerTower'].x, obstaclePosition['archerTower'].y, image6);
-        }
-
-        if (obstaclePosition.archerTower2){
-            archerTower.draw(300, 1308, obstaclePosition['archerTower2'].x, obstaclePosition['archerTower2'].y, image6);
-        }
-
-
-        if (obstaclePosition.goldStorage){
-            goldStorage.draw(58, 129, obstaclePosition['goldStorage'].x, obstaclePosition['goldStorage'].y, image);
-        }
-        if (obstaclePosition.campFire){
-            campFire.draw(25, 203, obstaclePosition['campFire'].x, obstaclePosition['campFire'].y, image);
-        }
-        if (obstaclePosition.barrack){
-            barrack.draw(225, 100, obstaclePosition['barrack'].x, obstaclePosition['barrack'].y, image);
-        }
-        if (this.isAttacking){
-            endBattle.draw(1575, 70, -440, CANVAS_HEIGHT - 100, image6);
-        } else {
-            attackButton.draw(224, 2094, -440, CANVAS_HEIGHT - 100, image6);
-        }
-        trophy.draw(222, 956, -440, 0, image6);
-        gemDisplay.draw(1883, 1196, 200, 100, image6);
-        shopClick.draw(1980, 2102, 240, CANVAS_HEIGHT - 100, image6);
-
-        for (let i = 0; i<10; i++){
-            this.tree(image5, 70, 254,  - ( i * 90), i * 50);
-        }
-
-        if (obstaclePosition.townHall){
-            townHall.draw(860, 2016, obstaclePosition['townHall'].x, obstaclePosition['townHall'].y, image6);
-        }
-
-		if (this.collector && !this.isAttacking){
-			getMine.draw(20, 123, -25, 334, image);
-        }
-        this.displayScore();
-        if (obstaclePosition.elixirCollector){
-            elixirCollector.draw(32, 21, obstaclePosition['elixirCollector'].x, obstaclePosition['elixirCollector'].y, image);
-        }
-        if (obstaclePosition.goldCollector){
-            goldCollector.draw(148, 194, obstaclePosition['goldCollector'].x, obstaclePosition['goldCollector'].y, image);
-        }
     }
 
     horizontalWall = (n, x, y) => {
@@ -167,9 +169,9 @@ class PlayGround {
     
     fire = () => {
         this.fx -= this.speed;
-        this.fy += this.speed;
+        this.fy -= this.speed;
         if (this.count === 0){
-            this.fx -= this.speed;
+            
             ctx.beginPath();
             ctx.drawImage(image6, 1202, 284, 172, 33, this.fx, this.fy, 25, 15);
             ctx.closePath();

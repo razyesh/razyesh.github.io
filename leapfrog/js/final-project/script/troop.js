@@ -11,6 +11,7 @@ class Troop {
         this.dHeight = 40;
         this.speed = 1;
         this.life = 5;
+        this.health = 40;
         this.direction = direction;
         this.life = 5;
         this.attacking = false;

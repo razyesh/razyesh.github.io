@@ -3,14 +3,13 @@ let playerMove;
 const characters = [];
 let isMoving = false;
 let loaded = false;
-const tempObstacle = obstaclePosition;
-
 const randomCharacters = [];
-
+let tempObstacle;
 let direction;
 
 function init() {
-    let x = -125;
+
+    tempObstacle = obstaclePosition;
     direction = 'down';
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     p1 = new PlayGround();
@@ -30,7 +29,7 @@ function init() {
     }
 
     function randomCharAnimation() {
-        ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT + 200);
+        ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
         p1.draw();
         for (i = 0; i < randomCharacters.length; i++) {
             randomCharacters[i].draw();
@@ -47,6 +46,7 @@ function init() {
 
     function animate() {
         clearInterval(randomCharMove);
+        let width = 40;
         if (characters.length > 0) {
             isMoving = true;
 
@@ -58,29 +58,36 @@ function init() {
                 len = Object.keys(obstaclePosition).length
                 obstacle = Object.keys(obstaclePosition)
                 if (len > 0) {
-                    // if (obstaclePosition['archerTower2']){
-                    //     if (flag) {
-                    //         console.log(flag);
-                    //         fx -= 1;
-                    //         fy -= 1;
-                    //         ctx.drawImage(image6, 1202, 284, 172, 33, fx, fy, 25, 15), 100;
-                    //         ctx.drawImage(image6, 1202, 284, 172, 33, fx, fy, 25, 15), 100;
-                    //         if (fx < -50) {
-                    //             fx = 20;
-                    //             fy = 210 
-                    //         }
-                    //     }
-                    // }
+                    if (obstaclePosition['archerTower2']){
+                        if (flag) {
+                            fx -= 2;
+                            ctx.drawImage(image6, 1202, 284, 172, 33, fx, fy, 25, 15), 100;
+                            if (fx - item.x < 20) {
+                                if (item.health > 10){
+                                    item.health -= 10;
+                                }
+                                ctx.beginPath();
+                                ctx.rect(item.x, item.y, item.health, 5);
+                                ctx.fillStyle = 'green';
+                                ctx.fill();
+                                ctx.closePath();
+                                fx = 20;
+                                fy = 210 
+                                
+                            }
+                        }
+                    }
                     flag = true;
                     for (var j = 0; j < len; j++) {
-
                         if (obstaclePosition[obstacle[j]].y - item.y < 30) {
-                            console.log(obstaclePosition[obstacle[j]].y - fy);
-                            // if (obstaclePosition[obstacle[j]].y - fy === 35){
-                            //     flag = false;
-                            //     delete characters[1];
-                            //     console.log(item);
-                            // }
+                            console.log(fx - item.x);
+                            if (fx - item.x < 20){
+                                flag = false;
+                                if (item.health < 0){
+                                    delete item;
+                                }
+                                
+                            }
 
                             if (item.direction === 'right') {
                                 if (obstaclePosition[obstacle[j]].x - item.x < 30) {
@@ -89,10 +96,10 @@ function init() {
                                     ctx.rect(obstaclePosition[obstacle[j]].x - 10, obstaclePosition[obstacle[j]].y - 10, 40, 5);
                                     ctx.fillStyle = 'blue';
                                     ctx.fill();
+                                    ctx.closePath();
                                     item.attacking = true;
                                     let x = obstaclePosition[obstacle[j]].x;
                                     let y = obstaclePosition[obstacle[j]].y;
-                                    let width = 40;
                                     setTimeout(function () {
                                         ctx.rect(x - 10, y - 10, width, 5);
                                         ctx.fillStyle = 'red';
@@ -135,6 +142,7 @@ function init() {
                     }
                 } else {
                     if (p1.isAttacking) {
+                        console.log(tempObstacle);
                         ctx.drawImage(image6, 147, 2556, 702, 645, -200, 150, 400, 300);
                     }
                 }
@@ -179,18 +187,18 @@ function init() {
 
 
     function handleMouseMove(e, item){
-        console.log(e.clientX);
-        console.log(e.clientY);
-        obstaclePosition[item].x = e.clientX - 600;
-        obstaclePosition[item].y = e.clientY;
-        obstaclePosition[item].OffSetX = e.clientX;
-        obstaclePosition[item].OffSetY = e.clientY;
+        obstaclePosition[item].x = e.offsetX;
+        obstaclePosition[item].y = e.offsetY;
+        obstaclePosition[item].OffSetX = e.offsetX;
+        obstaclePosition[item].OffSetY = e.offsetY;
         ctx.fillText(`${item}`, e.clientX, e.clientY);
     }
 
     canvas.addEventListener('mouseup', function(e){
-        canvas.removeEventListener('mousedown', handleMouseDown, false);
-        canvas.removeEventListener('mousemove', handleMouseMove, false);
+        // canvas.removeEventListener('mousedown', handleMouseDown, false);
+        // canvas.removeEventListener('mousemove', handleMouseMove, false);
+        ctx.drawImage(image6, 2096, 2919, 873, 194, -250, 400, 200, 40);
+
     })
 
     canvas.addEventListener('click', function (e) {
@@ -202,7 +210,9 @@ function init() {
             p1.draw();
         }
         if (600 - e.clientX < 100 && 500 - e.clientY < 100) {
-            location.reload();
+            p1.isAttacking = false;
+            obstaclePosition = tempObstacle;
+            p1.draw();
         }
     })
     setInterval(p1.minerCollectorCollectTrue, 20000);
