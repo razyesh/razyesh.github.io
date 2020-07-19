@@ -4,19 +4,20 @@ const characters = [];
 let isMoving = false;
 let loaded = false;
 const randomCharacters = [];
-let tempObstacle;
 let direction;
+var draggable = false;
+let storedTransform = ctx.getTransform();
+let count = 0;
+
 
 function init() {
-
-    tempObstacle = obstaclePosition;
     direction = 'down';
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     p1 = new PlayGround();
     p1.draw();
-    c1 = new Troop(-280, 290, 'right', 1281, 952, 360, 552);
-    c2 = new Troop(-120, 180, 'right', 1281, 952, 360, 552);
-    c3 = new Troop(-240, 240, 'right', 1281, 952, 360, 552);
+    c1 = new Troop(-320, 290, 'right', 1281, 952, 360, 552);
+    c2 = new Troop(-150, 180, 'right', 1281, 952, 360, 552);
+    c3 = new Troop(-280, 240, 'right', 1281, 952, 360, 552);
 
 
     characters.push(c1);
@@ -40,182 +41,114 @@ function init() {
 
     randomCharMove = setInterval(randomCharAnimation, 100);
 
-    let flag = false;
-    fx = 20;
-    fy = 210;
-
-    function animate() {
-        clearInterval(randomCharMove);
-        let width = 40;
-        if (characters.length > 0) {
-            isMoving = true;
-
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            p1.draw();
-            characters.forEach(function (item) {
-                item.draw();
-                item.update();
-                len = Object.keys(obstaclePosition).length
-                obstacle = Object.keys(obstaclePosition)
-                if (len > 0) {
-                    if (obstaclePosition['archerTower2']){
-                        if (flag) {
-                            fx -= 2;
-                            ctx.drawImage(image6, 1202, 284, 172, 33, fx, fy, 25, 15), 100;
-                            if (fx - item.x < 20) {
-                                if (item.health > 10){
-                                    item.health -= 10;
-                                }
-                                ctx.beginPath();
-                                ctx.rect(item.x, item.y, item.health, 5);
-                                ctx.fillStyle = 'green';
-                                ctx.fill();
-                                ctx.closePath();
-                                fx = 20;
-                                fy = 210 
-                                
-                            }
-                        }
-                    }
-                    flag = true;
-                    for (var j = 0; j < len; j++) {
-                        if (obstaclePosition[obstacle[j]].y - item.y < 30) {
-                            console.log(fx - item.x);
-                            if (fx - item.x < 20){
-                                flag = false;
-                                if (item.health < 0){
-                                    delete item;
-                                }
-                                
-                            }
-
-                            if (item.direction === 'right') {
-                                if (obstaclePosition[obstacle[j]].x - item.x < 30) {
-                                    ctx.drawImage(image6, 2232, 2520, 219, 252, item.x + 30, item.y + 20, 30, 20);
-                                    ctx.beginPath();
-                                    ctx.rect(obstaclePosition[obstacle[j]].x - 10, obstaclePosition[obstacle[j]].y - 10, 40, 5);
-                                    ctx.fillStyle = 'blue';
-                                    ctx.fill();
-                                    ctx.closePath();
-                                    item.attacking = true;
-                                    let x = obstaclePosition[obstacle[j]].x;
-                                    let y = obstaclePosition[obstacle[j]].y;
-                                    setTimeout(function () {
-                                        ctx.rect(x - 10, y - 10, width, 5);
-                                        ctx.fillStyle = 'red';
-                                        ctx.fill();
-                                        item.attacking = false;
-
-                                    }, 1000);
-
-                                }
-                                if (obstaclePosition[obstacle[j]].x - item.x < 20) {
-                                    delete obstaclePosition[obstacle[j]]
-                                }
-                            } else if (item.direction === 'down') {
-                                if (obstaclePosition[obstacle[j]].x - item.x < 30) {
-                                    ctx.drawImage(image6, 2682, 2484, 198, 240, item.x + 10, item.y + 40, 30, 20);
-                                    ctx.beginPath();
-                                    ctx.rect(obstaclePosition[obstacle[j]].x - 10, obstaclePosition[obstacle[j]].y - 10, 40, 5);
-                                    ctx.fillStyle = 'blue';
-                                    ctx.fill();
-                                    item.attacking = true;
-                                    let x = obstaclePosition[obstacle[j]].x;
-                                    let y = obstaclePosition[obstacle[j]].y;
-                                    let width = 40;
-                                    setTimeout(function () {
-                                        ctx.rect(x - 10, y - 10, width, 5);
-                                        ctx.fillStyle = 'red';
-                                        ctx.fill();
-                                        item.attacking = false;
-                                    }, 1000);
-                                }
-                                if (obstaclePosition[obstacle[j]].x - item.x < 20) {
-                                    delete obstaclePosition[obstacle[j]]
-                                }
-                            }
-                        } else {
-                            if (obstaclePosition[obstacle[j]].y > item.y) {
-                                item.direction === 'down'
-                            }
-                        }
-                    }
-                } else {
-                    if (p1.isAttacking) {
-                        console.log(tempObstacle);
-                        ctx.drawImage(image6, 147, 2556, 702, 645, -200, 150, 400, 300);
-                    }
-                }
-            })
-
-        }
-    }
-
-
-    document.addEventListener('click', function (e) {
-        if (e.clientX - 520 < 5 && CANVAS_HEIGHT - e.clientY < 50) {
-            p1.isAttacking = true;
-            playerMove = setInterval(animate, 100);
-        }
-    })
-
 
     canvas.addEventListener('mousedown', handleMouseDown, true);
 
-    function handleMouseDown(e){
+    function handleMouseDown(e) {
+        clearInterval(randomCharMove);
         obstacle = Object.keys(obstaclePosition);
-        obstacle.forEach(function (item) {
-            if ((e.offsetX - obstaclePosition[item].OffSetX < 10 && e.offsetX - obstaclePosition[item].OffSetX > 0) &&
-                (e.offsetY - obstaclePosition[item].OffSetY < 30)) {
-                    ctx.fillText(`${item}`, obstaclePosition[item].x, obstaclePosition[item].y);
-                    ctx.drawImage(image6, 2096, 2919, 873, 194, -250, 400, 200, 40);
-                
+        obstacle.forEach(function (character) {
+            console.log(obstaclePosition[character].x - getMousePos(canvas, e).x - storedTransform.e - obstaclePosition[character].dw / 2);
+            if ((obstaclePosition[character].x - getMousePos(canvas, e).x - storedTransform.e - obstaclePosition[character].dw / 2 < 10 && obstaclePosition[character].x - getMousePos(canvas, e).x - storedTransform.e - obstaclePosition[character].dw / 2 > 0)) {
+                console.log(character);
+                ctx.fillText(`${character}`, obstaclePosition[character].x, obstaclePosition[character].y);
+                ctx.drawImage(image6, 2096, 2919, 873, 194, -250, 400, 200, 40);
+                canvas.addEventListener('mousemove', handleDrag(e, character), false);
+                canvas.addEventListener('mouseup', handleDrop, false);
             }
         })
     }
 
-    // canvas.addEventListener('click', function(e){
-    //     obstacle = Object.keys(obstaclePosition);
-    //     obstacle.forEach(function (item) {
-    //         if ((e.offsetX - obstaclePosition[item].OffSetX < 10 && e.offsetX - obstaclePosition[item].OffSetX > 0) &&
-    //             (e.offsetY - obstaclePosition[item].OffSetY < 30)) {
-    //             ctx.fillText(`${item}`, obstaclePosition[item].x, obstaclePosition[item].y);
-    //             ctx.drawImage(image6, )
-    //         }
-    //     })
-    // });
+    function getMousePos(canvas, evt) {
+        var rect = canvas.getBoundingClientRect();
+        return {
+          x: evt.clientX - rect.left,
+          y: evt.clientY - rect.top
+        };
+      }
 
-
-    function handleMouseMove(e, item){
-        obstaclePosition[item].x = e.offsetX;
-        obstaclePosition[item].y = e.offsetY;
-        obstaclePosition[item].OffSetX = e.offsetX;
-        obstaclePosition[item].OffSetY = e.offsetY;
-        ctx.fillText(`${item}`, e.clientX, e.clientY);
+    function handleDrag(e, character) {
+        draggable = true;
+        if (draggable){
+            obstaclePosition[character].x = getMousePos(canvas, e).x - storedTransform.e - obstaclePosition[character].dw / 2;
+            obstaclePosition[character].y = getMousePos(canvas, e).y - storedTransform.f -  obstaclePosition[character].dh / 2;
+            obstaclePosition[character].OffSetX = getMousePos(canvas, e).x;
+            obstaclePosition[character].OffSetY = getMousePos(canvas, e).y;
+        }
     }
 
-    canvas.addEventListener('mouseup', function(e){
-        // canvas.removeEventListener('mousedown', handleMouseDown, false);
-        // canvas.removeEventListener('mousemove', handleMouseMove, false);
-        ctx.drawImage(image6, 2096, 2919, 873, 194, -250, 400, 200, 40);
+    function handleDrop(){
+        draggable = false;
+        setInterval(randomCharMove);
+        canvas.removeEventListener('mousemove', handleDrag);
+        canvas.removeEventListener('mouseup', handleDrop);
 
-    })
+    }
 
     canvas.addEventListener('click', function (e) {
-        if (e.clientY - CANVAS_WIDTH < 30 && CANVAS_HEIGHT - 385 > 0) {
+        if (CANVAS_HEIGHT - getMousePos(canvas, e).x - storedTransform.e < 10 && CANVAS_HEIGHT - getMousePos(canvas, e).x - storedTransform.e > 0){
+            p1.collector = false;
+            ctx.drawImage(image6, 2480, 78, 706, 466, -350, 10, 600, 400);
+            clearInterval(randomCharMove);
+        }
+        else if (e.clientX - 520 < 5 && CANVAS_HEIGHT - e.clientY < 50) {
+            p1.isAttacking = true;
+            playerMove = setInterval(animate, 100);
+        }
+        else if ((getMousePos(canvas, e).x - storedTransform.e) > 25 && (getMousePos(canvas, e).x - storedTransform.e) < 40){
+            if (!p1.upgrade){
+                ctx.drawImage(image6, 934, 2910, 1002, 650, -350, 10, 600, 400);
+            }
+        }
+        else if ((getMousePos(canvas, e).x - storedTransform.e) > 65 && (getMousePos(canvas, e).x - storedTransform.e) < 75){
+            p1.draw();
+            ctx.drawImage(image7, 88, 20, 2216, 1240, -350, 10, 600, 400);
+        } else if((getMousePos(canvas, e).x - storedTransform.e) > 90 && (getMousePos(canvas, e).x - storedTransform.e) < 100) {
+
+            if (p1.elixirStorage > 8000000){
+                p1.upgrade = true;
+                p1.draw();
+
+            } else {
+                ctx.fillStyle = 'red';
+                ctx.fillText("You Don't have Enough Elixir to Upgrade Dragon", -200, 400);
+            }
+        } else if (-(getMousePos(canvas, e).x - storedTransform.e) > 430 && -(getMousePos(canvas, e).x - storedTransform.e) < 440){
+            ctx.drawImage(image7, 264, 1444, 1068, 1424, -450, 0, 300, CANVAS_HEIGHT);
+        } else if (-(getMousePos(canvas, e).x - storedTransform.e) > 160 && -(getMousePos(canvas, e).x - storedTransform.e) < 180){
+            p1.draw();
+        }
+        else if ((getMousePos(canvas, e).x - storedTransform.e) > 10 && (getMousePos(canvas, e).x - storedTransform.e) < 20){
+            if (this.training){
+                count++;
+                ctx.clearRect(140, 60, 20, 20);
+                ctx.fillStyle = 'red';
+                ctx.fillText(count, 140, 75);
+            } else {
+                ctx.drawImage(image7, 1517, 1501, 144, 142, 140, 30, 70, 60);
+            }
+            this.training = true 
+        }
+        else if (-(getMousePos(canvas, e).x - storedTransform.e) > 10 && -(getMousePos(canvas, e).x - storedTransform.e) < 20) {
             if (p1.collector) {
-                p1.elixirStorage += 500;
+                coin_collect.play();
+                p1.elixirStorage += Math.floor(Math.random() * 50);
+                p1.goldStorage += Math.floor(Math.random() * 50);
+
             }
             p1.collector = false;
             p1.draw();
         }
-        if (600 - e.clientX < 100 && 500 - e.clientY < 100) {
+        else if (600 - e.clientX < 100 && 500 - e.clientY < 100) {
             p1.isAttacking = false;
-            obstaclePosition = tempObstacle;
             p1.draw();
-        }
+            clearInterval(playerMove);
+        } 
+
+        
     })
     setInterval(p1.minerCollectorCollectTrue, 20000);
+    
 
 }
 window.onload = function () {

@@ -95,8 +95,8 @@ const elixirCollector = {
 
 
 const goldCollector = {
-	sw: 33,
-	sh: 32,
+	sw: 174,
+	sh: 160,
 	dw: 45,
 	dh: 43,
 	draw: function (sx, sy, dx, dy, image) {
@@ -106,10 +106,10 @@ const goldCollector = {
 
 
 const getMine = {
-	sw: 14,
-	sh: 15,
-	dw: 14,
-	dh: 15,
+	sw: 321,
+	sh: 335,
+	dw: 24,
+	dh: 25,
 	draw: function (sx, sy, dx, dy, image) {
 		ctx.drawImage(image, sx, sy, this.sw, this.sh, dx, dy, this.dw, this.dh);
 	}
@@ -119,8 +119,8 @@ const getMine = {
 const barrack = {
 	sw: 23,
 	sh: 28,
-	dw: 23,
-	dh: 28,
+	dw: 40,
+	dh: 50,
 	draw: function (sx, sy, dx, dy, image) {
 		ctx.drawImage(image, sx, sy, this.sw, this.sh, dx, dy, this.dw, this.dh);
 	}
@@ -128,8 +128,8 @@ const barrack = {
 
 
 const attackButton = {
-	sw: 236,
-	sh: 233,
+	sw: 244,
+	sh: 240,
 	dw: 90,
 	dh: 80,
 	draw: function(sx, sy, dx, dy, image){
@@ -140,10 +140,10 @@ const attackButton = {
 
 
 const trophy = {
-	sw: 368,
-	sh: 126,
-	dw: 130,
-	dh: 50,
+	sw: 598,
+	sh: 423,
+	dw: 200,
+	dh: 150,
 	draw: function(sx, sy, dx, dy, image){
 		ctx.drawImage(image, sx, sy, this.sw, this.sh, dx, dy, this.dw, this.dh);
 	}
@@ -151,10 +151,10 @@ const trophy = {
 
 
 const elixirDisplay = {
-	sw: 454,
-	sh: 109,
+	sw: 470,
+	sh: 117,
 	dw: 180,
-	dh: 40,
+	dh: 50,
 	draw: function(sx, sy, dx, dy, image){
 		ctx.drawImage(image, sx, sy, this.sw, this.sh, dx, dy, this.dw, this.dh);
 	}
@@ -164,7 +164,7 @@ const goldDisplay = {
 	sw: 464,
 	sh: 113,
 	dw: 180,
-	dh: 40,
+	dh: 50,
 	draw: function(sx, sy, dx, dy, image){
 		ctx.drawImage(image, sx, sy, this.sw, this.sh, dx, dy, this.dw, this.dh);
 	}
@@ -194,12 +194,10 @@ const shopClick = {
 
 
 const archerTower = {
-	sw: 396,
-	sh: 459,
-	dw: 100,
-	dh: 80,
-	sx: 300,
-	sy: 1308,
+	sw: 208,
+	sh: 305,
+	dw: 50,
+	dh: 70,
 	draw: function(sx, sy, dx, dy, image){
 		ctx.drawImage(image, sx, sy, this.sw, this.sh, dx, dy, this.dw, this.dh);
 	}
@@ -216,8 +214,8 @@ const endBattle = {
 }
 
 const baseTroop = {
-	sw: 495,
-	sh: 396,
+	sw: 418,
+	sh: 384,
 	dw: 50,
 	dh: 40,
 	draw: function(sx, sy, dx, dy, image){
@@ -225,64 +223,221 @@ const baseTroop = {
 	}
 }
 
+const baseTroop2 = {
+	sw: 530,
+	sh: 318,
+	dw: 50,
+	dh: 40,
+	draw: function(sx, sy, dx, dy, image){
+		ctx.drawImage(image, sx, sy, this.sw, this.sh, dx, dy, this.dw, this.dh);
+	}
+}
+
+const warMapTrainTroop = {
+	sw: 138,
+	sh: 285,
+	dw: 50,
+	dh: 100,
+	draw: function(sx, sy, dx, dy, image){
+		ctx.drawImage(image, sx, sy, this.sw, this.sh, dx, dy, this.dw, this.dh);
+	}
+}
+
+const settingMyBase = {
+	sw: 140,
+	sh: 433,
+	dw: 50,
+	dh: 150,
+	draw: function(sx, sy, dx, dy, image){
+		ctx.drawImage(image, sx, sy, this.sw, this.sh, dx, dy, this.dw, this.dh);
+	}
+}
+
+const clanCastle = {
+	sw: 310,
+	sh: 350,
+	dw: 50,
+	dh: 60,
+	draw: function(sx, sy, dx, dy, image){
+		ctx.drawImage(image, sx, sy, this.sw, this.sh, dx, dy, this.dw, this.dh);
+	}
+}
+
+const laboratory = {
+	sw: 192,
+	sh: 198,
+	dw: 70,
+	dh: 60,
+	draw: function(sx, sy, dx, dy, image){
+		ctx.drawImage(image, sx, sy, this.sw, this.sh, dx, dy, this.dw, this.dh);
+	}
+}
+
+const spellFactory = {
+	sw: 216,
+	sh: 196,
+	dw: 50,
+	dh: 60,
+	draw: function(sx, sy, dx, dy, image){
+		ctx.drawImage(image, sx, sy, this.sw, this.sh, dx, dy, this.dw, this.dh);
+	}
+}
+
+const elixirStorage = {
+	sw: 268,
+	sh: 270,
+	dw: 50,
+	dh: 60,
+	draw: function(sx, sy, dx, dy, image){
+		ctx.drawImage(image, sx, sy, this.sw, this.sh, dx, dy, this.dw, this.dh);
+	}
+}
+
+const builderShield = {
+	sw: 876,
+	sh: 132,
+	dw: 250,
+	dh: 40,
+	draw: function(sx, sy, dx, dy, image){
+		ctx.drawImage(image, sx, sy, this.sw, this.sh, dx, dy, this.dw, this.dh);
+	}
+}
+
+const builder = {
+	sw: 182,
+	sh: 216,
+	dw: 30,
+	dh: 30,
+	draw: function(sx, sy, dx, dy, image){
+		ctx.drawImage(image, sx, sy, this.sw, this.sh, dx, dy, this.dw, this.dh);
+	}
+}
 
 let obstaclePosition = {
 	goldCollector : {
-		x: 0,
-		y: 325,
+		x: 40,
+		y: 300,
+		dw: 45,
+		dh: 43,
 		OffSetX: 480,
 		OffSetY: 280,
 	},
 	elixirCollector: {
 		x: -42,
 		y: 350,
+		dw: 45,
+		dh: 43,
 		OffSetX: 430,
 		OffSetY: 390,
+		
 	},
 
 	canon: {
 		x: -42,
 		y: 305,
+		dw: 62,
+		dh: 62,
 		OffSetX: 425,
 		OffSetY: 330,
 	},
 
 	goldStorage: {
-		x: 60,
-		y: 300,
+		x: -150,
+		y: 310,
+		dw: 42,
+		dh: 42,
 		OffSetX: 525,
 		OffSetY: 330,
+		
 	},
 
 	campFire: {
-		x: -20,
+		x: 100,
 		y: 200,
+		dw: 45,
+		dh: 43,
 		OffSetX: 425,
 	},
 
 	townHall: {
 		x: -42,
 		y: 220,
+		dw: 80,
+		dh: 80,
 		OffSetX: 450,
 	},
 
 	archerTower: {
 		x: -125,
 		y: 235,
+		dw: 50,
+		dh: 70,
 		OffSetX: 355,
 		OffSetY: 220
 	}, 
 	archerTower2: {
 		x: 30, 
 		y: 200,
+		dw: 50,
+		dh: 70,
 		OffSetX: 515,
 		OffSetY: 240,
 	},
 	barrack: {
 		x: 80,
-		y: 280,
+		y: 260,
+		dw: barrack.dw,
+		dh: barrack.dh,
 		OffSetX: 540,
 		OffSetY: 300
+	}, 
+
+	clanCastle: {
+		x: -80,
+		y: 200,
+		dw: 50,
+		dh: 60,
+	}, 
+
+	laboratory: {
+		x: 0,
+		y: 150,
+		dw: laboratory.dw,
+		dh: laboratory.dh,
+	},
+
+	spellFactory: {
+		x: -180,
+		y: 205,
+		dw: spellFactory.dw,
+		dh: spellFactory.dh,
+	},
+
+	elixirStorage: {
+		x: 130,
+		y: 230,
+		dw: elixirCollector.dw,
+		dh: elixirCollector.dh
+	},
+	builderShield : {
+		x : -150,
+		y: 0,
+		dw: builderShield.dw,
+		dh: builderShield.dh,
+	},
+	builder1: {
+		x: -30,
+		y: 180,
+		dw: builder.dw,
+		dh: builder.dh,
+	},
+
+	builder2 : {
+		x: -120,
+		y: 180,
+		dw: builder.dw,
+		dh: builder.dh,
 	}
+
 }
 

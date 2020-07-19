@@ -38,7 +38,7 @@ class Troop {
         else if (this.direction === 'right'){
             if (!this.attacking){
                 this.x += this.speed;  
-                if (this.x > 90){
+                if (this.x > 80){
                     this.frameX = 2391;
                     this.frameY = 1143;
                     this.width = 423;
@@ -111,7 +111,7 @@ class Character {
     update(){
         if (this.action === 'up') {
             if (this.y < 0 - (this.height * 5)) {
-                 this.y = CANVAS_HEIGHT + this.height;
+                 this.y = CANVAS_HEIGHT - 200 + this.height;
                  this.x = Math.random() * CANVAS_WIDTH;
                  this.speed = (Math.random() * 2) + 3;
              } else {
@@ -120,7 +120,7 @@ class Character {
          }
          else if (this.action === 'top right') {
              if (this.y < 0 - this.height && this.x > CANVAS_WIDTH + this.width) {
-                 this.y = CANVAS_HEIGHT + this.height
+                 this.y = CANVAS_HEIGHT - 200 + this.height
                  this.x = Math.random() * 100;
                  this.speed = (Math.random() * 2) + 3;
              } else {
@@ -155,6 +155,10 @@ class Character {
              } else {
                  this.y += this.speed;  
              }
+         }
+
+         if (this.x > 200){
+             this.action = 'down';
          }
     }
 }

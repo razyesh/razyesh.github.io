@@ -1,12 +1,10 @@
 canvas {
 	display: block;
 	margin: 0 auto;
-	background-image: #6d9421;
+	background-image: #756658;
 }
 
-body {
-	background-color: rgb(7, 80, 7);
-}
+
 
 #source2 {
 	display: none;
