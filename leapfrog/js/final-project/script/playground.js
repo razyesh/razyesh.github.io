@@ -6,8 +6,8 @@ class PlayGround {
     constructor() {
 
         this.collector = true;
-        this.elixirStorage = 75000000;
-        this.goldStorage = 75000000;
+        this.elixirStorage = 7500000;
+        this.goldStorage = 7500000;
         this.attack = false;
         this.fx = 20;
         this.fy = 210;
@@ -215,10 +215,10 @@ class PlayGround {
         ctx.clearRect(0, 0, 400, 0);
         goldDisplay.draw(1344, 2238, 150, 10, image6);
         elixirDisplay.draw(1784, 968, 150, 60, image6);
-        ctx.font = "18px Fondamento";
+        ctx.font = "18px Aerial";
         ctx.fillStyle = '#fff';
-        ctx.fillText(`${this.goldStorage}`, 190, 40);
-        ctx.fillText(`${this.elixirStorage}`, 190, 95);
+        ctx.fillText(`${this.goldStorage}`, 210, 45);
+        ctx.fillText(`${this.elixirStorage}`, 210, 95);
     }
 
     minerCollectorCollectTrue = () => {

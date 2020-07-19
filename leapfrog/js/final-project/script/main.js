@@ -11,6 +11,7 @@ let count = 0;
 
 
 function init() {
+    clearInterval(loading);
     direction = 'down';
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     p1 = new PlayGround();
@@ -107,6 +108,7 @@ function init() {
 
             if (p1.elixirStorage > 8000000){
                 p1.upgrade = true;
+                p1.elixirStorage -= 8000000;
                 p1.draw();
 
             } else {
@@ -153,5 +155,10 @@ function init() {
 }
 window.onload = function () {
     loaded = true;
-    init();
+    introPlay();
+}
+
+if (!loaded){
+    ctx.font = '18px Times New Roman';
+    ctx.fillText('loading...', 0, 240);
 }

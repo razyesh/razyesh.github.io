@@ -4,7 +4,9 @@ canvas {
 	background-image: #756658;
 }
 
-
+.container {
+    position: relative;
+}
 
 #source2 {
 	display: none;
@@ -12,7 +14,7 @@ canvas {
 
 #play {
 	position: absolute;
-    left: 400px;
+    left: 800px;
     top: 250px;
     padding: 15px;
     background-color: darkgreen;

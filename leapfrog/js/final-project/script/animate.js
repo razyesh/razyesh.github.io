@@ -110,18 +110,18 @@ function animate() {
                     if (p1.elixirStorage < 8100000){
                         p1.elixirStorage += 546000;
                     }
-                    if (p1.goldStorage < 81000000){
+                    if (p1.goldStorage < 8100000){
                         p1.goldStorage += 340000;
                     }
                     ctx.rect(-300, 50, 500, 400);
                     ctx.fillStyle = '#000';
                     ctx.fill();
                     ctx.fillStyle = '#fff';
-                    ctx.fillText("340000", -100, 300);
-                    ctx.fillText("546000", -100, 320);
-                    ctx.fillText("14000", 90, 320)
-                    ctx.fillText("14000", 90, 340)
-                    ctx.drawImage(image6, 147, 2556, 702, 645, -200, 150, 400, 300);                    
+                    ctx.fillText("340000", -130, 250);
+                    ctx.fillText("546000", -130, 270);
+                    ctx.fillText("14000", 50, 270)
+                    ctx.fillText("14000", 50, 290)
+                    ctx.drawImage(image6, 147, 2556, 702, 645, -250, 100, 400, 300);                    
                 }
             }
         })
