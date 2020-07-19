@@ -1,3 +1,7 @@
+/**
+ * collection of all the sprites info for our playground
+ */
+
 const bg = {
 	sx: 32,
 	sy: 32,

@@ -1,3 +1,7 @@
+/**
+ * constant value that will remain constant through out the game
+ */
+
 const CANVAS_HEIGHT = 500;
 const CANVAS_WIDTH = 800;
 const CHARACTER_DIFF_PLACE = 60;

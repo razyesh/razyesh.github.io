@@ -1,3 +1,6 @@
+/**
+ * class that defines the characteristics of our troops that is going to attack the village
+ */
 class Troop {
     constructor(x, y, direction, sx, sy, swidth, sheight) {
         this.width = swidth;
@@ -17,7 +20,10 @@ class Troop {
         this.attacking = false;
     }
 
-
+    /**
+     * this draw method helps to introduce new troop and we can make them ready to face the 
+     * battle
+     */
     draw() {
         drawSprite(image6, this.frameX,
             this.frameY, this.width, this.height,
@@ -25,6 +31,9 @@ class Troop {
         );
     }
 
+    /**
+     * update the current state of the troops as they start destroying villages
+     */
 
     update() {
         if (this.direction === 'down') {
@@ -56,10 +65,10 @@ class Troop {
 }
 
 
-function drawSprite(img, sx, sy, sw, sh, dx, dy, dw, dh) {
-    ctx.drawImage(img, sx, sy, sw, sh, dx, dy, dw, dh);
-}
 
+/**
+ * this class the defines the random moving characters in our game
+ */
 class Character {
     constructor(){
         this.width = 40;
@@ -70,6 +79,8 @@ class Character {
         this.speed = (Math.random() * 2) + 1;
         this.minFrame = 0;
         this.action = characterActions[Math.floor(Math.random() * characterActions.length)];
+
+        //checking on which direction does the characters were moving
         if (this.action === 'up') {
             this.frameY = 0; 
             this.minFrame = 4;
@@ -102,12 +113,19 @@ class Character {
         }
 
     }
+    /**
+     * draw the new character with the random intial position
+     */
     draw(){
         drawSprite(images.player, this.width * this.frameX, this.height * this.frameY, this.width, this.height, this.x, this.y, this.width - 10, this.height - 20);
         
         if (this.frameX < this.maxFrame) this.frameX++;
         else this.frameX = this.minFrame;
     }
+
+    /**
+     * helps in animating the character
+     */
     update(){
         if (this.action === 'up') {
             if (this.y < 0 - (this.height * 5)) {

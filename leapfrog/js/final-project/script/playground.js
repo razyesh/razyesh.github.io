@@ -81,11 +81,13 @@ class PlayGround {
         }
         trophy.draw(1989, 3237, -440, 0, image6);
         gemDisplay.draw(1883, 1196, 195, 110, image6);
-        shopClick.draw(1980, 2102, 240, CANVAS_HEIGHT - 100, image6);
         warMapTrainTroop.draw(244, 1812, -440, CANVAS_HEIGHT - 210, image6);
         ctx.drawImage(image7, 0, 1428, 104, 352, -450, 160, 30, 130);
     }
 
+    /**
+     * methods that collects all the obstacles in our village
+     */
     playgroundObstacle = () => {
         canon.draw(101, 87, -42, 305, image);
         archerTower.draw(224, 1304, -125, 235, image6);
@@ -117,6 +119,7 @@ class PlayGround {
         builder.draw(3138, 748, -30, 180, image6);
         builder.draw(3138, 748, -120, 180, image6)
         settingMyBase.draw(2108, 1664, 290, CANVAS_HEIGHT - 260, image6);
+        shopClick.draw(1980, 2102, 240, CANVAS_HEIGHT - 100, image6);
 
 
         if (this.collector){
@@ -125,6 +128,9 @@ class PlayGround {
         }
     }
 
+    /**
+     * method that defines the edges into our village
+     */
     drawPlayGroundEdges = () => {
         for (var x = 0; x < 40; x++) {
             for (var y = 0; y < 30; y++) {
@@ -153,6 +159,10 @@ class PlayGround {
         }
     }
 
+
+    /**
+     * method to deine walls on our village
+     */
     drawWall = () => {
         this.horizontalWall(6, 40, 280);
 		this.horizontalWall(5, -15, 250);
@@ -170,6 +180,13 @@ class PlayGround {
         this.horizontalWall(7, 110, 250);
     }
 
+
+    /**
+     * defining walls in horizontal position
+     * @param {Number} n number of horizontal wall to draw 
+     * @param {Number} x x-position to define where to draw 
+     * @param {*} y y-position to define where to draw
+     */
     horizontalWall = (n, x, y) => {
 		for (var i=0;i<n; i++){
 			wall.draw(758, 1938, x - (i * 10), y + (i * 5), image6);
@@ -177,12 +194,24 @@ class PlayGround {
 
 	}
 
+    /**
+     * defining walls in vertical position
+     * @param {Number} n number of vertical wall to draw 
+     * @param {Number} x x-position to define where to draw 
+     * @param {*} y y-position to define where to draw
+     */
 	verticalWall = (n, x, y) => {
 		for (var i=0;i<n; i++){
 			wall.draw(758, 1938, x + (i * 10), y + (i * 5), image6);
 		}
-	}
+    }
+    
 
+    /**
+     * drawing image tiles for the isometric view
+     * @param {number} x x-position of canvas 
+     * @param {*} y y-position of canvas
+     */
     drawImageTile = (x, y) => {
         ctx.save();
         ctx.translate((x - y) * 60 / 2, (x + y) * 20 / 2);
@@ -221,11 +250,19 @@ class PlayGround {
         ctx.fillText(`${this.elixirStorage}`, 210, 95);
     }
 
+
+    /**
+     * time definning when to collect the mines
+     */
     minerCollectorCollectTrue = () => {
         this.collector = true;
         this.draw();
     }
-    
+
+
+    /**
+     * archer tower firing up the arrow
+     */
     fire = () => {
         this.fx -= this.speed;
         this.fy -= this.speed;

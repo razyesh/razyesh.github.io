@@ -1,26 +1,35 @@
-let p1;
-let playerMove;
-const characters = [];
-let isMoving = false;
-let loaded = false;
-const randomCharacters = [];
-let direction;
-var draggable = false;
+let p1; //defining the playgorund
+let playerMove; //checking the troops move
+const characters = []; //troops that are going to face the battle
+let isMoving = false; //checking whether troops is moving forward or not
+let loaded = false; //checking whether the documents loaded completely or not
+const randomCharacters = []; //the random characters
+let direction; //finding on which direction character is moving
+var draggable = false; 
 let storedTransform = ctx.getTransform();
 let count = 0;
 
 
+/**
+ * intial function that will run after the document loads completely
+ */
 function init() {
     clearInterval(loading);
     direction = 'down';
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+
+    /**
+     * declaration of playground
+     */
     p1 = new PlayGround();
     p1.draw();
+
+    /**
+     * declaration of new attacking troops
+     */
     c1 = new Troop(-320, 290, 'right', 1281, 952, 360, 552);
     c2 = new Troop(-150, 180, 'right', 1281, 952, 360, 552);
     c3 = new Troop(-280, 240, 'right', 1281, 952, 360, 552);
-
-
     characters.push(c1);
     characters.push(c2);
     characters.push(c3);
@@ -30,6 +39,7 @@ function init() {
         randomCharacters.push(new Character());
     }
 
+    //function to update to state of our character
     function randomCharAnimation() {
         ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
         p1.draw();
@@ -41,10 +51,9 @@ function init() {
     }
 
     randomCharMove = setInterval(randomCharAnimation, 100);
-
-
     canvas.addEventListener('mousedown', handleMouseDown, true);
 
+    //handling mouse down events for drag and drop
     function handleMouseDown(e) {
         clearInterval(randomCharMove);
         obstacle = Object.keys(obstaclePosition);
@@ -60,6 +69,8 @@ function init() {
         })
     }
 
+
+    //getting the current mouse position in canvas
     function getMousePos(canvas, evt) {
         var rect = canvas.getBoundingClientRect();
         return {
@@ -68,6 +79,8 @@ function init() {
         };
       }
 
+
+    //handling drag events
     function handleDrag(e, character) {
         draggable = true;
         if (draggable){
@@ -78,6 +91,8 @@ function init() {
         }
     }
 
+
+    //handling drop events
     function handleDrop(){
         draggable = false;
         setInterval(randomCharMove);
@@ -86,6 +101,8 @@ function init() {
 
     }
 
+
+    //handling onclick events
     canvas.addEventListener('click', function (e) {
         if (CANVAS_HEIGHT - getMousePos(canvas, e).x - storedTransform.e < 10 && CANVAS_HEIGHT - getMousePos(canvas, e).x - storedTransform.e > 0){
             p1.collector = false;
@@ -153,6 +170,8 @@ function init() {
     
 
 }
+
+//checking whether windows loaded completely or not
 window.onload = function () {
     loaded = true;
     introPlay();
