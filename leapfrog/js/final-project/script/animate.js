@@ -117,6 +117,7 @@ function animate() {
                     ctx.fillStyle = '#000';
                     ctx.fill();
                     ctx.fillStyle = '#fff';
+                    ctx.font = "bold 18px Arial";
                     ctx.fillText("340000", -130, 250);
                     ctx.fillText("546000", -130, 270);
                     ctx.fillText("14000", 50, 270)

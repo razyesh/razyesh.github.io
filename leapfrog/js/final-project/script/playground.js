@@ -21,6 +21,7 @@ class PlayGround {
         this.tempObstacle = obstaclePosition;
         this.upgrade = false;
         this.training = false;
+        this.trophy = 0;
     }
 
 
@@ -28,6 +29,7 @@ class PlayGround {
     draw = () => {
         this.drawPlayGroundEdges();
         this.displayScore();
+        this.displayTrophy();
         this.drawWall();
 
         if (this.isAttacking){ 
@@ -120,8 +122,6 @@ class PlayGround {
         builder.draw(3138, 748, -120, 180, image6)
         settingMyBase.draw(2108, 1664, 290, CANVAS_HEIGHT - 260, image6);
         shopClick.draw(1980, 2102, 240, CANVAS_HEIGHT - 100, image6);
-
-
         if (this.collector){
             getMine.draw(1721, 2440, -25, 334, image6);
             getMine.draw(2766, 1757, 40, 280, image6);
@@ -244,7 +244,7 @@ class PlayGround {
         ctx.clearRect(0, 0, 400, 0);
         goldDisplay.draw(1344, 2238, 150, 10, image6);
         elixirDisplay.draw(1784, 968, 150, 60, image6);
-        ctx.font = "18px Aerial";
+        ctx.font = "bold 18px Arial";
         ctx.fillStyle = '#fff';
         ctx.fillText(`${this.goldStorage}`, 210, 45);
         ctx.fillText(`${this.elixirStorage}`, 210, 95);
@@ -274,10 +274,17 @@ class PlayGround {
         }
     }
 
+    /* method for decorating the village */
     tree = (image, sx, sy, dx, dy) => {
         ctx.drawImage(image, sx, sy, 105, 145, dx, dy, this.decorateWidth, this.decorateHeight);
     }
 
+    displayTrophy = () => {
+        ctx.font = "bold 18px Arial";
+        ctx.fillStyle = '#fff';
+        ctx.clearRect(-400, 80, 5, 5);
+        ctx.fillText(`${this.trophy}`, -400, 80);
+    }
 
 }
 

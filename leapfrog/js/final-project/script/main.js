@@ -55,12 +55,12 @@ function init() {
 
     //handling mouse down events for drag and drop
     function handleMouseDown(e) {
+        console.log("mouse down");
         clearInterval(randomCharMove);
         obstacle = Object.keys(obstaclePosition);
         obstacle.forEach(function (character) {
-            console.log(obstaclePosition[character].x - getMousePos(canvas, e).x - storedTransform.e - obstaclePosition[character].dw / 2);
-            if ((obstaclePosition[character].x - getMousePos(canvas, e).x - storedTransform.e - obstaclePosition[character].dw / 2 < 10 && obstaclePosition[character].x - getMousePos(canvas, e).x - storedTransform.e - obstaclePosition[character].dw / 2 > 0)) {
-                console.log(character);
+            console.log(getMousePos(canvas, e).x - obstaclePosition[character].x - storedTransform.e);
+            if ((obstaclePosition[character].x - getMousePos(canvas, e).x - storedTransform.e < 10 && obstaclePosition[character].x - getMousePos(canvas, e).x - storedTransform.e > 0)) {
                 ctx.fillText(`${character}`, obstaclePosition[character].x, obstaclePosition[character].y);
                 ctx.drawImage(image6, 2096, 2919, 873, 194, -250, 400, 200, 40);
                 canvas.addEventListener('mousemove', handleDrag(e, character), false);
@@ -129,6 +129,7 @@ function init() {
                 p1.draw();
 
             } else {
+                ctx.font = "bold 18px Arial";
                 ctx.fillStyle = 'red';
                 ctx.fillText("You Don't have Enough Elixir to Upgrade Dragon", -200, 400);
             }
